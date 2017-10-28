@@ -50,15 +50,25 @@
 
 				<div class="barra-topo">
 					<div class="container">
-						<ul class="pull-right menu-topo-links">
-							<li>
-								<i class="fa fa-phone" aria-hidden="true"></i>
-								<a href="mailto:<?php echo $tel = $titan->getOption( 'telefone' ); ?>"> <?php echo $tel = $titan->getOption( 'telefone' ); ?></a>
-								<a href="tel:<?php echo $tel2 = $titan->getOption( 'telefone2' ); ?>"><?php echo $tel2 = $titan->getOption( 'telefone2' ); ?></a>
-							</li>			
-						</ul>
+						<div class="row">
+							<div class="col-6">
+								<ul class="menu-topo-links">
+									<li>
+										<i class="fa fa-phone" aria-hidden="true"></i>
+										<a href="mailto:<?php echo $tel = $titan->getOption( 'telefone' ); ?>"> <?php echo $tel = $titan->getOption( 'telefone' ); ?></a> | 
+										<a href="tel:<?php echo $tel2 = $titan->getOption( 'telefone2' ); ?>"><?php echo $tel2 = $titan->getOption( 'telefone2' ); ?></a>
+									</li>			
+								</ul>
 
 
+							</div>					
+							<div class="col-6">
+								<div class="pull-right topo-search">
+									<i class="fa fa-search" aria-hidden="true"></i>
+
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 
@@ -66,9 +76,9 @@
 				<div class="menu-topo">
 
 					<nav class="navbar-topo">
-						<div class="container">
+						<div class="container no-padding">
 							
-							<div class="row no-gutters container-fluid align-items-center">
+							<div class="row no-gutters no-padding container-fluid align-items-center"> 
 								<div class="col-md-3 navbar-header">
 									<?php if ( is_home() || is_front_page() ) { ?>
 									<h1>

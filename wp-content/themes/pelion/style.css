@@ -104,6 +104,34 @@ dl, ol, ul {
 .barra-topo {
   background: #01687b;
   float: left;
-  width: 100%; }
+  width: 100%;
+  padding: 5px 0; }
+  .barra-topo .menu-topo-links li {
+    color: #fff; }
+  .barra-topo .menu-topo-links a {
+    color: #fff;
+    font-size: 1.1em; }
+  .barra-topo .menu-topo-links i {
+    color: #fff;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    margin-right: 10px; }
+  .barra-topo .topo-search {
+    color: #fff; }
+
+#header #navbar-menu li {
+  float: left;
+  padding: 5px 15px; }
+  #header #navbar-menu li a {
+    color: #333;
+    font-size: 1.3em; }
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0; }
 
 /******HEADER*******/

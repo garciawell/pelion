@@ -140,6 +140,49 @@ dl, ol, ul {margin:0;}
     background: #01687b;
     float: left;
     width: 100%;
+    padding: 5px 0;
+
+    .menu-topo-links{
+    	li{
+			color:#fff;
+    	}
+    	a{
+    		color:#fff;
+    		font-size:1.1em;
+    	}
+    	i{
+    		color:#fff;
+    		border-radius:50%;
+    		border:1px solid #fff;
+    		width:25px;
+    		height:25px;
+    		line-height:25px;
+    		text-align:center;
+    		margin-right:10px;
+    	}
+    }
+
+    .topo-search{
+    	color:#fff;
+    }
+}
+
+#header{
+	#navbar-menu{
+		li{
+			float:left;
+			padding: 5px 15px;
+			a{
+				color:#333;
+				font-size:1.3em;
+			}
+		}
+	}
+}
+
+.no-padding{
+	padding-left:0;
+	padding-right:0;
 }
 
 /******HEADER*******/
