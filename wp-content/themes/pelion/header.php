@@ -18,7 +18,7 @@
 		</head>
 		
 		<body <?php body_class(); ?>>
-			<?php $titan = TitanFramework::getInstance( 'inundaweb' ); ?>
+			<?php $titan = TitanFramework::getInstance( 'pelion' ); ?>
 
 			<div class="menu-wrap">
 				<nav class="menu">
@@ -52,11 +52,10 @@
 					<div class="container">
 						<ul class="pull-right menu-topo-links">
 							<li>
-								<a href="mailto:<?php echo $tel = $titan->getOption( 'email' ); ?>"><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $tel = $titan->getOption( 'email' ); ?></a>
+								<i class="fa fa-phone" aria-hidden="true"></i>
+								<a href="mailto:<?php echo $tel = $titan->getOption( 'telefone' ); ?>"> <?php echo $tel = $titan->getOption( 'telefone' ); ?></a>
+								<a href="tel:<?php echo $tel2 = $titan->getOption( 'telefone2' ); ?>"><?php echo $tel2 = $titan->getOption( 'telefone2' ); ?></a>
 							</li>			
-							<li>
-								<a href="tel:<?php echo $tel = $titan->getOption( 'telefone' ); ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php echo $tel = $titan->getOption( 'telefone' ); ?></a>
-							</li> 
 						</ul>
 
 
@@ -95,7 +94,7 @@
 
 								</div> 
 								<div id="navbar-menu" class="col-md-9">
-									<?php wp_nav_menu( array( 'menu' => 'menu', 'container'=>'', 'menu_class'=> 'pull-right' ) ); ?> 
+									<?php wp_nav_menu( array( 'menu' => 'Menu Principal', 'container'=>'', 'menu_class'=> 'pull-right' ) ); ?> 
 
 
 

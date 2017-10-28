@@ -46,7 +46,7 @@ gulp.task('min-css', function() {
 
 gulp.task('min-js', function() {
 	gulp.src([
-		'./node_modules/jquery/dist/jquery.js',   
+		//'./node_modules/jquery/dist/jquery.js',   
 		'./node_modules/popper.js/dist/umd/popper.js',  
 		'./node_modules/bootstrap/dist/js/bootstrap.js',
 		'./node_modules/owl.carousel/dist/owl.carousel.js',
@@ -102,7 +102,7 @@ gulp.task('min-html', function() {
 gulp.task('serve', ['sass'], function() {
 
     browserSync.init({
-        proxy:'192.168.0.104/bilhares/'   
+        proxy:'localhost/pelion/'   
     });
 
     gulp.watch("scss/style.scss", ['sass']); 
