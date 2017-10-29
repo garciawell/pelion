@@ -5970,8 +5970,6 @@ dl, ol, ul {
 /****HEADER******************/
 .barra-topo {
   background: #01687b;
-  float: left;
-  width: 100%;
   padding: 5px 0; }
   .barra-topo .menu-topo-links li {
     color: #fff; }
@@ -5989,6 +5987,9 @@ dl, ol, ul {
     margin-right: 10px; }
   .barra-topo .topo-search {
     color: #fff; }
+
+#header .menu-topo {
+  padding: 15px 0; }
 
 #header #navbar-menu li {
   float: left;
@@ -6062,3 +6063,25 @@ dl, ol, ul {
   border-radius: 0; }
 
 /******FOOTER*******/
+.banner-full {
+  height: 370px;
+  margin-bottom: 60px; }
+
+.title-cat {
+  font-size: 4rem;
+  color: #fff; }
+
+.subtitle-cat {
+  color: #fff; }
+  .subtitle-cat p {
+    font-size: 1.5rem;
+    color: #fff; }
+
+.breadcrumb {
+  background: transparent;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 50px; }

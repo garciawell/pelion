@@ -81,7 +81,7 @@ register_sidebar(array(
 // Habilitar Menus e Post Thumbnails
 register_nav_menus(); 
 add_theme_support( 'post-thumbnails' );	
-// add_image_size('foto-gd',760,380,true);
+ add_image_size('padrao',280,250,true);
 ////add_image_size('Postos',600,450,true);
 ////add_image_size('servicos',600,450,true);
 ////add_image_size('capacitacao',600,350,true);

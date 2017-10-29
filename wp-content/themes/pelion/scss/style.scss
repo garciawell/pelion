@@ -168,8 +168,6 @@ dl, ol, ul {margin:0;}
 
 .barra-topo{
 	background: #01687b;
-	float: left;
-	width: 100%;
 	padding: 5px 0;
 
 	.menu-topo-links{
@@ -198,6 +196,11 @@ dl, ol, ul {margin:0;}
 }
 
 #header{
+
+	.menu-topo {
+		padding: 15px 0;
+	}
+
 	#navbar-menu{
 		li{
 			float:left;
@@ -298,8 +301,8 @@ dl, ol, ul {margin:0;}
 
 
  	.btn{
-		 font-size: 0.8rem;
-   	 text-transform: uppercase;
+ 		font-size: 0.8rem;
+ 		text-transform: uppercase;
 
  	}
 
@@ -307,6 +310,34 @@ dl, ol, ul {margin:0;}
  		@include border-radius(0); // apply the mixin
  	}
 
+
  	/******FOOTER*******/
 
+
+.banner-full{
+	height:370px;
+	margin-bottom:60px;
+}
+
+
+.title-cat{
+	font-size: 4rem;
+	color: #fff;
+}
+
+
+.subtitle-cat{
+	color: #fff; 
+	p{ 
+		font-size: 1.5rem;
+		color: #fff;
+	}
+}
+
+.breadcrumb{
+	background:transparent;
+		@include border-radius(0); // apply the mixin
+		padding:0;
+		margin-bottom:50px;
+}
 

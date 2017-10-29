@@ -52,15 +52,25 @@
 		$args['meta_query'][] = array(
 			'key' => '_thumbnail_id',
 			'compare' => 'EXISTS'
-		);
+		); 
+
+
+	/*
+	if( isset( $_POST['price'] ) && $_POST['price'] == 'on' )
+		$args['meta_query'][] = array(
+			'key' => 'price',
+			'compare' => 'EXISTS'
+		);*/
  
 	$query = new WP_Query( $args );
  
 	if( $query->have_posts() ) :
+		echo '<div id="item-loop-cat">';
 		echo '<div class="row">';
 		while( $query->have_posts() ): $query->the_post(); ?>	
 		<?php   get_template_part("templates/loop", "post"); ?>
 	<?php 	endwhile;
+	echo '</div>';
 	echo '</div>';
 		wp_reset_postdata();
 	else :

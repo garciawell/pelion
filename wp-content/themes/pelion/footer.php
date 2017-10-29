@@ -54,16 +54,18 @@
 		jQuery(function($){
 	$('#filter').submit(function(){
 		var filter = $('#filter');
+		var conteudo = $('#main-items-cat');
 		$.ajax({
 			url:filter.attr('action'),
 			data:filter.serialize(), // form data
-			type:filter.attr('method'), // POST
+			type:filter.attr('method'), // POST 
 			beforeSend:function(xhr){
-				filter.find('button').text('Processing...'); // changing the button label
+				conteudo.append( '<div class="loader">teste...</div>'); 
+				conteudo.find( '#item-loop-cat').remove(); 
 			},
 			success:function(data){
 				filter.find('button').text('Apply filter'); // changing the button label back
-				$('#response').html(data); // insert data
+				$('#main-items-cat').html(data); // insert data
 			}
 		});
 		return false;
