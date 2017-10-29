@@ -5962,7 +5962,7 @@ input[readonly] {
 
 body {
   overflow-x: hidden;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Ubuntu', sans-serif; }
 
 dl, ol, ul {
   margin: 0; }
@@ -5997,6 +5997,10 @@ dl, ol, ul {
   #header #navbar-menu li a {
     color: #333;
     font-size: 1.3em; }
+
+#header #navbar-menu .btn-success a {
+  color: #fff;
+  font-size: 0.75rem; }
 
 .no-padding {
   padding-left: 0;
@@ -6088,3 +6092,13 @@ dl, ol, ul {
 
 .slider.container-full {
   margin-bottom: 50px; }
+
+span.sf-range-values-seperator {
+  width: 40px;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center; }
+
+input, select, textarea {
+  border: 1px solid #ddd;
+  padding: 10px; }
