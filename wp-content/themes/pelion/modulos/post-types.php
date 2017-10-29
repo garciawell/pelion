@@ -69,6 +69,33 @@ add_action( 'init', 'register_packages' );
   ));  
 
 
+  //TAXONOMIA Price
+  
+  
+  $labels = array(
+    'name' => _x( 'Price', 'taxonomy general name' ),
+    'singular_name' => _x( 'Price', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Price' ),
+    'all_items' => __( 'All Price' ),
+    'parent_item' => __( 'Parent Price' ),
+    'parent_item_colon' => __( 'Parent Price' ),
+    'edit_item' => __( 'Edit Price' ), 
+    'update_item' => __( 'Update Price' ),
+    'add_new_item' => __( 'Add New Price' ),
+    'new_item_name' => __( 'New Price' ),
+    'menu_name' => __( 'Price' ),
+  );    
+
+  register_taxonomy('price',array('packages','activities'), array( 
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'query_var' => true,
+    'rewrite' => true,
+    'rewrite' => array( 'slug' => 'price', 'with_front' => false ),
+  ));  
+
+
 
 //Activities
 

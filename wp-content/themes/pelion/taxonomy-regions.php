@@ -64,17 +64,31 @@ $term_id = $queried_object->term_id;
 
 
 				<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
-					<?php
+							<?php
 							if( $terms = get_terms( 'options', 'orderby=name' ) ) :  // to make it simple I use default categories
 							echo '<select name="categoryfilter"><option>Select category...</option>';
 							foreach ( $terms as $term ) :
 									echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
 								endforeach;
 								echo '</select>';
-							endif;
-							?>
+							endif; 
+							?>						
 
-							<input type="text" name="price_min" placeholder="Min price" />
+								<?php
+							if( $terms = get_terms( 'price', 'orderby=name' ) ) :  // to make it simple I use default categories
+							echo '<select name="teste"><option>Select category...</option>';
+							foreach ( $terms as $term ) :
+									echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
+								endforeach;
+								echo '</select>';
+							endif;
+							?>					
+
+
+							<input type="text" name="catage" placeholder="Age" />
+
+
+							<input type="text" name="" placeholder="Min price" />
 							<input type="text" name="price_max" placeholder="Max price" />
 							<label>
 								<input type="radio" name="date" value="ASC" /> Date: Ascending

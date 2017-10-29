@@ -4,16 +4,41 @@
 		'order'	=> $_POST['date'] // ASC или DESC
 	);
  
+
 	// for taxonomies / categories
-	if( isset( $_POST['categoryfilter'] ) )
+	if( isset( $_POST['categoryfilter']) && isset( $_POST['teste']  ) ){
 		$args['tax_query'] = array(
+			'relation' => 'AND',
 			array(
 				'taxonomy' => 'options',
 				'field' => 'id',
 				'terms' => $_POST['categoryfilter']
+			
+			),
+				array(
+				'taxonomy' => 'price',
+				'field' => 'id',
+				'terms' => $_POST['teste']
+			
 			)
-		);
+			);
+
+		} else{
+			$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'options',
+				'field' => 'id',
+				'terms' => $_POST['categoryfilter']
+			
+			),
+			);
+		}
  
+
+
+print_r($args);
+ 
+
 	// create $args['meta_query'] array if one of the following fields is filled
 	if( isset( $_POST['price_min'] ) && $_POST['price_min'] || isset( $_POST['price_max'] ) && $_POST['price_max'] || isset( $_POST['featured_image'] ) && $_POST['featured_image'] == 'on' )
 		$args['meta_query'] = array( 'relation'=>'AND' ); // AND means that all conditions of meta_query should be true
@@ -55,13 +80,8 @@
 		); 
 
 
-	/*
-	if( isset( $_POST['price'] ) && $_POST['price'] == 'on' )
-		$args['meta_query'][] = array(
-			'key' => 'price',
-			'compare' => 'EXISTS'
-		);*/
- 
+
+
 	$query = new WP_Query( $args );
  
 	if( $query->have_posts() ) :
