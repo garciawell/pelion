@@ -16,15 +16,6 @@
 			)
 		); 
 
-
-	// if post thumbnail is set
-	if( isset( $_POST['categoryfilter2'] ) && $_POST['categoryfilter2'] == 'on' )
-		$args['meta_query'][] = array(
-			'key' => 'age',
-			'value' => $_POST['categoryfilter2'],
-			'compare' => 'LIKE'
-		);  
-
  
 
 

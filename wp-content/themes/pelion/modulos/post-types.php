@@ -25,6 +25,7 @@ add_action( 'init', 'register_packages' );
          'menu_icon'  => 'dashicons-tickets-alt',
         'publicly_queryable' => true,
         'show_ui' => true,
+        'has_archive' => true,
         'show_in_menu' => true,
         'query_var' => true,
         "rewrite" => [
@@ -71,7 +72,7 @@ add_action( 'init', 'register_packages' );
 
   //TAXONOMIA Price
   
-  
+  /*
   $labels = array(
     'name' => _x( 'Price', 'taxonomy general name' ),
     'singular_name' => _x( 'Price', 'taxonomy singular name' ),
@@ -95,7 +96,7 @@ add_action( 'init', 'register_packages' );
     'rewrite' => array( 'slug' => 'price', 'with_front' => false ),
   ));  
 
-
+*/
 
 //Activities
 
@@ -103,7 +104,7 @@ add_action( 'init', 'register_activities' );
     function register_activities() {
 
       $labels = array(
-        'name' => _x('Packages', 'post type general name'),
+        'name' => _x('Activities', 'post type general name'),
         'singular_name' => _x('Activities', 'post type singular name'),
         'add_new' => _x('Adicionar Novo', 'Activities'),
         'add_new_item' => __('Adicionar Novo Activities'),

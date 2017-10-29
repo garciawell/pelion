@@ -1,64 +1,75 @@
-<?php
-/**
- * The template for displaying archive pages
- *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * If you'd like to further customize these archive views, you may create a
- * new template file for each one. For example, tag.php (Tag archives),
- * category.php (Category archives), author.php (Author archives), etc.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
- */
+<?php get_header();  ?>
 
-get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<?php 
 
-		<?php if ( have_posts() ) : ?>
+// vars
+$queried_object = get_queried_object(); 
+$taxonomy = $queried_object->taxonomy;
+$term_id = $queried_object->term_id;  
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+?>
 
-			<?php
-			// Start the Loop.
-			while ( have_posts() ) : the_post();
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'content', get_post_format() );
 
-			// End the loop.
-			endwhile;
 
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
-				'next_text'          => __( 'Next page', 'twentyfifteen' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
-			) );
+<div class="banner-full d-flex  align-items-center" style="background-image: url('<?php  echo $thumbnail = get_field('imagem_categoria', $queried_object);  ?>');">
+	<div class="container">
+		<h1 class="title-cat text-center"><?php single_cat_title();  ?></h1>
+		<span class="subtitle-cat text-center"><?php echo category_description(); ?> </span>
+	</div>
+</div>
+<div class="container-full">
+	<div id="content-main">
+		<div class="container">
+			<div class="row">
+				<div class="col-9 col-lg-9 col-md-9 col-sm-12">
+					<nav class="breadcrumb">
+						<a class="breadcrumb-item" href="#">Home</a>
+						<a class="breadcrumb-item" href="#">Library</a>
+						<a class="breadcrumb-item" href="#">Data</a>
+						<span class="breadcrumb-item active">Bootstrap</span>
+					</nav>
 
-		// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'content', 'none' );
+					<div id="main">
+						<div class="row">
+							<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+								<?php   get_template_part("templates/loop", "post"); ?>
+							<?php endwhile; else : ?>
+							<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+						<?php endif; ?>
+					</div>
+				</div>
 
-		endif;
-		?>
+			<?php 
 
-		</main><!-- .site-main -->
-	</section><!-- .content-area -->
+			$images = get_field('galeria' , $queried_object);
+					$size = 'padrao'; // (thumbnail, medium, large, full or custom size)
 
-<?php get_footer(); ?>
+					if( $images ): ?>
+					<div class="galeria-cat">
+						<ul class="row">
+							<?php foreach( $images as $image ): ?>
+								<li class="col-4 col-md-4 col-sm-6">
+									<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					</div>
+				<?php endif; ?>
+
+			</div>
+			<div class="col-3 col-lg-3 col-md-3 col-sm-12">
+				<?php echo do_shortcode('[searchandfilter id="63"]'); ?>
+
+
+
+
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+
+<?php get_footer (); ?>  	 

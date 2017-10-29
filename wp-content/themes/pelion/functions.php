@@ -77,7 +77,6 @@ register_sidebar(array(
 
 
 
-
 // Habilitar Menus e Post Thumbnails
 register_nav_menus(); 
 add_theme_support( 'post-thumbnails' );	
