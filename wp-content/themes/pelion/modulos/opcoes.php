@@ -11,7 +11,7 @@ function mytheme_create_options() {
 		'name' => 'Opções Gerais',
 		'id' => 'opcoes_gerais',
 		'position' => '2',
-		'icon' => 'dashicons-admin-site',
+		'icon' => 'dashicons-admin-generic',
 		'capability' => 'edit_posts', 
 
 
@@ -73,7 +73,7 @@ function mytheme_create_options() {
 		'name' => 'Rodapé',
 		'id' => 'rodape',
 	) );
-
+/*
 	$generalTab2->createOption( array(
 		'name' => 'Logo Rodapé',
 		'id' => 'logo_rodape',
@@ -82,23 +82,9 @@ function mytheme_create_options() {
 		'placeholder' => 'clique aqui para adicionar uma imagem',
 		'desc' => 'enviar arquivo'
 	) );
+*/
+/*
 
-
-	$generalTab2->createOption( array(
-		'name' => 'Horário de Funcionamento',
-		'id' => 'hora',
-		'type' => 'textarea',
-		'placeholder' => 'Das 8H às 19H',
-	) );
-
-
-
-	$generalTab2->createOption( array(
-		'name' => 'Endereço',
-		'id' => 'endereco',
-		'type' => 'textarea',
-		'placeholder' => 'R. endereco',
-	) );
 	$generalTab2->createOption( array(
 		'name' => 'Facebook',
 		'id' => 'face',
@@ -118,14 +104,8 @@ function mytheme_create_options() {
 		'type' => 'text',
 		'placeholder' => 'https://www.insta.com/',
 	) );
+*/
 
-
-	$generalTab2->createOption( array(
-		'name' => 'Telefone',
-		'id' => 'telefone_rodape',
-		'type' => 'text',
-		'placeholder' => '(41) 3333-3333',
-	) );
 
 
 	$generalTab2->createOption( array(
@@ -133,6 +113,13 @@ function mytheme_create_options() {
 		'id' => 'copyright',
 		'type' => 'text',
 		'placeholder' => '© Copyright',
+	) );
+
+	$generalTab2->createOption( array(
+		'name' => 'Aditional',
+		'id' => 'aditional',
+		'type' => 'text',
+		'placeholder' => '',
 	) );
 
 	$generalTab2->createOption( array(

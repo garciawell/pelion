@@ -14,7 +14,6 @@ function theme_scripts() {
 	wp_enqueue_style ( 'css-minify', get_template_directory_uri() . '/css/libs.css' );  
 	wp_enqueue_style ( 'css-padrao', get_template_directory_uri() . '/style.css' ); 	   
 	wp_enqueue_script( 'js-topo', get_template_directory_uri() . '/js/libs-bottom.js', array(), '1.0.0', true);  
-
 	wp_enqueue_script('js-rodape', get_template_directory_uri() . '/js/libs.js', array(), '1.0.0', false);
 
 }
@@ -38,7 +37,7 @@ register_sidebar(array(
 register_sidebar(array(
 	'name' => 'Rodape 1',
 	'id' => 'rodape-1',
-	'before_widget' => '<div class="side-blog">',
+	'before_widget' => '<div class="block-rodape1">',
 	'after_widget' => '</div>',
 	'before_title' => '<h4 class="tl-cat">',
 	'after_title' => '</h4>',
@@ -48,7 +47,7 @@ register_sidebar(array(
 register_sidebar(array(
 	'name' => 'Rodape 2',
 	'id' => 'rodape-2', 
-	'before_widget' => '<div class="side-blog">',
+	'before_widget' => '<div class="block-rodape2">',
 	'after_widget' => '</div>',
 	'before_title' => '<h4 class="tl-cat">',
 	'after_title' => '</h4>',
@@ -58,7 +57,7 @@ register_sidebar(array(
 register_sidebar(array(
 	'name' => 'Rodape 3',
 	'id' => 'rodape-3',
-	'before_widget' => '<div class="side-blog">',
+	'before_widget' => '<div class="block-rodape3">',
 	'after_widget' => '</div>',
 	'before_title' => '<h4 class="tl-cat">',
 	'after_title' => '</h4>',
@@ -69,7 +68,7 @@ register_sidebar(array(
 register_sidebar(array(
 	'name' => 'Rodape 4',
 	'id' => 'rodape-4',
-	'before_widget' => '<div class="side-blog">',
+	'before_widget' => '<div class="block-rodape4">',
 	'after_widget' => '</div>',
 	'before_title' => '<h4 class="tl-cat">',
 	'after_title' => '</h4>',
@@ -102,14 +101,18 @@ require_once( 'plugins/titan-framework/titan-framework-embedder.php' );
 
 require_once( 'modulos/opcoes.php' );
 require_once( 'modulos/main.php' );
+require_once( 'modulos/post-types.php' );
+require_once( 'modulos/filtro.php' );
 
 
+
+/***************MENU RESPONSIVO***********/
 function wp_nav_menu_no_ul()
 {
     $options = array(
         'echo' => false,
         'container' => false,
-        'menu' => 'menu',
+        'menu' => 'Menu Principal',
         'fallback_cb'=> 'default_page_menu'
     );
 
@@ -124,20 +127,9 @@ function wp_nav_menu_no_ul()
 function default_page_menu() {
    wp_list_pages('title_li=');
 }
-/**********DESCRICAO WOOCOMERCE***********/
-add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_single_excerpt', 5);
 
 
-/**********BREADCRUMB WOOCOMERCE***********/
 
-add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' );
-function jk_woocommerce_breadcrumbs() {
-    return array(
-            'delimiter'   => ' &#47; ',
-            'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><div class="container">',
-            'wrap_after'  => '</div></nav>',
-            'before'      => '',
-            'after'       => '',
-            'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
-        );
-}
+
+/*****************************************/
+

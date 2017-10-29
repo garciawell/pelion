@@ -15,6 +15,29 @@ Version: 0.1
 @charset "utf-8";
 
 
+
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+$blue:    #2390c8 !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #49b198 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+$border-radius: 2rem !default;
+$input-btn-padding-y:   0.7rem !default; 
+$input-btn-padding-x:   1.5rem !default;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+
 *{
 	margin: 0;
 	padding: 0;
@@ -28,12 +51,12 @@ Version: 0.1
 
 
 a:focus, a:hover {
-    color: inherit; 
+	color: inherit; 
 }
 
 
 
- html input[type=button], input[type=reset], input[type=submit] {
+html input[type=button], input[type=reset], input[type=submit] {
 	background:#000;
 	color:#fff;
 	padding:10px;
@@ -42,13 +65,13 @@ a:focus, a:hover {
 
 
 p,li {
-    font-size: 0.8rem;
-    color: #777;
+	font-size: 0.8rem;
+	color: #777;
 }
 
 a {
-    color: #1e3c76;
-    text-decoration: none;
+	color: #1e3c76;
+	text-decoration: none;
 }
 
 *dl, dt, dd, ul, ol{
@@ -57,17 +80,17 @@ a {
 }
 
 @mixin placeholder {
-  ::-webkit-input-placeholder {@content}
-  :-moz-placeholder           {@content}
-  ::-moz-placeholder          {@content}
-  :-ms-input-placeholder      {@content}  
+	::-webkit-input-placeholder {@content}
+	:-moz-placeholder           {@content}
+	::-moz-placeholder          {@content}
+	:-ms-input-placeholder      {@content}  
 }
 
 @include placeholder {
-    font-style:italic;
-    color: #777;
-    font-weight:100;
-    font-size:14px;
+	font-style:italic;
+	color: #777;
+	font-weight:100;
+	font-size:14px;
 }
 
 
@@ -76,7 +99,12 @@ img{
 	height: auto;
 }
 
-
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
 
 textarea,
 input[type="text"], 
@@ -95,7 +123,7 @@ textarea{
 	max-height: 100px;
 	width: 100%;
 }
- 
+
 
 
 
@@ -134,37 +162,39 @@ body{
 dl, ol, ul {margin:0;}
 
 
+
+
 /****HEADER******************/	
 
 .barra-topo{
-    background: #01687b;
-    float: left;
-    width: 100%;
-    padding: 5px 0;
+	background: #01687b;
+	float: left;
+	width: 100%;
+	padding: 5px 0;
 
-    .menu-topo-links{
-    	li{
+	.menu-topo-links{
+		li{
 			color:#fff;
-    	}
-    	a{
-    		color:#fff;
-    		font-size:1.1em;
-    	}
-    	i{
-    		color:#fff;
-    		border-radius:50%;
-    		border:1px solid #fff;
-    		width:25px;
-    		height:25px;
-    		line-height:25px;
-    		text-align:center;
-    		margin-right:10px;
-    	}
-    }
+		}
+		a{
+			color:#fff;
+			font-size:1.1em;
+		}
+		i{
+			color:#fff;
+			border-radius:50%;
+			border:1px solid #fff;
+			width:25px;
+			height:25px;
+			line-height:25px;
+			text-align:center;
+			margin-right:10px;
+		}
+	}
 
-    .topo-search{
-    	color:#fff;
-    }
+	.topo-search{
+		color:#fff;
+	}
 }
 
 #header{
@@ -186,3 +216,97 @@ dl, ol, ul {margin:0;}
 }
 
 /******HEADER*******/
+
+
+/******FOOTER*******/
+
+#footer{
+	color:#fff;
+	background:#01669c;
+
+
+	.main-rodape{
+		padding:60px 0;
+	}
+
+	.copyright{
+		p{
+			margin:0;
+		}
+
+		background:#22466a;	
+		padding:10px 0;
+	}
+
+	.socialFooter{ 
+		border: 1px solid #fff;
+ 		  @include border-radius(15px); // apply the mixin
+ 		  padding: 15px;
+ 		  max-width: 155px;
+ 		  margin: 50px 0 0 auto;
+ 		  text-align: center;
+
+ 		  li{
+ 		  	display:inline-block;
+ 		  	i{
+ 		  		font-size:18px;
+ 		  	}
+
+ 		  	span{
+ 		  		display:block;
+ 		  		margin-bottom:5px;
+ 		  	}
+
+ 		  	a{
+ 		  		margin: 0 8px;
+ 		  		display: inline-block;
+ 		  	}
+ 		  }
+ 		}
+ 		a,li,p{
+ 			color:#fff;
+ 		}	
+
+ 		#menu-menu-footer{
+
+ 			a{text-transform:uppercase;}
+ 			li{margin-bottom:20px;}
+
+ 		}
+
+ 		.tl-cat{
+ 			text-transform: uppercase;
+ 			font-weight: normal;
+ 			font-size: 0.9em;
+ 			margin-bottom: 25px;
+ 		}
+
+ 		.menu-handy-pages-container{
+ 			li{margin-bottom: 5px;}
+ 		}
+
+ 		.block-rodape4{
+ 			text-align:right;
+ 			p{
+ 				margin:0;
+ 			}
+ 		}
+
+
+
+ 	}
+
+
+ 	.btn{
+		 font-size: 0.8rem;
+   	 text-transform: uppercase;
+
+ 	}
+
+ 	.btn-square{
+ 		@include border-radius(0); // apply the mixin
+ 	}
+
+ 	/******FOOTER*******/
+
+

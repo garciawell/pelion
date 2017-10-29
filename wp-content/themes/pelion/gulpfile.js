@@ -31,7 +31,7 @@ gulp.task('min-img', function() {
 
 gulp.task('min-css', function() {
 	gulp.src([ 
-		'./node_modules/bootstrap/dist/css/bootstrap.min.css',
+		//'./node_modules/bootstrap/dist/css/bootstrap.min.css',
 		'./node_modules/owl.carousel/dist/assets/owl.carousel.css',
 		'./css/menu_sideslide.css',
 		'./node_modules/font-awesome/css/font-awesome.min.css'
