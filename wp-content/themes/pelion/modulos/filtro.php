@@ -5,42 +5,35 @@
 	);
  
 
+ 
 	// for taxonomies / categories
-	if( isset( $_POST['categoryfilter']) && isset( $_POST['teste']  ) ){
+	if( isset( $_POST['categoryfilter'] ) )
 		$args['tax_query'] = array(
-			'relation' => 'AND',
 			array(
 				'taxonomy' => 'options',
 				'field' => 'id',
 				'terms' => $_POST['categoryfilter']
-			
-			),
-				array(
-				'taxonomy' => 'price',
-				'field' => 'id',
-				'terms' => $_POST['teste']
-			
 			)
-			);
+		); 
 
-		} else{
-			$args['tax_query'] = array(
-			array(
-				'taxonomy' => 'options',
-				'field' => 'id',
-				'terms' => $_POST['categoryfilter']
-			
-			),
-			);
-		}
+
+	// if post thumbnail is set
+	if( isset( $_POST['categoryfilter2'] ) && $_POST['categoryfilter2'] == 'on' )
+		$args['meta_query'][] = array(
+			'key' => 'age',
+			'value' => $_POST['categoryfilter2'],
+			'compare' => 'LIKE'
+		);  
+
  
 
 
-print_r($args);
+
+
  
 
 	// create $args['meta_query'] array if one of the following fields is filled
-	if( isset( $_POST['price_min'] ) && $_POST['price_min'] || isset( $_POST['price_max'] ) && $_POST['price_max'] || isset( $_POST['featured_image'] ) && $_POST['featured_image'] == 'on' )
+	if( isset( $_POST['price_min'] ) && $_POST['price_min'] || isset( $_POST['price_max'] ) && $_POST['price_max'] || isset( $_POST['categoryfilter2'] ) && $_POST['categoryfilter2']  || isset( $_POST['featured_image'] ) && $_POST['featured_image'] == 'on' )
 		$args['meta_query'] = array( 'relation'=>'AND' ); // AND means that all conditions of meta_query should be true
  
 	// if both minimum price and maximum price are specified we will use BETWEEN comparison

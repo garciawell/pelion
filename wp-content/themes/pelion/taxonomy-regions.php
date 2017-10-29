@@ -31,6 +31,10 @@ $term_id = $queried_object->term_id;
 						<span class="breadcrumb-item active">Bootstrap</span>
 					</nav>
 
+					<div id="content">
+
+					</div>
+
 					<div id="main-items-cat">
 						<div id="item-loop-cat">
 							<div class="row">
@@ -61,31 +65,22 @@ $term_id = $queried_object->term_id;
 
 			</div>
 			<div class="col-3 col-lg-3 col-md-3 col-sm-12">
-
+				<?php //echo do_shortcode('[AjaxWPQSF id=54]');?>
 
 				<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
-							<?php
+					<?php
 							if( $terms = get_terms( 'options', 'orderby=name' ) ) :  // to make it simple I use default categories
 							echo '<select name="categoryfilter"><option>Select category...</option>';
 							foreach ( $terms as $term ) :
 									echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
 								endforeach;
 								echo '</select>';
-							endif; 
-							?>						
+							endif;		
 
-								<?php
-							if( $terms = get_terms( 'price', 'orderby=name' ) ) :  // to make it simple I use default categories
-							echo '<select name="teste"><option>Select category...</option>';
-							foreach ( $terms as $term ) :
-									echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
-								endforeach;
-								echo '</select>';
-							endif;
-							?>					
-
-
-							<input type="text" name="catage" placeholder="Age" />
+							?>		
+ 	
+ 
+							<input type="text" name="categoryfilter2" placeholder="Age" />
 
 
 							<input type="text" name="" placeholder="Min price" />

@@ -6085,3 +6085,6 @@ dl, ol, ul {
   border-radius: 0;
   padding: 0;
   margin-bottom: 50px; }
+
+.slider.container-full {
+  margin-bottom: 50px; }
