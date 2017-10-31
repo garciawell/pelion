@@ -6199,7 +6199,8 @@ input, select, textarea {
     height: 50px;
     margin: auto;
     color: #fff;
-    padding: 0 15px; }
+    padding: 0 15px;
+    z-index: 0; }
   .bloco-padrao .owl-prev {
     float: left; }
   .bloco-padrao .owl-next {
