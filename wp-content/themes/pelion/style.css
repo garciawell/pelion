@@ -6106,6 +6106,13 @@ input, select, textarea {
   border: 1px solid #ddd;
   padding: 10px; }
 
+.page-padrao h2, .page-padrao h3, .page-padrao h4, .page-padrao h5 {
+  color: #444444;
+  font-weight: 400; }
+
+.page-padrao p {
+  font-size: 0.9rem; }
+
 .icon-ht {
   background: url(img/icons-grid.png) left center no-repeat;
   width: 35px;

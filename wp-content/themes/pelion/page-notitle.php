@@ -1,4 +1,14 @@
-<?php get_header(); /* Template Name: Página Sem Titulo*/?>
+<?php get_header(); /* Template Name: Page Banner*/?>
+
+
+<div class="banner-full regions d-flex  align-items-center text-center"  style="background: url('<?php  echo get_field('banner' );?>') center center no-repeat; background-size: cover;">
+	<div class="container">
+		<h1 class="title-white"><?php the_title(); ?></h1>
+	</div>
+</div>
+
+
+
 	<?php
 			// Start the loop.
 			while ( have_posts() ) : the_post(); ?>
