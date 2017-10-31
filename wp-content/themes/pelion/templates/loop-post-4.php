@@ -1,14 +1,28 @@
 <div class="col-3 col-lg-3 col-md-3 col-sm-6">
 
 	<div class="bloco-padrao">
-		<figure class="bloco-imagem">
+		<div class="bloco-imagem">
 			<div class="label"> 
 				<span style="background:<?php the_field('cor_label'); ?>">
 					 <?php the_field('text_label'); ?>
 				</span>
 			</div>
-			<?php the_post_thumbnail( 'large', array( 'alt' => get_the_title() ) );  ?>
-		</figure>
+			<div class="owl-carousel owl-slider-post">
+				<div class="item">
+					<?php the_post_thumbnail( 'padrao', array( 'alt' => get_the_title() ) );  ?>			
+				</div>
+					<?php 
+					$images = get_field('galeria');
+					$size = 'padrao'; // (thumbnail, medium, large, full or custom size)
+					if( $images ): ?>
+				        <?php foreach( $images as $image ): ?>
+				        	<div class="item">
+				            	<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+				            	</div>
+				        <?php endforeach; ?>
+					<?php endif; ?>
+			</div>
+		</div>
 
 		<div class="top">
 			<div class="cat-travel">

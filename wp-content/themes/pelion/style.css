@@ -5988,6 +5988,9 @@ dl, ol, ul {
   .barra-topo .topo-search {
     color: #fff; }
 
+#header .sub-menu {
+  display: none; }
+
 #header .menu-topo {
   padding: 15px 0; }
 
@@ -6175,14 +6178,31 @@ input, select, textarea {
     margin: 0; }
     .bloco-padrao .rating li i {
       color: #fdcd00; }
-  .bloco-padrao figure.bloco-imagem {
+  .bloco-padrao .bloco-imagem {
     position: relative; }
   .bloco-padrao .label {
     position: absolute;
     top: 25px;
-    right: 0; }
+    right: 0;
+    z-index: 9; }
     .bloco-padrao .label span {
       color: #fff;
       font-weight: bold;
       font-size: 14px;
       padding: 10px; }
+  .bloco-padrao .owl-nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 9;
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    color: #fff;
+    padding: 0 15px; }
+  .bloco-padrao .owl-prev {
+    float: left; }
+  .bloco-padrao .owl-next {
+    float: right; }
+  .bloco-padrao .owl-nav {
+    font-size: 32px; }

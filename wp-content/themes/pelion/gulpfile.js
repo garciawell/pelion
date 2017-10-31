@@ -46,12 +46,12 @@ gulp.task('min-css', function() {
 
 gulp.task('min-js', function() {
 	gulp.src([
-		//'./node_modules/jquery/dist/jquery.js',   
+		'./node_modules/jquery/dist/jquery.js',    
 		'./node_modules/popper.js/dist/umd/popper.js',  
 		'./node_modules/bootstrap/dist/js/bootstrap.js',
 		'./node_modules/owl.carousel/dist/owl.carousel.js',
 		'./js/jquery.maskedinput.min.js',
-		'./js/main.js'
+		'./js/main.js' 
 	]) 
 	.pipe(concat('libs.js'))
 	.pipe(uglify())
@@ -95,7 +95,8 @@ gulp.task('min-html', function() {
 });
 
 
-
+ 
+ gulp.watch("js/main.js", ['min-js']); 
 
 
 // Static Server + watching scss/html files
