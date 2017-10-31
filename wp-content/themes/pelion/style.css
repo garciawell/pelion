@@ -6206,3 +6206,65 @@ input, select, textarea {
     float: right; }
   .bloco-padrao .owl-nav {
     font-size: 32px; }
+
+/*******REG*****************/
+.bloco-cat .col-in {
+  text-align: center;
+  padding: 60px 15px;
+  height: 100%; }
+
+.title-cat-pag {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.subtitle-cat {
+  font-size: 18px;
+  color: #fff; }
+
+.desc-top-white p {
+  color: #fff;
+  font-size: 20px; }
+
+.title-white {
+  color: #fff;
+  font-size: 60px; }
+
+.banner-full.regions {
+  margin-bottom: 80px; }
+
+.title-grey {
+  color: #444444;
+  font-weight: 300;
+  font-size: 28px; }
+
+.bloco-inf-cat {
+  margin-top: 80px; }
+
+.bloco-inf-cat .col-line {
+  border: 1px solid #349999; }
+
+.bloco-inf-cat .col-line {
+  border: 1px solid #349999;
+  padding: 15px;
+  margin-bottom: 50px; }
+
+.bloco-inf-cat .title-line {
+  color: #349999;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 20px;
+  display: inline-block;
+  background: #fff;
+  /* margin: -20px 0 0 0 !important; */
+  top: -30px;
+  position: relative;
+  padding: 0 25px; }
+
+.bloco-inf-cat .title-line p {
+  color: #444444;
+  font-size: 15px; }
+
+.bloco-inf-cat .mg-tp {
+  margin-top: 60px; }
