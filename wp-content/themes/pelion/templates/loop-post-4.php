@@ -21,6 +21,49 @@
 			<h2 class="title-grid">
 				<?php the_title(); ?>		
 			</h2>
+			<?php if( get_field('star') == 'option1' ){ ?>
+				<ul class="rating">
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					
+				</ul>
+			<?php } else if( get_field('star') == 'option2' ) { ?> 
+				<ul class="rating">
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+				</ul>
+			<?php } else if( get_field('star') == 'option3' ){  ?>
+				<ul class="rating">
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+				</ul>
+			<?php } else if( get_field('star') == 'option4' ){  ?>
+				<ul class="rating">
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+				</ul>
+			<?php } else if( get_field('star') == 'option5' ){  ?>
+				<ul class="rating">
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+				</ul>
+
+			<?php } ?>			
 		</div>
 
 		<div class="middle">

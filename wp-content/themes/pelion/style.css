@@ -6170,3 +6170,8 @@ input, select, textarea {
     .bloco-padrao .price .moeda {
       font-size: 18px;
       font-weight: normal; }
+  .bloco-padrao .rating li {
+    display: inline-block;
+    margin: 0; }
+    .bloco-padrao .rating li i {
+      color: #fdcd00; }

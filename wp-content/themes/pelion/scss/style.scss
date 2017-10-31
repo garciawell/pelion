@@ -451,4 +451,14 @@ input,select,textarea{
 			font-weight:normal; 
 		}
 	}
+
+	.rating{
+		li{
+			display:inline-block;
+		    margin: 0;
+			i{
+				color:#fdcd00;
+			}
+		}
+	}
 }
