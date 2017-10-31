@@ -461,4 +461,19 @@ input,select,textarea{
 			}
 		}
 	}
+
+	figure.bloco-imagem{
+		position:relative;
+	}
+	.label{
+		position:absolute;
+		top:25px;
+		right:0;
+		span{
+			color: #fff;
+		    font-weight: bold;
+		    font-size: 14px;
+   			padding: 10px;
+		}
+	}
 }

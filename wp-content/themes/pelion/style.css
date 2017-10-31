@@ -6175,3 +6175,14 @@ input, select, textarea {
     margin: 0; }
     .bloco-padrao .rating li i {
       color: #fdcd00; }
+  .bloco-padrao figure.bloco-imagem {
+    position: relative; }
+  .bloco-padrao .label {
+    position: absolute;
+    top: 25px;
+    right: 0; }
+    .bloco-padrao .label span {
+      color: #fff;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 10px; }

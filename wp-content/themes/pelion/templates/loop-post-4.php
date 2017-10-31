@@ -1,7 +1,14 @@
 <div class="col-3 col-lg-3 col-md-3 col-sm-6">
 
 	<div class="bloco-padrao">
-		<figure><?php the_post_thumbnail( 'large', array( 'alt' => get_the_title() ) );  ?></figure>
+		<figure class="bloco-imagem">
+			<div class="label"> 
+				<span style="background:<?php the_field('cor_label'); ?>">
+					 <?php the_field('text_label'); ?>
+				</span>
+			</div>
+			<?php the_post_thumbnail( 'large', array( 'alt' => get_the_title() ) );  ?>
+		</figure>
 
 		<div class="top">
 			<div class="cat-travel">
