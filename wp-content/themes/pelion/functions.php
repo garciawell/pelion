@@ -15,8 +15,9 @@ function theme_scripts() {
 	wp_enqueue_style ( 'css-padrao', get_template_directory_uri() . '/style.css' ); 	   
 	wp_enqueue_script( 'js-topo', get_template_directory_uri() . '/js/libs-bottom.js', array(), '1.0.0', true);  
 	wp_enqueue_script('js-rodape', get_template_directory_uri() . '/js/libs.js', array(), '1.0.0', false);
-
-}
+	//wp_enqueue_script('js-java', get_template_directory_uri() . '/js/java.js', NULL, 1.0, true); 
+	//wp_enqueue_script('js-java', get_template_directory_uri() . '/js/java.js',  1.0, true);  
+} 
 
 
 

@@ -37,14 +37,7 @@ $('.owl-slider-post').owlCarousel({
     }
 });   
 
-
-
-
-
-
-
-
-
+ 
 /*****MASCARAS************/
 jQuery(function($) {  
 	$.mask.definitions['~']='[+-]';
