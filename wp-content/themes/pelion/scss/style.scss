@@ -375,6 +375,60 @@ input,select,textarea{
 }
 
 
+.page-template-page-build-trip #content{
+	background:#f5f5f5; 
+}
+
+.faq{
+	h4{
+		color:#326698;
+		font-weight:normal;
+		font-size:18px;
+	}
+	.card-header{
+    padding: 0;
+    margin: 0;
+    border: none !important;
+    border-radius: 0;
+    background: transparent;
+	}
+
+	.card {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #dadada;
+    border-radius: 0;
+    padding: 10px 0;
+	}
+
+
+
+
+
+	.card-header h4 a:after { 
+	    font-family: 'FontAwesome'; 
+	    float: right;
+	    color: #326698;
+	    font-size: 18px; 
+	    line-height: 22px;
+	} 
+
+
+	[data-toggle="collapse"]:after{
+	    content: "\f106";
+	     font-family: 'FontAwesome';  
+	}
+
+	[data-toggle="collapse"].collapsed:after{
+	    content: "\f107";
+	}
+
+
+
+
+
+}
+
 .icon-ht{
     background: url(img/icons-grid.png) left center no-repeat;
     width: 35px;
