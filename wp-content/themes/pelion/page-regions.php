@@ -24,10 +24,11 @@ while ( have_posts() ) : the_post(); ?>
 						foreach( $terms as $term ) { ?>
 						<div class="col">
 							<div class="col-in" style="background-image: url('<?php  echo $custom_field = get_field('imagem_categoria', $term ); ?>');">
-								<span class="subtitle-cat"><?php the_field('subtitle', $term ); ?></span>
+								<a href="<?php echo  $term_link = get_term_link( $term ); ?>">
+									<span class="subtitle-cat"><?php the_field('subtitle', $term ); ?></span>
 
-								<h2 class="title-cat-pag"><?php echo  $term->name; ?></h2>
-
+									<h2 class="title-cat-pag"><?php echo  $term->name; ?></h2>
+								</a>
 							</div>
 						</div>
 						<?php } 
