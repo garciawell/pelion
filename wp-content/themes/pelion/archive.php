@@ -41,21 +41,22 @@ $term_id = $queried_object->term_id;
 
 					</nav>
 
-					<div id="main-cat">
+					<div id="main">
 
 						<p><?php the_field('description_large' , $queried_object);?> </p> 
 
 
-						<div id="main">
+		
 							<div class="row">
 								<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 									<?php   get_template_part("templates/loop", "post"); ?>
 								<?php endwhile; else : ?>
-								<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+								<div class="col">
+									<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+								</div>
 							<?php endif; ?>
 							</div>
-						</div>
-
+	
 						<?php
 
 						// check if the flexible content field has rows of data
@@ -135,7 +136,7 @@ $term_id = $queried_object->term_id;
 					</div>
 				<?php endif; ?>
 
-				<?php // include('bloco-build.php'); ?>
+				<?php //include('bloco-build.php'); ?>
 
 			</div>
 			<div class="col-3 col-lg-3 col-md-3 col-sm-12">

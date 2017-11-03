@@ -74,7 +74,7 @@ $(document).on("sf:ajaxfinish", ".searchandfilter", function(){
 $(document).on("sf:init", ".searchandfilter", function(){
 	console.log("S&F JS initialised");
 });
-
+ 
 //depending on where you add your JS, sometimes its necessary to wrap the above events in a function (as is standard practice):
 (function ( $ ) {
 	"use strict";
@@ -82,7 +82,7 @@ $(document).on("sf:init", ".searchandfilter", function(){
 	$(document).on("sf:init", ".searchandfilter", function(){
 		console.log("S&F JS initialised");
 	});
-}(jQuery));
+}(jQuery)); 
 	/*
 		jQuery(function($){
 	$('#filter').submit(function(){
