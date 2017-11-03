@@ -41,17 +41,20 @@ $term_id = $queried_object->term_id;
 					</div>
 				</div>
 
-			<?php 
+				<?php 
 
-			$images = get_field('galeria' , $queried_object);
+				$images = get_field('galeria' , $queried_object);
 					$size = 'padrao'; // (thumbnail, medium, large, full or custom size)
 
 					if( $images ): ?>
 					<div class="galeria-cat">
+						<h3 class="title-main">PHOTO GALERY</h3>
 						<ul class="row">
 							<?php foreach( $images as $image ): ?>
-								<li class="col-4 col-md-4 col-sm-6">
-									<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+								<li class="col-4 col-md-4 col-sm-6"> 
+									<a href="<?php echo $image['url']; ?>" data-rel="lightbox">
+										<img src="<?php echo $image['sizes']['padrao']; ?>" alt="<?php echo $image['alt']; ?>" />
+									</a>
 								</li>
 							<?php endforeach; ?>
 						</ul>

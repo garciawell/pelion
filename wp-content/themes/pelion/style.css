@@ -6312,3 +6312,8 @@ input, select, textarea {
 
 .bloco-inf-cat .mg-tp {
   margin-top: 60px; }
+
+.galeria-cat {
+  margin-top: 80px; }
+  .galeria-cat .title-main {
+    margin-bottom: 35px; }
