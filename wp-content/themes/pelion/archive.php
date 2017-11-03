@@ -57,7 +57,7 @@ $term_id = $queried_object->term_id;
 							<?php endif; ?>
 							</div>
 	
-						<?php
+						<?php 
 
 						// check if the flexible content field has rows of data
 						 if( have_rows('items' , $queried_object)  ): ?>
