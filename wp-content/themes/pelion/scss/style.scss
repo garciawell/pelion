@@ -31,9 +31,13 @@ $yellow:  #ffc107 !default;
 $green:   #49b198 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
+
 $border-radius: 2rem !default;
 $input-btn-padding-y:   0.7rem !default; 
 $input-btn-padding-x:   1.5rem !default;
+
+ $secondary:#fff;  
+
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
@@ -342,10 +346,11 @@ dl, ol, ul {margin:0;}
 }
 
 .breadcrumb{
+
 	background:transparent;
 		@include border-radius(0); // apply the mixin
 		padding:0;
-		margin-bottom:50px;
+		margin-bottom:25px;
 }
 
 
@@ -668,6 +673,118 @@ input,select,textarea{
 		height:460px;
 	}
 } 
+
+
+.bloco-build{
+	background: rgba(10,143,150,1);
+	background: -moz-linear-gradient(left, rgba(10,143,150,1) 0%, rgba(41,196,152,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(10,143,150,1)), color-stop(100%, rgba(41,196,152,1)));
+	background: -webkit-linear-gradient(left, rgba(10,143,150,1) 0%, rgba(41,196,152,1) 100%);
+	background: -o-linear-gradient(left, rgba(10,143,150,1) 0%, rgba(41,196,152,1) 100%);
+	background: -ms-linear-gradient(left, rgba(10,143,150,1) 0%, rgba(41,196,152,1) 100%);
+	background: linear-gradient(to right, rgba(10,143,150,1) 0%, rgba(41,196,152,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a8f96', endColorstr='#29c498', GradientType=1 );
+	padding:40px 25px;
+	margin:50px 0;
+
+
+	span{
+		color:#fff;
+		text-transform:uppercase;
+		font-weight:600;
+		font-size:14px;
+	}
+	
+	span em{
+		font-style:normal; 
+		font-weight:400;
+		font-size:14px; 
+	}
+
+	.mg-tp{
+		margin-top:35px;
+	}
+
+	.icon-travel{
+    background: url(img/icones-trip.png) left center no-repeat;
+    display: inline-block;
+    margin-right: 10px;
+    width: 50px;
+    height: 63px;
+    vertical-align: middle;
+
+
+	}
+	
+	.icon-acco{
+background: url(img/icones-trip.png) left -103px center no-repeat;
+    display: inline-block;
+    margin-right: 10px;
+    width: 53px;
+    height: 46px;
+    vertical-align: middle;
+	}	
+	.icon-perso{
+    background: url(img/icones-trip.png) right center no-repeat;
+    display: inline-block;
+    margin-right: 10px;
+    width: 50px;
+    height: 59px;
+    vertical-align: middle;
+
+	}
+
+
+}
+
+.breadcrumb-item + .breadcrumb-item::before { 
+    content: "›";
+}
+
+.breadcrumb-item{ 
+	color:#666666; font-weight:500;
+	&:hover{
+		text-decoration:underline;
+	}
+}
+
+.breadcrumb-item.active{ color:#326698; font-weight:500; }
+
+
+
+.bloco-build h4{
+	color:#fff;
+	font-weight:normal;
+	font-size:28px;
+}
+
+.btn-outline-secondary:hover{ 
+	color:#777 !important;
+}
+
+
+
+
+.bloco-desc-full {
+	margin-bottom:35px; 
+
+} 
+.bloco-desc-full p {
+	font-size:16px;
+}
+
+.header-cat{
+
+	margin-bottom:25px;  
+	.btn{
+		 margin-left: auto;
+		}
+	
+}
+
+.full-cat{
+	margin:60px 0; 
+}
 
 
 
