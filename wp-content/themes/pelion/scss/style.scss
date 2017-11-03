@@ -653,3 +653,39 @@ input,select,textarea{
 		margin-bottom:35px;
 	}
 }
+
+.maps-footer{
+
+	iframe{
+    height: 700px;
+    width: 100% !important;
+    margin-top: -120px;
+	}
+
+	.inner{
+		width: 100%; 
+		overflow: hidden; 
+		height:460px;
+	}
+} 
+
+
+
+@media(max-width:767px){
+
+	.maps-footer{
+
+		iframe{ 
+	    height: 500px;
+	    width: 100% !important;
+	    margin-top: -120px;
+		}
+
+		.inner{
+			width: 100%; 
+			overflow: hidden; 
+			height:350px;
+		}
+	} 
+
+}

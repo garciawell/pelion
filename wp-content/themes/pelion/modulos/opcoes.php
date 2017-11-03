@@ -121,6 +121,12 @@ function mytheme_create_options() {
 		'type' => 'text',
 		'placeholder' => '',
 	) );
+	$generalTab2->createOption( array(
+		'name' => 'Maps Footer',
+		'id' => 'maps-footer',
+		'type' => 'textarea',
+		'placeholder' => '',
+	) );
 
 	$generalTab2->createOption( array(
 		'type' => 'save',

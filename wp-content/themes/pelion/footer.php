@@ -1,4 +1,10 @@
 ﻿<?php $titan = TitanFramework::getInstance( 'pelion' ); ?>
+
+<section class="maps-footer">
+	<div class="inner">
+		<?php echo $mySavedValue2 = $titan->getOption( 'maps-footer' ); ?>
+	</div>
+</section>
 <footer id="footer" class="site-footer" role="contentinfo">	
 	<div class="main-rodape">
 		<div class="container">
