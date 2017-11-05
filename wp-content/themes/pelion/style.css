@@ -6117,6 +6117,13 @@ input, select, textarea {
 .page-template-page-build-trip #content {
   background: #f5f5f5; }
 
+.container-full {
+  padding: 80px 0; }
+
+.container-full.grey {
+  padding: 80px 0;
+  background: #f5f5f5; }
+
 .faq h4 {
   color: #326698;
   font-weight: normal;
@@ -6599,7 +6606,10 @@ span.wpcf7-not-valid-tip {
     .bloco-padrao .title-grid a:hover {
       text-decoration: underline; }
   .bloco-padrao .top {
-    padding: 20px 10px; }
+    padding: 20px 10px;
+    background: #fff; }
+  .bloco-padrao .bottom {
+    background: #fff; }
   .bloco-padrao .cat-travel {
     margin-bottom: 10px; }
     .bloco-padrao .cat-travel p {
@@ -6660,6 +6670,11 @@ span.wpcf7-not-valid-tip {
 
 .owl-nav {
   font-size: 32px; }
+
+.full-reg-front .col-in {
+  padding: 168px 0;
+  text-align: center;
+  background-size: cover; }
 
 /*******REG*****************/
 .bloco-cat .col-in {
