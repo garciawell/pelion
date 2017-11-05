@@ -502,7 +502,7 @@ input,select,textarea{
 
 .bg-blue{
 	background:#326698;
-	padding: 50px;
+	padding: 50px !important;
 }
 
 
@@ -556,6 +556,109 @@ input,select,textarea{
 	}
 }
 
+.owl-thumb-item {
+    display: table-cell;
+    border: none;
+    background: none;
+    padding: 0;
+
+}
+
+.owl-thumb-item img {
+
+    border: 1px solid #fff;
+}
+
+.banner-full-single .owl-carousel img{
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  max-height:700px;
+  object-fit: cover;
+}
+
+/****CFT7 ERROS****/
+ 
+ .wpcf7-form .wpcf7-response-output.wpcf7-validation-errors {
+      color: #D8000C;
+    background-color: #FFBABA;
+    border: 0;
+
+        padding: 5px 10px;
+    font-size: 13px;
+        margin: 0;
+}
+.wpcf7-form .wpcf7-response-output.wpcf7-mail-sent-ok {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    border: 0;
+        padding: 5px 10px;
+    font-size: 13px;
+        margin: 0;
+}
+div.wpcf7-mail-sent-ok:before,div.wpcf7-validation-errors:before {
+    font: 26px/30px dashicons;
+    margin-right: 16px;
+    vertical-align: middle;
+}
+div.wpcf7-mail-sent-ok:before {
+    content: "\f147";
+}
+div.wpcf7-validation-errors:before {
+    content: "\f158";
+}
+
+.wpcf7-form .wpcf7-response-output.wpcf7-validation-errors {
+    color: #D8000C;
+    background-color: #FFBABA;
+    border: 0;
+        padding: 5px 10px;
+    font-size: 13px;
+        margin: 0;
+}
+.wpcf7-form .wpcf7-response-output.wpcf7-mail-sent-ok {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    border: 0;
+        padding: 5px 10px;
+    font-size: 13px;
+        margin: 0;
+}
+div.wpcf7-mail-sent-ok:before,div.wpcf7-validation-errors:before {
+    font: 26px/30px FontAwesome;
+    margin-right: 16px;
+    vertical-align: middle;
+}
+div.wpcf7-mail-sent-ok:before {
+    content:'\f00c';
+}
+div.wpcf7-validation-errors:before {
+    content:'\f057';
+}
+
+span.wpcf7-not-valid-tip{display:none;}
+ 
+.wpcf7-not-valid {
+    border: 1px solid #f00 !important;
+}
+/****CFT7 ERROS****/
+
+.owl-thumbs {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: table;
+    width: 100%;
+    text-align: center;
+    padding: 5%;
+        z-index: 9;
+}
+
+.owl-thumb-item img {
+    width: 130px;
+    height: auto;
+}
+
 .bloco-tabs {
     margin-top: 35px;
 }
@@ -571,6 +674,33 @@ input,select,textarea{
 }
 
 
+.price-inf{
+	.price{
+		font-weight: 500;
+ 	   font-size: 45px;
+ 	   .moeda{
+ 	  	 font-weight:300;
+ 	  	 font-size:32px;
+ 	   }
+	}
+	p.text-price {
+	    margin: -8px 0 0;
+	    font-size: 18px;
+	    font-weight: 300;
+	}
+
+	.btn-secondary{
+		    font-size: 22px;
+		    padding: 15px 45px;
+		    font-weight: bold;
+		    color: #326698;
+			&:hover{
+			background:#204060;
+			color:#fff;
+			border-color:#204060;
+		}
+	}
+}
 
 .bloco-tabs{
 	.nav-tabs {

@@ -182,4 +182,16 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="price-inf">	
+			<div class="row align-items-center">	
+				<div class="col-12 col-sm-6">	
+					<span class="price"><span class="moeda">€</span> <?php the_field('price');?></span>
+					<p class="text-price"><?php the_field('text_price');?></p>
+				</div>			
+				<div class="col-12 col-sm-6">	
+					<a href="#" class="pull-right btn btn-secondary">Book Now</a>
+				</div>
+			</div>
+		</div>
 	</div>

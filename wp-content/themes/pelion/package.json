@@ -24,6 +24,7 @@
     "jquery": "^2.1.4",
     "jshint": "^2.9.5",
     "owl.carousel": "^2.2.0",
+    "owl.carousel2.thumbs": "^0.1.8",
     "popper.js": "^1.12.5"
   },
   "scripts": {

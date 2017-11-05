@@ -56,6 +56,8 @@
 
 
 </footer><!-- .site-footer -->
+
+
 <script>
 	
 //detects the start of an ajax request being made

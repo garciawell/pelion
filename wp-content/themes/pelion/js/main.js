@@ -19,6 +19,19 @@ $( document ).ready(function() {
 
 /**********CAROUSEL*********/
 
+
+
+
+
+
+
+
+  $('.owl-carousel-thumbs').owlCarousel({
+    items: 1 , 
+     URLhashListener:false
+  });
+
+
 $('.owl-slider-post').owlCarousel({
     loop:true,
     margin:0,  

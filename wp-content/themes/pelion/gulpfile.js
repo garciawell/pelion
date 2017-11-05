@@ -49,7 +49,8 @@ gulp.task('min-js', function() {
 		'./node_modules/jquery/dist/jquery.js',    
 		'./node_modules/popper.js/dist/umd/popper.js',  
 		'./node_modules/bootstrap/dist/js/bootstrap.js',
-		'./node_modules/owl.carousel/dist/owl.carousel.js',
+		'./node_modules/owl.carousel/dist/owl.carousel.js', 
+		'./node_modules/owl.carousel2.thumbs/src/owl.carousel2.thumbs.js',  
 		'./js/jquery.maskedinput.min.js',
 		'./js/main.js' 
 	]) 

@@ -126,6 +126,8 @@ register_sidebar(array(
 register_nav_menus(); 
 add_theme_support( 'post-thumbnails' );	
  add_image_size('padrao',280,250,true);
+ add_image_size('full-interna',1000,600,true); 
+ add_image_size('thumb-galeria',130,80,true); 
 ////add_image_size('Postos',600,450,true);
 ////add_image_size('servicos',600,450,true);
 ////add_image_size('capacitacao',600,350,true);

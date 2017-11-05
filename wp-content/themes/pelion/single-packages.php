@@ -1,9 +1,41 @@
 <?php get_header();?>
 
 
+
+
+
 <section class="banner-full-single">
-	<div class="row">
-		<div class="col-6 col-md-6 col-sm-12" style="background: url(<?php the_field('banner_full'); ?>) left center no-repeat; background-size:cover !important; ">
+	<div class="row no-gutters">
+		<div class="col-6 col-md-6 col-sm-12" style="background: url(<?php// the_field('banner_full'); ?>) left center no-repeat; background-size:cover !important; ">
+
+			<div class="owl-carousel-thumbs owl-carousel" data-slider-id="1">
+			  	  <div class="item" data-hash="thumb1"><?php the_post_thumbnail('full-interna'); ?></div> 
+					<?php 
+					$images = get_field('galeria');
+					$size = 'full-interna'; // (thumbnail, medium, large, full or custom size)
+					if( $images ): ?>
+				        <?php $i=2; foreach( $images as $image ): ?>
+				        	<div class="item" data-hash="thumb<?php echo $i; ?>">
+				            	<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+				            </div>
+				        <?php $i++; endforeach; ?>
+					<?php endif; ?>
+			</div> 
+			<div class="owl-thumbs" data-slider-id="1">
+			    <a  href="#thumb1" class="owl-thumb-item"><?php the_post_thumbnail('thumb-galeria'); ?></a>
+					<?php 
+					$images = get_field('galeria');
+					$size = 'thumb-galeria'; // (thumbnail, medium, large, full or custom size)
+					if( $images ): ?>
+				        <?php  $i=2;  foreach( $images as $image ): ?>
+				        	<a class="owl-thumb-item" href="#thumb<?php echo $i; ?>">
+				            	<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+				            </a>
+				        <?php $i++; endforeach; ?>
+					<?php endif; ?>
+			</div>
+
+
 			
 		</div>					
 		<div class="col-6 col-md-6 col-sm-12 bg-blue">
@@ -24,22 +56,29 @@
 
 	<div id="content-main" class="single-padrao">
 		<div class="container">
-			<nav class="breadcrumb">
-				<a class="breadcrumb-item" href="#">Home</a>
-				<a class="breadcrumb-item" href="#">Regions</a>
-				<a class="breadcrumb-item active" href="#">
-				<?php   // Get terms for post
-				$terms = get_the_terms( $post->ID , 'regions' );
-					 // Loop over each item since it's an array
-				if ( $terms != null ){ 
-					foreach( $terms as $term ) {
-						print $term->name ;
-						unset($term);  
-					} } ?>
+			<div class="row">
+				<div class="col-12 col-sm-6">
+					<nav class="breadcrumb">
+						<a class="breadcrumb-item" href="#">Home</a>
+						<a class="breadcrumb-item" href="#">Regions</a>
+						<a class="breadcrumb-item active" href="#">
+						<?php   // Get terms for post
+						$terms = get_the_terms( $post->ID , 'regions' );
+							 // Loop over each item since it's an array
+						if ( $terms != null ){ 
+							foreach( $terms as $term ) {
+								print $term->name ;
+								unset($term);  
+							} } ?>
 
-				</a>
+						</a>
 
-			</nav>	
+					</nav>	
+				</div>
+				<div class="col-12 col-sm-6">
+					<div class="pull-right"><?php echo do_shortcode('[addtoany]');?></div>
+				</div>
+			</div>
 
 			<?php if( have_rows('tabs') ): ?>
 			<div class="bloco-tabs">
