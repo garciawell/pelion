@@ -13,7 +13,7 @@ $term_id = $queried_object->term_id;
 
 
 
-<div class="banner-full d-flex  align-items-center" style="background-image: url('<?php  echo $thumbnail = get_field('imagem_categoria', $queried_object);  ?>');">
+<div class="banner-full d-flex  align-items-center" style="background: url('<?php bloginfo('template_url');  ?>/img/banner-regioes.jpg') center center no-repeat; background-size:cover;">
 	<div class="container">
 		<h1 class="title-cat text-center"><?php single_cat_title();  ?></h1>
 		<span class="subtitle-cat text-center"><?php echo category_description(); ?> </span>
@@ -26,18 +26,7 @@ $term_id = $queried_object->term_id;
 				<div class="col-9 col-lg-9 col-md-9 col-sm-12">
 					<nav class="breadcrumb">
 						<a class="breadcrumb-item" href="#">Home</a>
-						<a class="breadcrumb-item" href="#">Regions</a>
-						<a class="breadcrumb-item active" href="#">
-						<?php   // Get terms for post
-						$terms = get_the_terms( $post->ID , 'regions' );
-							 // Loop over each item since it's an array
-						if ( $terms != null ){ 
-							foreach( $terms as $term ) {
-								print $term->name ;
-								unset($term);  
-							} } ?>
-
-						</a>
+						<a class="breadcrumb-item active" href="#"><?php single_cat_title(); ?></a>
 
 					</nav>
  
@@ -59,7 +48,7 @@ $term_id = $queried_object->term_id;
 
 					</div>
 
-	
+				<?php //include('bloco-build.php'); ?>
 
 			</div>
 			<div class="col-3 col-lg-3 col-md-3 col-sm-12">

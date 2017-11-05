@@ -17,7 +17,15 @@ $( document ).ready(function() {
 
 
 
-/**********CAROUSEL*********/
+	/**********Busca*********/
+
+	$( ".fa-search" ).click(function() {   
+		$('.search-form').toggle("slide"); 
+	});	 
+
+
+
+	/**********CAROUSEL*********/
 
 
 

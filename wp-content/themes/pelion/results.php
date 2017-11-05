@@ -4,10 +4,10 @@
 
 
 
-<div class="banner-full d-flex  align-items-center" style="background-image: url('<?php  echo $thumbnail = get_field('imagem_categoria', $queried_object);  ?>');">
+<div class="banner-full d-flex text-center align-items-center" style="background: url('<?php bloginfo('template_url');  ?>/img/banner-regioes.jpg') center center no-repeat; background-size:cover;">
 	<div class="container">
-		<h1 class="title-cat text-center"><?php single_cat_title();  ?></h1>
-		<span class="subtitle-cat text-center"><?php echo category_description(); ?> </span>
+		<h1 class="title-cat text-center">Resultados</h1>
+		<i><img src="<?php bloginfo('template_url'); ?>/img/icon-down.png"></i>
 	</div>
 </div>
 <div class="container-full">
@@ -17,18 +17,6 @@
 				<div class="col-9 col-lg-9 col-md-9 col-sm-12">
 					<nav class="breadcrumb">
 						<a class="breadcrumb-item" href="#">Home</a>
-						<a class="breadcrumb-item" href="#">Regions</a>
-						<a class="breadcrumb-item active" href="#">
-						<?php   // Get terms for post
-						$terms = get_the_terms( $post->ID , 'regions' );
-							 // Loop over each item since it's an array
-						if ( $terms != null ){ 
-							foreach( $terms as $term ) {
-								print $term->name ;
-								unset($term);  
-							} } ?>
-
-						</a>
 
 					</nav>
  
