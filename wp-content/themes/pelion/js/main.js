@@ -24,8 +24,6 @@ $( document ).ready(function() {
 
 
 
-
-
   $('.owl-carousel-thumbs').owlCarousel({
     items: 1 , 
      URLhashListener:false
@@ -49,6 +47,24 @@ $('.owl-slider-post').owlCarousel({
         }
     }
 });   
+
+
+
+jQuery(function($) {  
+	
+	"use strict";
+
+	$(function () { 
+		$('.searchandfilter').on("sf:ajaxstart", ".searchandfilter", function(){console.log("ajax start");});
+		$(document).on("sf:ajaxfinish", ".searchandfilter", function(){console.log("ajax complete"); document.write("<h1>hi all!</h1>");});
+		$(document).on("sf:init", ".searchandfilter", function(){console.log("S&F JS initialised");});
+	}); 
+
+
+});
+
+
+
 
  
 /*****MASCARAS************/
@@ -105,6 +121,9 @@ $(".cpf input").on('focusout',function(){
 
 
 }); 
+
+
+
 
 
 

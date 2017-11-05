@@ -25,7 +25,7 @@ add_action( 'init', 'register_packages' );
          'menu_icon'  => 'dashicons-tickets-alt',
         'publicly_queryable' => true,
         'show_ui' => true,
-        'has_archive' => true,
+        //'has_archive' => true,
         'show_in_menu' => true,
         'query_var' => true,
         "rewrite" => [

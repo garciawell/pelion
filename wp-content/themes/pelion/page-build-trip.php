@@ -4,6 +4,7 @@
 <div class="banner-full regions d-flex  align-items-center text-center"  style="background: url('<?php  echo get_field('banner' );?>') center center no-repeat; background-size: cover;">
 	<div class="container">
 		<h1 class="title-white"><?php the_title(); ?></h1>
+		<i><img src="<?php bloginfo('template_url'); ?>/img/icon-down.png"></i>
 	</div>
 </div>
 
@@ -46,59 +47,38 @@ while ( have_posts() ) : the_post(); ?>
 					<?php endwhile; wp_reset_postdata();  ?>
 
 					<div class="faq">
-						<?php
-						if( have_rows('faq') ): 
-							$n=1; while ( have_rows('faq') ) : the_row(); ?>
+						<h3>FAQ</h3>
 
-							<div id="accordion" role="tablist" aria-multiselectable="true">
+
+						<div id="accordion" role="tablist" aria-multiselectable="true">
+							<?php
+							if( have_rows('faq') ): 
+								$n=1; while ( have_rows('faq') ) : the_row(); ?>
 								<div class="card">
 
- 							<?php if($n==1) { ?>
 
 									<div class="card-header" role="tab" id="heading<?php echo $n; ?>">
 										<h4 class="mb-0">
-											<a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $n; ?>"  aria-expanded="true" aria-controls="collapse<?php echo $n; ?>">
+											<a data-toggle="collapse"  data-parent="#accordion" href="#collapse<?php echo $n; ?>"  aria-expanded="<?php  if( $n == 1) { echo 'true';} else{ echo 'false';} ?>" aria-controls="collapse<?php echo $n; ?>">
 												<?php the_sub_field('question'); ?>
 											</a>
 										</h4>
-									</div>
+									</div>  
 
-									<div id="collapse<?php echo $n; ?>" class="collapse show" role="tabpanel" aria-labelledby="heading<?php echo $n; ?>">
+									<div id="collapse<?php echo $n; ?>" class="collapse <?php  if( $n == 1) { echo 'show';} ?>" role="tabpanel" aria-labelledby="heading<?php echo $n; ?>">
 										<div class="card-block">
 											<?php the_sub_field('answer'); ?>
 										</div>
 									</div>
-
-									<?php } else{ ?>
- 
-									<div class="card-header" role="tab" id="heading<?php echo $n; ?>">
-										<h4 class="mb-0">
-											<a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $n; ?>"  aria-expanded="false" aria-controls="collapse<?php echo $n; ?>">
-												<?php the_sub_field('question'); ?>
-											</a>
-										</h4>
-									</div>
-
-									<div id="collapse<?php echo $n; ?>" class="collapse" role="tabpanel" aria-labelledby="heading<?php echo $n; ?>">
-										<div class="card-block">
-											<?php the_sub_field('answer'); ?>
-										</div>
-									</div>
-
-									<?php } ?>
-
 
 								</div>
-
+								<?php $n++; endwhile; endif; ?>
 							</div>
-
-						<?php $n++; endwhile; endif; ?>
-
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 <?php endwhile; ?>
 <?php get_footer (); ?>  	 

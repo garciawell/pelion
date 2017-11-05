@@ -46,6 +46,17 @@ $term_id = $queried_object->term_id;
 						<p><?php the_field('description_large' , $queried_object);?> </p> 
 
 
+		
+							<div class="row">
+								<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+									<?php   get_template_part("templates/loop", "post"); ?>
+								<?php endwhile; else : ?>
+								<div class="col">
+									<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+								</div>
+							<?php endif; ?>
+							</div>
+
 
 	
 						<?php 
@@ -67,7 +78,7 @@ $term_id = $queried_object->term_id;
 
 						    				</div>		        	
 						    				<div class="col">
-						    					<a href="<?php the_sub_field('link'); ?>" class="pull-right btn btn-outline-success">SEE ALL</a>
+						    					<a href="<?php  the_sub_field('link'); ?>" class="pull-right btn btn-outline-success">SEE ALL</a>
 						    				</div>
 						    			</div>
 

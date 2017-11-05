@@ -1,14 +1,5 @@
-<?php get_header();  ?>
+<?php get_header(); /* Template Name: Results */  ?>
 
-
-<?php 
-
-// vars
-$queried_object = get_queried_object(); 
-$taxonomy = $queried_object->taxonomy;
-$term_id = $queried_object->term_id;  
-
-?>
 
 
 
@@ -42,13 +33,19 @@ $term_id = $queried_object->term_id;
 					</nav>
  
 					<div id="main">
-
-						<p><?php the_field('description_large' , $queried_object);?> </p> 
+ 
+						<p><?php the_field('description_large');?> </p> 
 
 
 		
 							<div class="row">
-								<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+								<?php $args = array('post_type' => 'packages');
+								$args['search_filter_id'] = 63; 
+								$query = new WP_Query($args);
+								?>  
+
+
+								<?php if ( $query-> have_posts() ) : while ( $query-> have_posts() ) : $query-> the_post(); ?>
 									<?php   get_template_part("templates/loop", "post"); ?>
 								<?php endwhile; else : ?>
 								<div class="col">
@@ -56,10 +53,7 @@ $term_id = $queried_object->term_id;
 								</div>
 							<?php endif; ?>
 							</div>
-
 					</div>
-
-	
 
 			</div>
 			<div class="col-3 col-lg-3 col-md-3 col-sm-12">

@@ -4,6 +4,7 @@
 <div class="banner-full regions d-flex  align-items-center text-center"  style="background: url('<?php  echo get_field('banner' );?>') center center no-repeat; background-size: cover;">
 	<div class="container">
 		<h1 class="title-white"><?php the_title(); ?></h1>
+		<i><img src="<?php bloginfo('template_url'); ?>/img/icon-down.png"></i>
 	</div>
 </div>
 
