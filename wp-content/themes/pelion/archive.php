@@ -40,7 +40,7 @@ $term_id = $queried_object->term_id;
 						</a>
 
 					</nav>
-
+ 
 					<div id="main">
 
 						<p><?php the_field('description_large' , $queried_object);?> </p> 
@@ -56,9 +56,11 @@ $term_id = $queried_object->term_id;
 								</div>
 							<?php endif; ?>
 							</div>
+
+
 	
 						<?php 
-
+					
 						// check if the flexible content field has rows of data
 						 if( have_rows('items' , $queried_object)  ): ?>
 

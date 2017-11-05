@@ -457,6 +457,163 @@ input,select,textarea{
     display: inline-block;
 }
 
+
+
+
+.icon-ht-wt{
+    background: url(img/icons-grid-white.png) center top no-repeat;
+    width: 35px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+ 
+.icon-age-wt{
+    background: url(img/icons-grid-white.png) center top -98px no-repeat;
+    width: 28px;
+    height: 35px;
+    vertical-align: middle;
+    display: inline-block;
+}
+.icon-trans-wt{
+    background: url(img/icons-grid-white.png) center top -63px no-repeat;
+    width: 30px;
+    height: 35px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.icon-nt-wt{
+    background: url(img/icons-grid-white.png) center top -29px no-repeat;
+    width: 28px;
+    height: 35px;
+    vertical-align: middle;
+    display: inline-block;
+}
+  
+
+.icon-flight-wt{
+    background: url(img/icons-grid-white.png) center top -130px no-repeat;
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.bg-blue{
+	background:#326698;
+	padding: 50px;
+}
+
+
+.rating{
+	li{
+		display:inline-block;
+	    margin: 0;
+		i{
+			color:#fdcd00;
+		}
+	}
+}
+
+
+
+.single-padrao{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #f5f5f5;
+    margin-bottom: -24px;
+	.bloco-padrao{ 
+		.middle,.top,.bottom{ 
+			background:#fff;
+		}
+
+	}
+
+	p{
+		font-size:16px;
+		color:#444444;
+	}
+
+	.title-grey{
+		font-weight:400;
+		margin-bottom:35px;
+	}
+}
+
+.why {
+    margin-top: 100px;
+}
+
+
+.comentarios{
+	margin-top:100px;
+	h3{
+		font-weight: 400;
+	    margin-bottom: 35px;
+	    color: #444444;
+	    font-size: 28px;	
+	}
+}
+
+.bloco-tabs {
+    margin-top: 35px;
+}
+.customer{
+	margin-top:100px;
+	.gallery-single{
+		margin-left:-5px;
+		margin-right:-5px;
+		.col-6{
+			 padding: 5px !important;
+		}
+	}
+}
+
+
+
+.bloco-tabs{
+	.nav-tabs {
+		 border-bottom: 1px solid #339a99;
+		li{ 
+			a{  
+				color:#339a99;
+				text-transform:uppercase;
+				font-size:17px;
+   				 border-radius: 0; 
+   				 border:none;
+			}
+
+			a.active{ 
+				background:#339a99;
+				color:#fff;
+			}
+		}
+	}
+
+	.tab-content{
+		margin-top:30px;
+		h3{
+			font-weight:bold;
+			font-size:16px;
+			color:#339a99;
+		}
+		p, li{
+			color:#444444;
+			font-size:16px;
+		}
+
+		.list-inner{
+			border-bottom: 1px solid #dddddd;
+    		padding: 25px 0 10px 0;
+		}
+	}
+}
+
+
+
+
+
 .bloco-padrao{
 	-webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
 	-moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
@@ -487,6 +644,9 @@ input,select,textarea{
 		color:#444444;
 		font-weight:normal;
 		font-size:20px;
+		a:hover{
+			text-decoration:underline;
+		}
 	}
 
 	.top{
@@ -524,15 +684,6 @@ input,select,textarea{
 		}
 	}
 
-	.rating{
-		li{
-			display:inline-block;
-		    margin: 0;
-			i{
-				color:#fdcd00;
-			}
-		}
-	}
 
 	.bloco-imagem{
 		position:relative;
@@ -550,31 +701,42 @@ input,select,textarea{
 		}
 	}
 
-	.owl-nav {
-	    position: absolute;
-	    top: 0;
-	    bottom: 0;
-	    z-index: 9;
-	    width: 100%;
-	    height: 50px;
-	    margin: auto;
-	    color: #fff;
-	    padding: 0 15px;
-	    z-index:0;
-	}
 
-	.owl-prev{
-		float:left;
-	}
-	.owl-next{
-		float:right;
-	}
-
-	.owl-nav{
-		font-size:32px;
-	}
 }
 
+.others-packages{
+	margin-top:100px;
+	.title-grey{
+		text-transform:uppercase;
+		margin-bottom:35px;
+		font-weight:500;
+	}
+
+}
+
+.owl-nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 9;
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    color: #fff;
+    padding: 0 15px;
+    z-index:0;
+} 
+
+.owl-prev{
+	float:left;
+}
+.owl-next{
+	float:right;
+}
+
+.owl-nav{
+	font-size:32px;
+}
 /*******REG*****************/
 .bloco-cat .col-in{
 	text-align:center;
@@ -595,6 +757,23 @@ input,select,textarea{
 
 }
 
+.infs-single{
+	color:#fff;
+	p,a,li{
+		color:#fff;
+	}
+}
+
+.lista-single{margin-top:25px;}
+
+.bloco-tags{
+	margin:15px 0;
+	padding:15px 0;
+	border-top:1px solid #fff;
+	border-bottom:1px solid #fff;
+}
+
+
 .desc-top-white p{
 	color:#fff;
 	font-size:20px; 
@@ -607,6 +786,33 @@ input,select,textarea{
 .banner-full.regions{
 	margin-bottom:80px;
 }
+
+.bloco-tags{
+
+	li{
+		text-transform:uppercase;
+		font-size:12px;
+		    margin: 5px 0;
+	}
+ 
+	a:hover{
+		text-decoration:underline;
+		
+	}
+
+	a::after{
+	content:",";
+	display:inline-block;
+	margin-right:5px;
+	}
+
+
+	 a:last-child:after{ 
+		content:""; 
+	}
+
+}
+
 
 .title-grey{
 	color:#444444;
@@ -787,6 +993,15 @@ background: url(img/icones-trip.png) left -103px center no-repeat;
 }
 
 
+
+@media(min-width:767px){
+
+	.limit-grid-left{
+		max-width:550px;
+		float:left;
+		width:100%;
+	}
+}
 
 @media(max-width:767px){
 

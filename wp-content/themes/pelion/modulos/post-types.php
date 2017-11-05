@@ -35,7 +35,7 @@ add_action( 'init', 'register_packages' );
         'capability_type' => 'post',
         'hierarchical' => false,
         'menu_position' => null,
-        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt')
+        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt','revisions')
       );
       register_post_type('packages',$args);
 	  
@@ -70,6 +70,192 @@ add_action( 'init', 'register_packages' );
   ));  
 
 
+
+
+
+add_action( 'init', 'create_tag_taxonomies', 0 );
+
+//create two taxonomies, genres and tags for the post type "tag"
+function create_tag_taxonomies() 
+{
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Season', 'taxonomy general name' ),
+    'singular_name' => _x( 'Season', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Seasons' ),
+    'popular_items' => __( 'Popular Seasons' ),
+    'all_items' => __( 'All Seasons' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Season' ), 
+    'update_item' => __( 'Update Season' ),
+    'add_new_item' => __( 'Add New Season' ),
+    'new_item_name' => __( 'New Season Name' ),
+    'separate_items_with_commas' => __( 'Separate Seasons with commas' ),
+    'add_or_remove_items' => __( 'Add or remove Seasons' ),
+    'choose_from_most_used' => __( 'Choose from the most used Seasons' ),
+    'menu_name' => __( 'Seasons' ),
+  ); 
+
+  register_taxonomy('seasons','packages',array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'seasons' ),
+  ));
+}
+
+
+ 
+
+
+add_action( 'init', 'create_tag_taxonomies2', 0 );
+
+//create two taxonomies, genres and tags for the post type "tag"
+function create_tag_taxonomies2() 
+{
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Theme', 'taxonomy general name' ),
+    'singular_name' => _x( 'Theme', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Themes' ),
+    'popular_items' => __( 'Popular Themes' ),
+    'all_items' => __( 'All Themes' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Theme' ), 
+    'update_item' => __( 'Update Theme' ),
+    'add_new_item' => __( 'Add New Theme' ),
+    'new_item_name' => __( 'New Theme Name' ),
+    'separate_items_with_commas' => __( 'Separate Themes with commas' ),
+    'add_or_remove_items' => __( 'Add or remove Themes' ),
+    'choose_from_most_used' => __( 'Choose from the most used Themes' ),
+    'menu_name' => __( 'Themes' ),
+  ); 
+
+  register_taxonomy('theme','packages',array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'theme' ),
+  ));
+}
+ 
+
+
+add_action( 'init', 'create_tag_taxonomies3', 0 );
+
+//create two taxonomies, genres and tags for the post type "tag"
+function create_tag_taxonomies3() 
+{
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Travel Style', 'taxonomy general name' ),
+    'singular_name' => _x( 'Travel Style', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Travel Styles' ),
+    'popular_items' => __( 'Popular Travel Styles' ),
+    'all_items' => __( 'All Travel Styles' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Travel Style' ), 
+    'update_item' => __( 'Update Travel Style' ),
+    'add_new_item' => __( 'Add New Travel Style' ),
+    'new_item_name' => __( 'New Travel Style Name' ),
+    'separate_items_with_commas' => __( 'Separate Travel Styles with commas' ),
+    'add_or_remove_items' => __( 'Add or remove Travel Styles' ),
+    'choose_from_most_used' => __( 'Choose from the most used Travel Styles' ),
+    'menu_name' => __( 'Travel Styles' ),
+  ); 
+
+  register_taxonomy('travel-style','packages',array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'travel-style' ),
+  ));
+}
+
+
+
+
+
+
+add_action( 'init', 'create_tag_taxonomies4', 0 );
+
+//create two taxonomies, genres and tags for the post type "tag"
+function create_tag_taxonomies4() 
+{
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Suitable for', 'taxonomy general name' ),
+    'singular_name' => _x( 'Suitable for', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Suitable fors' ),
+    'popular_items' => __( 'Popular Suitable fors' ),
+    'all_items' => __( 'All Suitable fors' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Suitable for' ), 
+    'update_item' => __( 'Update Suitable for' ),
+    'add_new_item' => __( 'Add New Suitable for' ),
+    'new_item_name' => __( 'New Suitable for Name' ),
+    'separate_items_with_commas' => __( 'Separate Suitable fors with commas' ),
+    'add_or_remove_items' => __( 'Add or remove Suitable fors' ),
+    'choose_from_most_used' => __( 'Choose from the most used Suitable fors' ),
+    'menu_name' => __( 'Suitable fors' ),
+  ); 
+
+  register_taxonomy('suitable','packages',array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'suitable' ),
+  ));
+}
+
+
+
+add_action( 'init', 'create_tag_taxonomies5', 0 );
+
+//create two taxonomies, genres and tags for the post type "tag"
+function create_tag_taxonomies5() 
+{
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Difficulty', 'taxonomy general name' ),
+    'singular_name' => _x( 'Difficulty', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Difficultys' ),
+    'popular_items' => __( 'Popular Difficultys' ),
+    'all_items' => __( 'All Difficultys' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Difficulty' ), 
+    'update_item' => __( 'Update Difficulty' ),
+    'add_new_item' => __( 'Add New Difficulty' ),
+    'new_item_name' => __( 'New Difficulty Name' ),
+    'separate_items_with_commas' => __( 'Separate Difficultys with commas' ),
+    'add_or_remove_items' => __( 'Add or remove Difficultys' ),
+    'choose_from_most_used' => __( 'Choose from the most used Difficultys' ),
+    'menu_name' => __( 'Difficultys' ),
+  ); 
+
+  register_taxonomy('difficulty','packages',array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'difficulty' ),
+  ));
+}
+ 
   //TAXONOMIA Price
   
   /*

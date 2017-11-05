@@ -40,7 +40,7 @@
 
 			</div>
 			<h2 class="title-grid">
-				<?php the_title(); ?>		
+				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>		
 			</h2>
 			<?php if( get_field('star') == 'option1' ){ ?>
 				<ul class="rating">
@@ -91,7 +91,7 @@
 
 			<ul>
 				<li>
-					<?php if( get_field('label-hotel') == 'included' ): ?>   
+					<?php if( get_field('label-hotel')): ?>    
 						<i class="icon-ht"></i>
 					<?php endif; ?>	
 				</li>
