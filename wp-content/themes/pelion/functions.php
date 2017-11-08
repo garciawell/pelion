@@ -1,6 +1,6 @@
 <?php
-//define('WP_HOME','http://inundaweb.com.br');
-//define('WP_SITEURL','http://inundaweb.com.br'); 
+//define('WP_HOME','http://site.com.br');
+//define('WP_SITEURL','http://site.com.br'); 
 
 
 
@@ -12,6 +12,7 @@ add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 // Chamando JS e CSS 
 function theme_scripts() {	   
 	wp_enqueue_style ( 'css-minify', get_template_directory_uri() . '/css/libs.css' );  
+	wp_enqueue_style ( 'css-padrao', get_template_directory_uri() . '/style.min.css' ); 	   
 	wp_enqueue_style ( 'css-padrao', get_template_directory_uri() . '/style.css' ); 	   
 	wp_enqueue_script( 'js-topo', get_template_directory_uri() . '/js/libs-bottom.js', array(), '1.0.0', true);  
 	wp_enqueue_script('js-rodape', get_template_directory_uri() . '/js/libs.js', array(), '1.0.0', false);
@@ -173,6 +174,20 @@ function wp_nav_menu_no_ul()
 function default_page_menu() {
    wp_list_pages('title_li=');
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -116,8 +116,8 @@ gulp.task('serve', ['sass'], function() {
 gulp.task('sass', function() {
     return gulp.src("scss/style.scss") 
       	.pipe(sass().on('error', sass.logError))
-      	//.pipe(cssMin()) 
-        .pipe(gulp.dest("./")) 
+      	 .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest("./"))  
         .pipe(browserSync.stream()); 
 });  
 

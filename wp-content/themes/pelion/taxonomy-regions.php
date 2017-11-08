@@ -46,10 +46,74 @@ $term_id = $queried_object->term_id;
 						<p><?php the_field('description_large' , $queried_object);?> </p> 
 
 
+						<div class="full-cat">
+							<?php
+							$args=array(
+								'relation' => 'AND',
+								'orderby' => 'count',
+								'taxonomy' => 'options',
+								'order' => 'DESC', 
+								'hide_empty'   => 1,
+								'tax_query'=>
+								array(
+									'taxonomy' => 'options',
+									'field' => 'term_taxonomy_id',
+									'terms' => array($term_tax_id),
+								),array(
+									'taxonomy' => 'regions',
+									'field' => 'term_taxonomy_id',
+									'terms' => array($term_tax_id),
+
+								)
+							);
+
+
+							$categories=get_categories($args);
+
+
+
+							$taxonomy = get_queried_object();
+							$tax =  $taxonomy->slug;
+
+
+							foreach($categories as $category) {
+								?>
+
+			
+								<div class="row aling-items-cente header-cat">
+									<div class="col">
+
+										<h3> <?php echo $category->name; ?> </h3>
+
+
+									</div>		        	
+									<div class="col">
+										<?php $category_link = get_category_link( $category); ?>
+										<a href="<?php echo esc_url( $category_link ); ?>" class="pull-right btn btn-outline-success">SEE ALL</a>
+									</div>
+								</div>
+	
+
+								<?php query_posts( array( 'post_type' => 'packages', 'posts_per_page'=>'-1', 'orderby' => 'title', 'options'=>  $category->slug , 'regions'=>  $tax) );?>
+								<div class="row">
+									<?php if(have_posts()) : ?><?php while(have_posts()) : the_post() ?>
+
+
+										<?php   get_template_part("templates/loop", "post"); ?>
+
+
+									<?php endwhile; endif; ?> 
+								</div>
+
+
+								<?php }  ?>
+
+
+							</div>
 
 	
 						<?php 
-					
+					/*
 						// check if the flexible content field has rows of data
 						 if( have_rows('items' , $queried_object)  ): ?>
 
@@ -103,7 +167,7 @@ $term_id = $queried_object->term_id;
 
 
 					endif;
-
+*/
 					?>
 				</div>
 

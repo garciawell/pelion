@@ -226,7 +226,7 @@ dl, ol, ul {margin:0;}
 		padding: 15px 0;
 	}
 
-	.current-menu-item a{ 
+	.current-menu-item a, .current_page_ancestor > a{ 
 		color:#49b198 !important;  
 		font-weight:500;
 	}
@@ -710,16 +710,6 @@ box-shadow: 5px -5px 5px -6px rgba(0,0,0,0.27);
 
 }
 
-.cf7mls_next.action-button, .cf7mls_back.action-button{
-	text-transform:uppercase;
-	background:#326698;
-	border-radius:25px;
-	width:120px;
-	text-align:center;
-	&:hover{
-		background:#204060;
-	}
-}
 
 
 input.wpcf7-form-control.wpcf7-submit{ 
@@ -735,6 +725,7 @@ input.wpcf7-form-control.wpcf7-submit{
 		background:#258207;
 	}
 }
+
 
 
 button.cf7mls_btn:not(.disabled).sending:not(.expand) {
@@ -1353,6 +1344,128 @@ padding: 168px 0;
 		height:460px;
 	}
 } 
+
+
+.last-thumb{
+	position:relative;
+	    width: 130px;
+	        margin: 0 15px;
+} 
+
+.owl-thumb-item{
+	  width: 130px;
+	  padding:0 5px; 
+}
+
+.owl-thumbs{
+    max-width: 525px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    padding: 0;
+    bottom:50px;
+}
+
+
+
+.last-thumb i{
+	content:"+";
+	width:100%; 
+	height:100%;
+	position:absolute;
+	line-height:80px;
+	text-align:center;
+	background:#326698;
+	color:#fff;
+	font-style:normal; 
+	font-size:24px;
+}
+
+#swipebox-bottom-bar {
+    -webkit-transform: translate3d(0,-50px,0) !important;
+    transform: translate3d(0,-50px,0) !important;
+}
+
+.page-template-page-build-trip .gform_wrapper{
+	 .gf_step{
+	    margin-bottom: 0 !important;
+	    padding: 5px 15px !important;
+	    color: #326698;
+	    text-transform: uppercase;
+	    height: auto !important;
+  	  opacity: 1 !important;
+	} 
+
+	 .gf_page_steps { 
+    padding-bottom: 0 !important;
+    border-bottom: 1px solid #326698 !important;
+	}
+
+	.gf_step.gf_step_active {
+	    background: #326698;
+	    color: #fff;
+	    font-weight: bold;
+	    height: auto;
+	    text-transform: uppercase;
+	    font-size: 18px;
+	 }
+
+	 .gf_step_number:after{ 
+	 	display:inline-block; 
+	 	content:")"; 
+	 }
+	 .gf_step_number{ 
+	 	font-size:1em !important;
+	 	font-weight:normal !important;
+	 }
+
+
+	input[type="submit"].gform_button{   
+		background:#42bb1b; 
+		width:120px;
+		cursor:pointer; 
+		border-radius:25px;
+		margin-top:10px;
+		font-weight:bold;
+		text-transform:uppercase;
+		&:hover{
+			background:#258207;
+		}
+	}
+
+
+	.button{
+		cursor:pointer;
+	}
+
+
+	.gform_next_button{
+		text-transform:uppercase;
+		background:#326698;
+		border-radius:25px;
+		width:120px !important;
+		text-align:center;
+		&:hover{
+			background:#204060;
+		}
+	}
+
+
+	.gform_previous_button {
+		text-transform:uppercase;
+		color:#bfbfbf; 
+		border:1px solid #bfbfbf;
+		background:transparent; 
+		border-radius:25px;	
+		text-transform: none;
+		width: 120px;
+    		&:hover{
+			background:#bfbfbf;
+			color:#fff;
+		}
+	}
+
+}
 
 
 .bloco-build{

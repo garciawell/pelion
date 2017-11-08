@@ -18,21 +18,35 @@
 				        	<div class="item" data-hash="thumb<?php echo $i; ?>">
 				            	<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
 				            </div>
-				        <?php $i++; endforeach; ?>
+				        <?php $i++;  $len = count($images);  endforeach; ?>
 					<?php endif; ?>
 			</div> 
 			<div class="owl-thumbs" data-slider-id="1">
 			    <a  href="#thumb1" class="owl-thumb-item"><?php the_post_thumbnail('thumb-galeria'); ?></a>
 					<?php 
-					$images = get_field('galeria');
+ 					
+
+					$images2 = get_field('galeria');
 					$size = 'thumb-galeria'; // (thumbnail, medium, large, full or custom size)
-					if( $images ): ?>
-				        <?php  $i=2;  foreach( $images as $image ): ?>
-				        	<a class="owl-thumb-item" href="#thumb<?php echo $i; ?>">
-				            	<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+					if( $images2 ): ?>
+				        <?php  $i=2;   foreach( $images2 as $image2 ): 
+						$len2 = count($images2);
+
+						$conuntergeral = $len - 2; 
+
+						 $conuntergeral;
+
+				        ?>
+				        	<a class="owl-thumb-item <?php if ($i == 4) { echo 'last-thumb'; }  ?>" href="<?php if ($i == 4) { the_post_thumbnail_url(); } else {?>#thumb<?php echo $i; }?>"   <?php if ($i == 4 /*$len + 1*/) { ?> data-rel="lightbox" <?php } ?>>  
+ 								<?php if ($i == 4 /*$len + 1*/) {  ?>
+
+				        		<i><?php echo '+ ' . $conuntergeral ;?></i>
+							<?php }  ?>
+				            	<?php echo wp_get_attachment_image( $image2['ID'], $size ); ?>
 				            </a>
-				        <?php $i++; endforeach; ?>
+				        <?php $i++; if ($i == 5) { break; } endforeach; ?>
 					<?php endif; ?>
+
 			</div>
 
 
