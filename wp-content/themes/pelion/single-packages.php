@@ -32,7 +32,7 @@
 				        <?php  $i=2;   foreach( $images2 as $image2 ): 
 						$len2 = count($images2);
 
-						$conuntergeral = $len - 2; 
+						$conuntergeral = $len - 3; 
 
 						 $conuntergeral;
 
