@@ -1,4 +1,4 @@
-<div class="col-3 col-lg-3 col-md-3 col-sm-6">
+<div class="col-12 col-md-6 col-lg-3">
 
 	<div class="bloco-padrao">
 		<div class="bloco-imagem">

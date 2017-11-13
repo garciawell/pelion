@@ -69,7 +69,7 @@
 
             <?php foreach( $terms as $term ): ?>
 
-               <div class="col-12 col-md-3"">
+               <div class="col-12 col-md-6 col-lg-3">
                   <div class="col-in" style="background-image: url('<?php  echo $custom_field = get_field('imagem_categoria', $term ); ?>');">
 
                      <span class="subtitle-cat"><?php the_field('subtitle', $term ); ?></span>
@@ -155,7 +155,7 @@
           <div class="row">
              <?php  while ( have_rows('blocks') ) : the_row(); ?>
 
-               <div class="col-12 col-md-3">
+             <div class="col-12 col-md-6 col-lg-3">
                   <?php 
                   $attachment_id = get_sub_field('imagem');
                      $size = "padrao-md"; // (thumbnail, medium, large, full or custom size)

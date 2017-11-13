@@ -26,7 +26,7 @@ get_header(); ?>
 
 						</p>
 						<i class="text-center fa fa-angle-down" aria-hidden="true"></i>
-						<form role="search" method="get" class="search-form-404" action="<?php echo home_url( '/' ); ?>">
+						<form role="search" method="get" class="search-form-line" action="<?php echo home_url( '/' ); ?>">
 							<label>
 								<input type="search" class="search-field"
 								placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>"

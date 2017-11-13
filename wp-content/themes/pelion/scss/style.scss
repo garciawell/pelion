@@ -1287,7 +1287,45 @@ dl, ol, ul {margin:0;}
 			margin-top:50px;
 		}
 
-		.search-form-404{
+
+	} 
+
+	.packages-404{
+		margin-top:80px;
+		margin-bottom:50px;
+
+		.title-main{
+			margin-bottom:35px;
+		}
+	}
+
+	.error404 .site-content{
+		background:#f5f5f5;
+	}
+
+
+	.title-grey{
+		color:#444444;
+		font-weight:300;
+		font-size:28px;
+	}
+
+	.bloco-inf-cat{
+		margin-top:80px;
+	}
+
+	.bloco-inf-cat .col-line{
+		border:1px solid #349999;
+	}
+
+
+	.bloco-inf-cat .col-line{
+		border:1px solid #349999;
+		padding:15px;
+		margin-bottom:50px;
+	}
+
+		.search-form-line{
 			label{
 				width:100%;
 			}
@@ -1330,44 +1368,6 @@ dl, ol, ul {margin:0;}
 				padding: 0;
 			}
 		}
-	} 
-
-	.packages-404{
-		margin-top:80px;
-		margin-bottom:50px;
-
-		.title-main{
-			margin-bottom:35px;
-		}
-	}
-
-	.error404 .site-content{
-		background:#f5f5f5;
-	}
-
-
-	.title-grey{
-		color:#444444;
-		font-weight:300;
-		font-size:28px;
-	}
-
-	.bloco-inf-cat{
-		margin-top:80px;
-	}
-
-	.bloco-inf-cat .col-line{
-		border:1px solid #349999;
-	}
-
-
-	.bloco-inf-cat .col-line{
-		border:1px solid #349999;
-		padding:15px;
-		margin-bottom:50px;
-	}
-
-
 	.bloco-inf-cat .title-line{
 		color: #349999;
 		text-transform: uppercase;
@@ -1721,6 +1721,17 @@ dl, ol, ul {margin:0;}
 	}
 
 
+	.show-menu .close-button {
+	    font-size: 14px;
+	    left: 205px;
+	    text-align: center;
+	}
+
+
+	.menu-wrap {
+	    padding: 2em 1.5em 0;
+	}
+
 
 
 	.bloco-desc-full {
@@ -1748,6 +1759,25 @@ dl, ol, ul {margin:0;}
 	.menu-button::before {
 		background: linear-gradient(#01687b 20%,transparent 20%,transparent 40%,#01687b 40%,#01687b 60%,transparent 60%,transparent 80%,#01687b 80%);
 
+	}
+
+	.menu-wrap{
+		.search-form-line input[type="search"]{
+			height:38px;
+			font-size:13px !important;
+		}		
+		.search-form-line{
+				margin-bottom:15px;
+			@include placeholder { 
+				font-size:13px !important;
+			}
+		}
+
+		.search-form-line input[type="submit"] {
+   			 right: 15px;
+			background-size: 70%;
+		}
+    
 	}
 
 
@@ -1806,6 +1836,25 @@ dl, ol, ul {margin:0;}
 
 
 	@media(max-width:980px){
+
+		.full-reg-front .col-in {
+		    padding: 50% 0;
+		    text-align: center;
+		    background-size: cover;
+		    margin:15px 0;
+		}
+
+		.icon-list .btn-success {
+				margin-top:25px;
+				border:none;
+		 
+		    a{
+				color: #fff; 
+				border:none;
+				padding:0;
+
+		    }
+		}
 
 		#header .menu-topo {
 			padding: 15px;
