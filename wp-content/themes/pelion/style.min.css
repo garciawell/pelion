@@ -7234,6 +7234,8 @@ input[name="_sf_submit"] {
 @media (max-width: 980px) {
   #search-filter-form-63 .sf-field-post-meta-price label {
     width: 45%; }
+  .banner-full-single .owl-carousel img {
+    max-height: 480px; }
   #search-filter-form-63 .meta-slider {
     max-width: 100%; }
   #search-filter-form-63 input[type="number"] {
