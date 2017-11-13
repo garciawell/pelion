@@ -148,7 +148,6 @@ add_theme_support( 'post-thumbnails' );
 require_once( 'plugins/titan-framework/titan-framework-embedder.php' );
 
 require_once( 'modulos/opcoes.php' );
-require_once( 'modulos/main.php' );
 require_once( 'modulos/post-types.php' );
 require_once( 'modulos/filtro.php' );
 

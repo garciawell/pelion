@@ -18,13 +18,16 @@ $( document ).ready(function() {
 
 
 	/**********Busca*********/
+$(function() {
+	$(".fa-search").on("click",function(){
+	  $('.search-form').addClass("ativo");
+	
+	}); 
 
-	$( ".fa-search" ).click(function() {   
-		$('.search-form').toggle("slide"); 
-	});	 
-
-
-
+  $('#content, .menu-topo').on("click", function(e) {
+ 		 $('.search-form').removeClass("ativo");
+	});  
+}); 
 	/**********CAROUSEL*********/
 
 
