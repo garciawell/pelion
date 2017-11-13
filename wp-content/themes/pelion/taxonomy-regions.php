@@ -45,7 +45,7 @@ $term_id = $queried_object->term_id;
 
 						<p><?php the_field('description_large' , $queried_object);?> </p> 
 
-
+						<?php /*
 						<div class="full-cat">
 							<?php
 							$args=array(
@@ -110,10 +110,10 @@ $term_id = $queried_object->term_id;
 
 
 							</div>
-
+							*/ ?>
 	
 						<?php 
-					/*
+					
 						// check if the flexible content field has rows of data
 						 if( have_rows('items' , $queried_object)  ): ?>
 
@@ -163,11 +163,10 @@ $term_id = $queried_object->term_id;
 
 						endwhile;
 
-					else :
+					else : 
 
 
 					endif;
-*/
 					?>
 				</div>
 
