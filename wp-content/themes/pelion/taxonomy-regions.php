@@ -22,8 +22,8 @@ $term_id = $queried_object->term_id;
 <div class="container-full">
 	<div id="content-main">
 		<div class="container">
-			<div class="row">
-				<div class="col-9 col-lg-9 col-md-9 col-sm-12">
+			<div class="row order-resp">
+				<div class="col-12 col-lg-9 col-md-12 col-sm-12">
 					<nav class="breadcrumb">
 						<a class="breadcrumb-item" href="#">Home</a>
 						<a class="breadcrumb-item" href="#">Regions</a>
@@ -40,12 +40,12 @@ $term_id = $queried_object->term_id;
 						</a>
 
 					</nav>
- 
+					
 					<div id="main">
 
 						<p><?php the_field('description_large' , $queried_object);?> </p> 
 
-					
+						
 						<div class="full-cat">
 							<?php
 							$args=array(
@@ -79,30 +79,32 @@ $term_id = $queried_object->term_id;
 							foreach($categories as $category) {
 								?>
 
-			
-								<div class="row aling-items-cente header-cat">
-									<div class="col">
+								
+								<div class="full-cat-items">
+									<div class="row aling-items-cente header-cat">
+										<div class="col">
 
-										<h3> <?php echo $category->name; ?> </h3>
+											<h3> <?php echo $category->name; ?> </h3>
 
 
-									</div>		        	
-									<div class="col">
-										<?php $category_link = get_category_link( $category); ?>
-										<a href="<?php echo esc_url( $category_link ); ?>" class="pull-right btn btn-outline-success">SEE ALL</a>
+										</div>		        	
+										<div class="col">
+											<?php $category_link = get_category_link( $category); ?>
+											<a href="<?php echo esc_url( $category_link ); ?>" class="pull-right btn btn-outline-success">SEE ALL</a>
+										</div>
 									</div>
-								</div>
-	
+									
 
-								<?php query_posts( array( 'post_type' => 'packages', 'posts_per_page'=>'-1', 'orderby' => 'title', 'options'=>  $category->slug , 'regions'=>  $tax) );?>
-								<div class="row">
-									<?php if(have_posts()) : ?><?php while(have_posts()) : the_post() ?>
-
-
-										<?php   get_template_part("templates/loop", "post"); ?>
+									<?php query_posts( array( 'post_type' => 'packages', 'posts_per_page'=>'-1', 'orderby' => 'title', 'options'=>  $category->slug , 'regions'=>  $tax) );?>
+									<div class="row">
+										<?php if(have_posts()) : ?><?php while(have_posts()) : the_post() ?>
 
 
-									<?php endwhile; endif; ?> 
+											<?php   get_template_part("templates/loop", "post"); ?>
+
+
+										<?php endwhile; endif; ?> 
+									</div>
 								</div>
 
 
@@ -111,7 +113,7 @@ $term_id = $queried_object->term_id;
 
 							</div>
 							
-	
+							
 						<?php /*
 					
 						// check if the flexible content field has rows of data
@@ -193,11 +195,8 @@ $term_id = $queried_object->term_id;
 				<?php //include('bloco-build.php'); ?>
 
 			</div>
-			<div class="col-3 col-lg-3 col-md-3 col-sm-12">
+			<div class="col-12 col-lg-3 col-md-12 col-sm-12">
 				<?php echo do_shortcode('[searchandfilter id="63"]'); ?>
-
-
-
 
 			</div>
 		</div>
