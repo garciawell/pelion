@@ -162,9 +162,8 @@
 
 												<p itemprop="description">"<?php echo excerpt(25);  ?>"</p>
 												<a href="<?php the_permalink(); ?>"><h4 class="title-rating" itemprop="name">- <?php the_title(); ?></h4></a>
-
-												      <meta itemprop="ratingValue" content="<?php the_field('review'); ?>">
- 													  <meta itemprop="bestRating" content="5">
+												 <meta itemprop="author" content="<?php the_title(); ?>">
+							
 												<?php if( get_field('review') == '1' ){ ?>
 												<ul class="rating">
 													<li><i class="fa fa-star" aria-hidden="true"></i></li>
