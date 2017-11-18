@@ -8,9 +8,12 @@
 			unset($term); 
 		} } ?>
 
-		<h1><?php the_title();  ?></h1>
+		<h1 itemprop="name"><?php the_title();  ?></h1>
 
-		<div class="rating">
+		<div itemprop="aggregateRating"
+    itemscope itemtype="http://schema.org/AggregateRating" class="rating">
+		     <meta itemprop="ratingValue" content="<?php the_field('star'); ?>/5">
+		     <span itemprop="reviewCount" content="1">
 			<?php if( get_field('star') == 'option1' ){ ?>
 			<ul class="rating">
 				<li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -54,10 +57,13 @@
 			</ul>
 
 			<?php } ?>	
+
+
+
 		</div>
 
 		<div class="descricao">
-			<p><?php the_excerpt();  ?></p>
+			<p itemprop="description"><?php the_excerpt();  ?></p>
 		</div>	
 
 		<div class="lista-single">
@@ -183,10 +189,11 @@
 			</div>
 		</div>
 
-		<div class="price-inf">	
+		<div class="price-inf"  itemprop="offers" itemscope itemtype="http://schema.org/Offer">	
 			<div class="row align-items-center">	
 				<div class="col-12 col-sm-6">	
-					<span class="price"><span class="moeda">€</span> <?php the_field('price');?></span>
+					 <span itemprop="priceCurrency" content="EUR"><span class="price" itemprop="price" content="<?php the_field('price');?>"><span class="moeda">€</span> <?php the_field('price');?></span></span>
+					  <link itemprop="availability" href="http://schema.org/InStock" content="In stock"/>
 					<p class="text-price"><?php the_field('text_price');?></p>
 				</div>			
 				<div class="col-12 col-sm-6">	

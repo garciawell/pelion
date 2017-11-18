@@ -6697,7 +6697,7 @@ input[name="_sf_submit"] {
     border-right: 1px solid #b3b3b3;
     background: #f0f0f0; }
   #search-filter-form-63 .sf-field-post-meta-price label {
-    width: 39.32%; }
+    width: 38.9%; }
   #search-filter-form-63 .sf-field-post-meta-duration label, #search-filter-form-63 .sf-field-post-meta-age label {
     width: 100%; }
   #search-filter-form-63 .sf-field-reset {
@@ -7380,6 +7380,9 @@ figure.icon-person {
   content: "";
   position: absolute;
   top: 0; }
+
+.owl-carousel {
+  display: none; }
 
 .menu-resp {
   display: none; }

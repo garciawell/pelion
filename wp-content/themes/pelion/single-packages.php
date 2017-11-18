@@ -2,14 +2,14 @@
 
 
 
-
+<div itemscope itemtype="http://schema.org/Product">
 
 <section class="banner-full-single">
 	<div class="row no-gutters">
 		<div class="col-12 col-lg-6" style="background: url(<?php// the_field('banner_full'); ?>) left center no-repeat; background-size:cover !important; ">
 
 			<div class="owl-carousel-thumbs owl-carousel" data-slider-id="1">
-				<div class="item" data-hash="thumb1"><?php the_post_thumbnail('full-interna'); ?></div> 
+				<div class="item" data-hash="thumb1" itemprop="image" ><?php the_post_thumbnail('full-interna'); ?></div> 
 				<?php 
 				$images = get_field('galeria');
 					$size = 'full-interna'; // (thumbnail, medium, large, full or custom size)
@@ -156,12 +156,15 @@
 								<div class="row">
 									<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
 										<div class="col-12 col-sm-6">
-											<div class="col-review-in">
+											<div class="itemprop="review" itemscope itemtype="http://schema.org/Review"  col-review-in">
 												<?php setup_postdata($post); ?>
 
 
-												<p>"<?php echo excerpt(25);  ?>"</p>
-												<a href="<?php the_permalink(); ?>"><h4 class="title-rating">- <?php the_title(); ?></h4></a>
+												<p itemprop="description">"<?php echo excerpt(25);  ?>"</p>
+												<a href="<?php the_permalink(); ?>"><h4 class="title-rating" itemprop="name">- <?php the_title(); ?></h4></a>
+
+												      <meta itemprop="ratingValue" content="<?php the_field('review'); ?>">
+ 													  <meta itemprop="bestRating" content="5">
 												<?php if( get_field('review') == '1' ){ ?>
 												<ul class="rating">
 													<li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -294,6 +297,7 @@
 </div>
 
 <?php   include("templates/resume.php"); ?> 
+</div>
 
 <?php endwhile; ?>
 <?php get_footer (); ?>  	 
