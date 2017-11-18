@@ -23,7 +23,7 @@ $term_id = $queried_object->term_id;
 	<div id="content-main">
 		<div class="container">
 			<div class="row">
-				<div class="col-9 col-lg-9 col-md-9 col-sm-12">
+				<div class="col-12 col-lg-9 col-md-9 col-sm-12">
 					<nav class="breadcrumb">
 						<a class="breadcrumb-item" href="#">Home</a>
 						<a class="breadcrumb-item" href="#">Regions</a>
@@ -141,7 +141,7 @@ $term_id = $queried_object->term_id;
 				<?php //include('bloco-build.php'); ?>
 
 			</div>
-			<div class="col-3 col-lg-3 col-md-3 col-sm-12">
+			<div class="col-12 col-lg-3 col-md-3 col-sm-12">
 				<?php echo do_shortcode('[searchandfilter id="63"]'); ?>
 
 
