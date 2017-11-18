@@ -7387,6 +7387,16 @@ figure.icon-person {
 .owl-carousel {
   display: none; }
 
+.breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #868e96;
+  content: "›"; }
+
+.breadcrumb li:first-child .breadcrumb-item:before {
+  display: none; }
+
 .menu-resp {
   display: none; }
 

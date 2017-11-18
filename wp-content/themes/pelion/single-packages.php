@@ -72,10 +72,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-sm-6">
-					<nav class="breadcrumb">
-						<a class="breadcrumb-item" href="#">Home</a>
-						<a class="breadcrumb-item" href="#">Regions</a>
-						<a class="breadcrumb-item active" href="#">
+					<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+						<li itemprop="itemListElement" itemscope
+						itemtype="http://schema.org/ListItem"><a itemprop="item" class="breadcrumb-item" href="#"><span itemprop="name">Home</span></a></li>
+						<li itemprop="itemListElement" itemscope
+						itemtype="http://schema.org/ListItem"><a itemprop="item"  class="breadcrumb-item" href="#"><span itemprop="name">Regions</span></a></li>
+						<li itemprop="itemListElement" itemscope
+						itemtype="http://schema.org/ListItem"><a itemprop="item"  class="breadcrumb-item active" href="#">
+							<span itemprop="name">
 						<?php   // Get terms for post
 						$terms = get_the_terms( $post->ID , 'regions' );
 							 // Loop over each item since it's an array
@@ -84,10 +88,10 @@
 								print $term->name ;
 								unset($term);  
 							} } ?>
-
-						</a>
-
-					</nav>	
+						</span>
+					</a>
+				</li>
+			</ul>
 				</div>
 				<div class="col-12 col-sm-6">
 					<div class="pull-right"><?php echo do_shortcode('[addtoany]');?></div>
