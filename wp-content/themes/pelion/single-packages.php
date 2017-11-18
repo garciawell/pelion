@@ -156,7 +156,7 @@
 								<div class="row">
 									<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
 										<div class="col-12 col-sm-6">
-											<div class="itemprop="review" itemscope itemtype="http://schema.org/Review"  col-review-in">
+											<div itemprop="review" itemscope itemtype="http://schema.org/Review" class="col-review-in">
 												<?php setup_postdata($post); ?>
 
 
