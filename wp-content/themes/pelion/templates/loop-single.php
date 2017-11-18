@@ -12,7 +12,7 @@
 
 		<div itemprop="aggregateRating"
     itemscope itemtype="http://schema.org/AggregateRating" class="rating">
-		     <meta itemprop="ratingValue" content="<?php the_field('star'); ?>/5">
+		     <meta itemprop="ratingValue" content="<?php the_field('star'); ?>">
 		     <span itemprop="reviewCount" content="1">
 			<?php if( get_field('star') == 'option1' ){ ?>
 			<ul class="rating">
