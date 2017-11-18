@@ -74,22 +74,23 @@
 				<div class="col-12 col-sm-6">
 					<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
 						<li itemprop="itemListElement" itemscope
-						itemtype="http://schema.org/ListItem"><a itemprop="item" class="breadcrumb-item" href="#"><span itemprop="name">Home</span></a></li>
+						itemtype="http://schema.org/ListItem"><a itemprop="item" class="breadcrumb-item" href="<?php bloginfo('home'); ?>"><span itemprop="name">Home</span></a></li>
 						<li itemprop="itemListElement" itemscope
-						itemtype="http://schema.org/ListItem"><a itemprop="item"  class="breadcrumb-item" href="#"><span itemprop="name">Regions</span></a></li>
-						<li itemprop="itemListElement" itemscope
-						itemtype="http://schema.org/ListItem"><a itemprop="item"  class="breadcrumb-item active" href="#">
-							<span itemprop="name">
+						itemtype="http://schema.org/ListItem"><a itemprop="item"  class="breadcrumb-item" href="<?php bloginfo('home'); ?>/regions"><span itemprop="name">Regions</span></a></li>
+							
 						<?php   // Get terms for post
 						$terms = get_the_terms( $post->ID , 'regions' );
 							 // Loop over each item since it's an array
 						if ( $terms != null ){ 
 							foreach( $terms as $term ) {
-								print $term->name ;
+  								$term_link = get_term_link( $term ); 
+
+								 echo '<li itemprop="itemListElement" itemscope
+						itemtype="http://schema.org/ListItem"><a itemprop="item"  class="breadcrumb-item active" href="' . esc_url( $term_link ) . '"><span itemprop="name">'. $term->name . '</span></a></li>';
 								unset($term);  
 							} } ?>
-						</span>
-					</a>
+					
+				
 				</li>
 			</ul>
 				</div>
