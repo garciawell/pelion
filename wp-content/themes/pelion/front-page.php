@@ -17,8 +17,8 @@
       <?php // loop through the rows of data
       while ( have_rows('items') ) : the_row();
 
-        if( get_row_layout() == 'template_packages' ): ?>
-        <section class="container-full"  style="background:<?php the_sub_field('background'); ?>">
+       if( get_row_layout() == 'template_packages' ): ?>
+       <section class="container-full"  style="background:<?php the_sub_field('background'); ?>">
          <div class="container">
             <div class="full-cat-front">
                <div class="row aling-items-center header-cat">
@@ -44,7 +44,7 @@
 
 
 <?php elseif( get_row_layout() == 'template_regions' ):  ?>  
-  <section class="container-full" style="background:<?php the_sub_field('background'); ?>">
+ <section class="container-full" style="background:<?php the_sub_field('background'); ?>">
    <div class="container">
 
       <div class="full-reg-front">
@@ -91,7 +91,7 @@
 </section>
 
 <?php elseif( get_row_layout() == 'template_banner' ):  ?>  
-  <section class="container-full template-banner">
+ <section class="container-full template-banner">
    <div class="container">
       <div class="row align-items-center">
          <div class="col-12 col-sm-6">
@@ -112,9 +112,9 @@
                   <li>
                      <div class="row align-items-center">
                         <div class="col-12 col-sm-2">
-                          <figure><img src="<?php the_sub_field('icon'); ?>"></figure> 
-                       </div> 
-                       <div class="col-12 col-sm-10">
+                         <figure><img src="<?php the_sub_field('icon'); ?>"></figure> 
+                      </div> 
+                      <div class="col-12 col-sm-10">
 
                         <span><?php the_sub_field('text'); ?></span>
                      </div>
@@ -135,7 +135,7 @@
 
 
 <?php elseif( get_row_layout() == 'template_offers' ):  ?>  
-  <section class="container-full" style="background:<?php the_sub_field('background'); ?>">
+ <section class="container-full" style="background:<?php the_sub_field('background'); ?>">
    <div class="container">
 
       <div class="full-reg-front">
@@ -152,10 +152,10 @@
 
          <?php if( have_rows('blocks') ): ?>
 
-          <div class="row">
-             <?php  while ( have_rows('blocks') ) : the_row(); ?>
+           <div class="row">
+              <?php  while ( have_rows('blocks') ) : the_row(); ?>
 
-             <div class="col-12 col-md-6 col-lg-3">
+                 <div class="col-12 col-md-6 col-lg-3">
                   <?php 
                   $attachment_id = get_sub_field('imagem');
                      $size = "padrao-md"; // (thumbnail, medium, large, full or custom size)
@@ -182,6 +182,106 @@
    </div> 
 </div>
 </section>
+
+<?php elseif( get_row_layout() == 'template_reviews' ):  ?>  
+ <section class="container-full ct-reviews-home" >
+   <div class="container">
+
+      <h3 class="title-white text-center">Reviews</h3>
+      <?php 
+
+      $posts = get_sub_field('items');
+      if( $posts ): ?>
+      <div class="row owl-carousel" id="owl-review">
+         <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+            <div class="item">
+                  <figure class="icon-person"><img src="<?php bloginfo('template_url'); ?>/img/icon-person.png"></figure>
+               <div class="col-review-home-in">
+                  <?php setup_postdata($post); ?>
+
+
+                  <p>"<?php echo excerpt(25);  ?>"</p>
+                  <a href="<?php the_permalink(); ?>"><h4 class="title-rating">- <?php the_title(); ?></h4></a>
+                  <?php if( get_sub_field('review') == '1' ){ ?>
+                  <ul class="rating">
+                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+
+                  </ul>
+                  <?php } else if( get_sub_field('review') == '2' ) { ?> 
+                  <ul class="rating">
+                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                  </ul>
+                  <?php } else if( get_sub_field('review') == '3' ){  ?>
+                  <ul class="rating">
+                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                  </ul>
+                  <?php } else if( get_sub_field('review') == '4' ){  ?>
+                  <ul class="rating">
+                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                  </ul>
+                  <?php } else if( get_sub_field('review') == '5' ){  ?> 
+                  <ul class="rating">
+                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                  </ul>
+
+                  <?php } else { ?>
+                  <ul class="rating">
+                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+
+                  </ul>
+
+                  <?php }?>   
+
+
+
+               </div>
+            </div>
+         <?php endforeach; ?>
+
+         <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+      </div>
+   <?php endif; ?>   
+   <div class="text-center mg-tp-35">
+       <a href="#" class="btn btn-outline-secondary">SEE ALL</a>   
+
+   </div>
+</div>
+</section>
+
+
+
+<?php elseif( get_row_layout() == 'template_text' ):  ?>  
+ <section class="container-full ct-text" >
+   <div class="container">
+      <h3 class="noupper title-main text-center mg-bt-25"><?php the_sub_field('title'); ?></h3>
+      <p class="p-17 text-center"><?php the_sub_field('desc'); ?></p>
+   </div>
+</section>
+
 
 
 <?php  endif; ?>

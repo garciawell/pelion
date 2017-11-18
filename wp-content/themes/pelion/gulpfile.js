@@ -31,10 +31,10 @@ gulp.task('min-img', function() {
 
 gulp.task('min-css', function() {
 	gulp.src([ 
+		'./node_modules/jquery.mmenu/dist/jquery.mmenu.css',
 		//'./node_modules/bootstrap/dist/css/bootstrap.min.css',
 		'./node_modules/owl.carousel/dist/assets/owl.carousel.css',
 		'./node_modules/animate.css/animate.css', 
-		'./css/menu_sideslide.css',
 		'./node_modules/font-awesome/css/font-awesome.min.css'
 	])
 	.pipe(concat('libs.css'))
@@ -51,6 +51,7 @@ gulp.task('min-js', function() {
 		'./node_modules/popper.js/dist/umd/popper.js',  
 		'./node_modules/bootstrap/dist/js/bootstrap.js',
 		'./node_modules/owl.carousel/dist/owl.carousel.js', 
+		'./node_modules/jquery.mmenu/dist/jquery.mmenu.js', 
 		'./node_modules/owl.carousel2.thumbs/src/owl.carousel2.thumbs.js',  
 		'./js/jquery.maskedinput.min.js',
 		'./js/main.js' 
@@ -61,7 +62,7 @@ gulp.task('min-js', function() {
 }); 
 
 
-
+/*
 
 gulp.task('min-js-bottom', function() {
 	gulp.src([
@@ -72,7 +73,7 @@ gulp.task('min-js-bottom', function() {
 	.pipe(uglify())
 	.pipe(gulp.dest('js')); 
 }); 
- 
+ */
  
  /*
 gulp.task('min-js-topo', function() {

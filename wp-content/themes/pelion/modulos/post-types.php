@@ -19,7 +19,7 @@ add_action( 'init', 'register_packages' );
         'menu_name' => __('Packages')
  
       );      
-	  $args = array(
+      $args = array(
         'labels' => $labels,
         'public' => true,
          'menu_icon'  => 'dashicons-tickets-alt',
@@ -38,8 +38,9 @@ add_action( 'init', 'register_packages' );
         'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt','revisions')
       );
       register_post_type('packages',$args);
-	  
+      
 }
+
 
 
 
@@ -354,3 +355,47 @@ add_action( 'init', 'register_activities' );
   ));  
 
 
+
+
+//Reviews
+
+add_action( 'init', 'register_reviews' );
+    function register_reviews() {
+
+      $labels = array(
+        'name' => _x('Reviews', 'post type general name'),
+        'singular_name' => _x('Reviews', 'post type singular name'),
+        'add_new' => _x('Adicionar Novo', 'Reviews'),
+        'add_new_item' => __('Adicionar Novo Reviews'),
+        'edit_item' => __('Edit Reviews'),
+        'new_item' => __('New Reviews'),
+        'all_items' => __('All Reviews'),
+        'view_item' => __('See Packages'),
+        'search_items' => __('Search Reviews'),
+        'not_found' =>  __('No Reviews found'),
+        'not_found_in_trash' => __('No Reviews found in Trash'),
+        'parent_item_colon' => '',
+        'menu_name' => __('Reviews')
+ 
+      );      
+      $args = array(
+        'labels' => $labels,
+        'public' => true,
+         'menu_icon'  => 'dashicons-star-filled',
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        //'has_archive' => true,
+        'show_in_menu' => true,
+        'query_var' => true, 
+        "rewrite" => [
+            "with_front" => true
+        ],
+       // "cptp_permalink_structure" => "%post_id%",
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array( 'title', 'editor', 'excerpt','revisions')
+      );
+      register_post_type('reviews',$args);
+      
+}

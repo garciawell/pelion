@@ -60,33 +60,22 @@
 
 
 <script> 
-
-
-	/*
-		jQuery(function($){
-	$('#filter').submit(function(){
-		var filter = $('#filter');
-		var conteudo = $('#main-items-cat');
-		$.ajax({
-			url:filter.attr('action'),
-			data:filter.serialize(), // form data
-			type:filter.attr('method'), // POST 
-			beforeSend:function(xhr){
-				conteudo.append( '<div class="loader">teste...</div>'); 
-				conteudo.find( '#item-loop-cat').remove(); 
-			},
-			success:function(data){
-				filter.find('button').text('Apply filter'); // changing the button label back
-				$('#main-items-cat').html(data); // insert data
-			}
-		});
-		return false;
-	});
-});*/
+   $(document).ready(function() {
+      $("#my-menu").mmenu({
+         // options
+      }, {
+         // configuration
+         offCanvas: {
+            pageSelector: "#my-wrapper"
+         }
+      });
+   });
 
  
 </script>
-</div><!-- .site -->
+</div><!-- .content -->
+
+</div><!-- .my-page -->
 <?php wp_footer(); ?>
 
 </body>

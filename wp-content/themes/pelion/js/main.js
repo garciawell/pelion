@@ -28,6 +28,39 @@ $(function() {
  		 $('.search-form').removeClass("ativo");
 	});  
 }); 
+
+
+
+/*********APARECER e FECHAR RESUMO***************/
+$(function() {
+
+	$(window).scroll(function() {    
+		var scroll = $(window).scrollTop();
+
+	     //>=, not <=
+	     if (scroll >= 750) {  
+	        //clearHeader, not clearheader - caps H
+	        $("#resume").addClass("show");
+	    }
+
+	    else{
+	    	$("#resume").removeClass("show");
+
+	    }
+	}); 
+
+
+
+
+	$("#icon-close").on("click",function(){
+	  $("#resume").hide(); 
+	
+	}); 
+}); 
+
+
+
+
 	/**********CAROUSEL*********/
 
 
@@ -61,6 +94,7 @@ $('.owl-slider-post').owlCarousel({
 
 
 
+
 jQuery(function($) {  
 	
 	"use strict";
@@ -74,8 +108,24 @@ jQuery(function($) {
 
 });
 
-
-
+/******REVIEW HOME*************/
+$('#owl-review').owlCarousel({
+    //loop:true,
+    margin:50,
+    nav:true,
+        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'], 
+    responsive:{
+        0:{
+            items:1 
+        },
+        767:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+})
 
  
 /*****MASCARAS************/

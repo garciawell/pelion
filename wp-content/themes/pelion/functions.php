@@ -14,7 +14,7 @@ function theme_scripts() {
 	wp_enqueue_style ( 'css-minify', get_template_directory_uri() . '/css/libs.css' );  
 	wp_enqueue_style ( 'css-padrao', get_template_directory_uri() . '/style.min.css' ); 	   
 	wp_enqueue_style ( 'css-padrao', get_template_directory_uri() . '/style.css' ); 	   
-	wp_enqueue_script( 'js-topo', get_template_directory_uri() . '/js/libs-bottom.js', array(), '1.0.0', true);  
+	//wp_enqueue_script( 'js-topo', get_template_directory_uri() . '/js/libs-bottom.js', array(), '1.0.0', true);  
 	wp_enqueue_script('js-rodape', get_template_directory_uri() . '/js/libs.js', array(), '1.0.0', false);
 	//wp_enqueue_script('js-java', get_template_directory_uri() . '/js/java.js', NULL, 1.0, true); 
 	//wp_enqueue_script('js-java', get_template_directory_uri() . '/js/java.js',  1.0, true);  
@@ -75,8 +75,32 @@ register_sidebar(array(
 
 
 
-
-
+/**********LIMITAR EXCERPT******************************/
+function excerpt($limit) {
+  $excerpt = explode(' ', get_the_excerpt(), $limit);
+  if (count($excerpt)>=$limit) {
+    array_pop($excerpt);
+    $excerpt = implode(" ",$excerpt).'...';
+  } else {
+    $excerpt = implode(" ",$excerpt);
+  }	
+  $excerpt = preg_replace('`[[^]]*]`','',$excerpt);
+  return $excerpt;
+}
+ 
+function content($limit) {
+  $content = explode(' ', get_the_content(), $limit);
+  if (count($content)>=$limit) {
+    array_pop($content);
+    $content = implode(" ",$content).'...';
+  } else {
+    $content = implode(" ",$content);
+  }	
+  $content = preg_replace('/[.+]/','', $content);
+  $content = apply_filters('the_content', $content); 
+  $content = str_replace(']]>', ']]&gt;', $content);
+  return $content;
+}
 
 // Registrando Sidebar RODAPE
 
@@ -130,17 +154,7 @@ add_theme_support( 'post-thumbnails' );
  add_image_size('padrao-md',300,400,true);
  add_image_size('full-interna',1000,600,true); 
  add_image_size('thumb-galeria',130,80,true); 
-////add_image_size('Postos',600,450,true);
-////add_image_size('servicos',600,450,true);
-////add_image_size('capacitacao',600,350,true);
-//add_image_size('circle',275,275,true);
-//add_image_size('franqueado',200,200,true);
-//add_image_size('parceiros',190,190,true);
-//add_image_size('blog-home',600,450,true);
-//add_image_size('blog-peq',350,250,true);
-//add_image_size('blog-gd',900,400,true);
-//add_image_size('galeria',200,90,true);
-//add_image_size('circulo-landing',350,350,true);
+  add_image_size('resume',280,250,true);
 
 
 /**************TITAN FRAMEWORKER*** Opções WordPress*********************/

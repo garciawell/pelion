@@ -17,44 +17,10 @@
 		</head>
 		
 		<body <?php body_class(); ?>>
+			<div id="my-wrapper">
+
 			<?php $titan = TitanFramework::getInstance( 'pelion' ); ?>
 
-			<div class="menu-wrap">
-				<nav class="menu">
-					<button class="close-button" id="close-button">
-						Close Menu
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span> 
-					</button> 
-					<div class="icon-list">
-						<form role="search" method="get" class="search-form-line" action="<?php echo home_url( '/' ); ?>">
-							<label>
-								<input type="search" class="search-field"
-								placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>"
-								value="<?php echo get_search_query() ?>" name="s"
-								title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
-							</label>
-							<input type="submit" class="search-submit"
-							value="OK" />
-						</form>
-						
-						<?php   wp_nav_menu_no_ul(); ?>
-
-						<div class="bloc-menu-resp">
-							<a class="inf-topo" href="mailto:<?php echo $tel = $titan->getOption( 'email' ); ?>"> <?php echo $tel = $titan->getOption( 'email' ); ?></a>
-							<a class="inf-topo" href="tel:<?php echo $tel = $titan->getOption( 'telefone' ); ?>"><?php echo $tel = $titan->getOption( 'telefone' ); ?></a>
-							<ul class="midias-rodape">
-								<?php $var1 = $titan->getOption( 'face' ); if ($var1 != NULL){ ?><li><a href="<?php echo $var = $titan->getOption( 'face' ); ?>" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li><?php } ?>	 
-								<?php $var2 = $titan->getOption( 'insta' ); if ($var2 != NULL){ ?><li><a href="<?php echo $var2 = $titan->getOption( 'insta' ); ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li><?php } ?>	
-								<?php $var3 = $titan->getOption( 'twitter' ); if ($var3 != NULL){ ?><li><a href="<?php echo  $var3; ?>" target="_blank"></a><i class="fa fa-twitter-square" aria-hidden="true"></i></li><?php } ?>					
-							</ul> 
-						</div>
-					</div>
-				</nav>
-
-			</div>
 			<header id="header" >
 
 				<div class="barra-topo">
@@ -74,16 +40,16 @@
 							<div class="col-6">
 								<div class="pull-right topo-search">
 									<i class="fa fa-search" aria-hidden="true"></i>
-										<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-										    <label>
-										        <input type="search" class="search-field"
-										            placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>"
-										            value="<?php echo get_search_query() ?>" name="s"
-										            title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
-										    </label>
-										    <input type="submit" class="search-submit"
-										        value="OK" />
-										</form>
+									<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+										<label>
+											<input type="search" class="search-field"
+											placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>"
+											value="<?php echo get_search_query() ?>" name="s"
+											title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+										</label>
+										<input type="submit" class="search-submit"
+										value="OK" />
+									</form>
 								</div>
 							</div>
 						</div>
@@ -127,7 +93,7 @@
 
 
 								</div>
-								<button class="menu-button" id="open-button">Open Menu</button>
+								<a href="#my-menu" class="menu-button" id="open-button"></a>
 							</div>
 							
 						</div>
@@ -137,7 +103,13 @@
 				</div>
 
 
-			</header><!-- .site-header -->
+				<nav id="my-menu" class="menu-resp">
+					<ul>
+						<?php   wp_nav_menu_no_ul(); ?>
+					</ul>
+				</nav>
 
+
+			</header><!-- .site-header -->
 
 			<div id="content" class="site-content <?php if ( is_singular('product')) { echo 'mg-topo'; } ?>">
