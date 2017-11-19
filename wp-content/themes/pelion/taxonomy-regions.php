@@ -141,7 +141,7 @@ $term_id = $queried_object->term_id;
 				<?php echo do_shortcode('[searchandfilter id="63"]'); ?>
 
 				<div class="bloco-cat  item-tax">
-					<h3>Explore Others areas</h4>
+					<h3 class="title-cat-side">Explore Others areas</h4>
 					<div class="row">
 					<?php   // Get terms for post
 
@@ -169,7 +169,7 @@ $term_id = $queried_object->term_id;
 			</div>	
 
 			<div class="reviews item-tax">
-				<h3>Customers Review</h3>
+				<h3 class="title-cat-side">Customers Review</h3>
 				<div class="row mg-tp-25">
 					<?php
 					$the_press = new WP_Query(array('post_type' => 'reviews','posts_per_page' => 3 ));
