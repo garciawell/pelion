@@ -93,7 +93,7 @@
 
 					</ul>
 				</div>
-				<div class="col-12 col-sm-6">
+				<div class="col-12 col-sm-6 pull-resp">
 					<div class="pull-right"><?php echo do_shortcode('[addtoany]');?></div>
 				</div>
 			</div>
@@ -135,11 +135,11 @@
 				<?php if( get_field('why_lt') ): ?>
 					<div class="why">
 						<div class="row align-items-center">
-							<div class="col-12 col-sm-6">
+							<div class="col-12 col-md-6">
 								<h2 class="title-grey">WHY SHOULD YOU GO HERE?</h2>
 								<?php the_field('why_lt'); ?>
 							</div>						
-							<div class="col-12 col-sm-6">
+							<div class="col-12 col-md-6 mg-tp-15">
 								<div class="video"><?php the_field('why_rt'); ?></div>
 							</div>		
 						</div>

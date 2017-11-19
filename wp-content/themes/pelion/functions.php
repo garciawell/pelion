@@ -29,11 +29,11 @@ function caption_shortcode( $atts, $content = null ) {
 
 <section class="bloco-build">
 	<div class="row align-items-center">
-		<div class="col-md-7 col-lg-7 col-sm-12 col-12">
+		<div class="col-md-12 col-lg-7 col-sm-12 col-12">
 			<h4>PERSONALIZED TRIP IN 3 STEPS</h4>
 
 		</div>		
-		<div class="col-md-5 col-lg-5 col-sm-12 col-12">
+		<div class="col-md-12 col-lg-5 col-sm-12 col-12">
 			<a href="" class="pull-right btn btn-outline-secondary">BUILD YOUR TRIP!</a> 
 
 		</div>

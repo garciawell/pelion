@@ -22,10 +22,10 @@
          <div class="container">
             <div class="full-cat-front">
                <div class="row aling-items-center header-cat">
-                  <div class="col">
+                  <div class="col-12 col-lg-6">
                      <h3 class="title-main"><?php the_sub_field('title'); ?></h3>
                   </div>
-                  <div class="col">
+                  <div class="col-12 col-lg-6">
                      <a href="<?php the_sub_field('link'); ?>" class="pull-right btn btn-outline-success">SEE ALL</a>
                   </div>
                </div>
@@ -48,12 +48,12 @@
    <div class="container">
 
       <div class="full-reg-front">
-         <div class="row aling-items-center header-cat">
-            <div class="col">
+         <div class="row aling-items-center header-cat items">
+            <div class="col-12 col-md-12 col-lg-9 flex">
                <h3 class="title-main"><?php the_sub_field('title'); ?></h3>
                <p><?php the_sub_field('desc'); ?></p>
             </div>
-            <div class="col">
+            <div class="col-12 col-md-12 col-lg-3">
                <a href="<?php the_sub_field('link'); ?>" class="pull-right btn btn-outline-success">SEE ALL</a>
             </div>
          </div>
@@ -102,7 +102,7 @@
 <svg class="uvc-tilt-left-seperator top" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#f5f5f5" width="100%" height="70" viewBox="0 0 4 0.266661" preserveAspectRatio="none" style="height: 70px;"><polygon class="fil0" points="4,0 4,0.266661 -0,0.266661 "></polygon></svg>
    <div class="container">
       <div class="row align-items-center">
-         <div class="col-12 col-sm-6">
+         <div class="col-12 col-md-6">
             <h4><?php the_sub_field('title'); ?></h4>
             <p class="p-17"><?php the_sub_field('desc'); ?></p>
             <div class="bottom-btn">
@@ -114,15 +114,15 @@
 
             </div>
          </div>           
-         <div class="col-12 col-sm-6">
+         <div class="col-12 col-md-6">
             <ul class="list-items-in">
                <?php if( have_rows('list_items') ):  while ( have_rows('list_items') ) : the_row(); ?>
                   <li>
                      <div class="row align-items-center">
-                        <div class="col-12 col-sm-2">
+                        <div class="col-12 col-sm-12  col-md-3 col-lg-2">
                           <figure><img src="<?php the_sub_field('icon'); ?>"></figure> 
                        </div> 
-                       <div class="col-12 col-sm-10">
+                       <div class="col-12 col-sm-12  col-md-9 col-lg-10">
 
                         <span><?php the_sub_field('text'); ?></span>
                      </div>
@@ -149,12 +149,12 @@
    <div class="container">
 
       <div class="full-reg-front">
-         <div class="row aling-items-center header-cat">
-            <div class="col">
+         <div class="row aling-items-center header-cat items">
+            <div class="col-12 col-lg-9 col-md-12 flex">
                <h3 class="title-main"><?php the_sub_field('title'); ?></h3>
                <p><?php the_sub_field('desc'); ?></p>
             </div>
-            <div class="col">
+            <div class="col-1 col-md-12 col-lg-3">
                <a href="<?php the_sub_field('link'); ?>" class="pull-right btn btn-outline-success">SEE ALL</a>
             </div>
          </div>

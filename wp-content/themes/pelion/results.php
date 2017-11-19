@@ -6,19 +6,22 @@
 
 <div class="banner-full d-flex text-center align-items-center" style="background: url('<?php bloginfo('template_url');  ?>/img/banner-regioes.jpg') center center no-repeat; background-size:cover;">
 	<div class="container">
-		<h1 class="title-cat text-center">Resultados</h1>
+		<h1 class="title-cat text-center">Results</h1>
 		<i><img src="<?php bloginfo('template_url'); ?>/img/icon-down.png"></i>
 	</div>
 </div>
 <div class="container-full">
 	<div id="content-main">
 		<div class="container">
-			<div class="row">
+			<div class="row order-resp">
 				<div class="col-9 col-lg-9 col-md-9 col-sm-12">
-					<nav class="breadcrumb">
-						<a class="breadcrumb-item" href="#">Home</a>
-
-					</nav>
+			<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+				<li itemprop="itemListElement" itemscope
+				itemtype="http://schema.org/ListItem"><a itemprop="item" class="breadcrumb-item" href="<?php bloginfo('home'); ?>"><span itemprop="name">Home</span></a></li>
+				<li itemprop="itemListElement" itemscope
+				itemtype="http://schema.org/ListItem"><span itemprop="item"  class="breadcrumb-item active" href="<?php bloginfo('home'); ?>/regions"><span itemprop="name">Filter</span></span></li> 
+				
+			</ul>
  
 					<div id="main">
  

@@ -32,7 +32,7 @@ $term_id = $queried_object->term_id;
 			</ul>
 
 
-			<div class="row">
+			<div class="row order-resp">
 
 				<div class="col-12 col-lg-9  col-sm-12 content-filter">
 					

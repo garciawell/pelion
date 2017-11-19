@@ -10,7 +10,7 @@
 	<div class="main-rodape">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3 col-sm-12">
+				<div class="col-md-3 col-sm-6">
 					<?php
 					if(is_active_sidebar('rodape-1')){
 						dynamic_sidebar('rodape-1');
@@ -24,7 +24,7 @@
 					}
 					?>
 				</div> 	 
-				<div class="col-6 col-md-3 col-sm-6">
+				<div class="col-6 col-md-3 col-sm-12">
 					<?php
 					if(is_active_sidebar('rodape-3')){
 						dynamic_sidebar('rodape-3');
@@ -46,10 +46,10 @@
 	<div class="copyright">
 		<div class="container">
 			<div class="row align-items-center"> 
-				<div class="col-12 col-md-6 col-sm-4">
+				<div class="col-12 col-md-6 col-sm-8">
 					<p><?php echo $mySavedValue2 = $titan->getOption( 'copyright' ); ?></p>
 				</div> 	
-				<div class="col-12 col-md-6 col-sm-8">
+				<div class="col-12 col-md-6 col-sm-4">
 					<p class="pull-right"><?php echo $mySavedValue2 = $titan->getOption( 'aditional' ); ?></p>
 				
 				</div> 

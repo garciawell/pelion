@@ -13,7 +13,7 @@ $term_id = $queried_object->term_id;
 
 
 
-<div class="banner-full d-flex  align-items-center" style="background-image: url('<?php  echo $thumbnail = get_field('imagem_categoria', $queried_object);  ?>');">
+<div class="banner-full d-flex  align-items-center" style="background-image: url('<?php  echo $thumbnail = get_field('large_category', $queried_object);  ?>');">
 	<div class="container">
 		<h1 class="title-cat text-center"><?php single_cat_title();  ?></h1>
 		<span class="subtitle-cat text-center"><?php echo category_description(); ?> </span>
