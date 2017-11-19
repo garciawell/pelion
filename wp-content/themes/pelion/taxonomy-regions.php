@@ -92,7 +92,7 @@ $term_id = $queried_object->term_id;
 									</div>
 									
 
-									<?php query_posts( array( 'post_type' => 'packages', 'posts_per_page'=>'-1', 'orderby' => 'title', 'options'=>  $category->slug , 'regions'=>  $tax) );?>
+									<?php query_posts( array( 'post_type' => 'packages', 'posts_per_page'=>'-1', 'orderby' => 'title', 'options'=>  $category->slug , 'regions'=>  $tax) ); ?>
 									<div class="row">
 										<?php if(have_posts()) : ?><?php while(have_posts()) : the_post() ?>
 
@@ -111,8 +111,7 @@ $term_id = $queried_object->term_id;
 
 
 							</div>
-							
-						
+	
 				</div>
 
 				<?php 
