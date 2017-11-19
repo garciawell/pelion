@@ -23,15 +23,17 @@ while ( have_posts() ) : the_post(); ?>
 					if ( $terms != null ){ 
 						foreach( $terms as $term ) { ?>
 						<div class="col">
-								<a href="<?php echo  $term_link = get_term_link( $term ); ?>">
-							<div class="col-in" style="background-image: url('<?php  echo $custom_field = get_field('imagem_categoria', $term ); ?>');">
-							
-									<span class="subtitle-cat"><?php the_field('subtitle', $term ); ?></span>
+							<a href="<?php echo  $term_link = get_term_link( $term ); ?>">
+								<div class="col-in effect-hover" style="background-image: url('<?php  echo $custom_field = get_field('imagem_categoria', $term ); ?>');">
+									<div class="in">
 
-									<h2 class="title-cat-pag"><?php echo  $term->name; ?></h2>
-							
-							</div>
-								</a>
+										<span class="subtitle-cat"><?php the_field('subtitle', $term ); ?></span>
+
+										<h2 class="title-cat-pag"><?php echo  $term->name; ?></h2>
+
+									</div>
+								</div>
+							</a>
 						</div>
 						<?php } 
 					} ?>

@@ -40,6 +40,8 @@
 				</div> 
 			</div> 
 		</div> 
+
+		<button class="scroll-top" id="scroll-top"><img src="<?php bloginfo('template_url'); ?>/img/icon-up.png"></button>
 	</div> 
 	<div class="copyright">
 		<div class="container">

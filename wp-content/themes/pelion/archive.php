@@ -13,20 +13,25 @@ $term_id = $queried_object->term_id;
 
 
 
-<div class="banner-full d-flex  align-items-center" style="background: url('<?php bloginfo('template_url');  ?>/img/banner-regioes.jpg') center center no-repeat; background-size:cover;">
+<div class="banner-full d-flex  text-center align-items-center" style="background: url('<?php bloginfo('template_url');  ?>/img/banner-regioes.jpg') center center no-repeat; background-size:cover;">
 	<div class="container">
 		<h1 class="title-cat text-center"><?php single_cat_title();  ?></h1>
 		<span class="subtitle-cat text-center"><?php echo category_description(); ?> </span>
+				<i><img src="<?php bloginfo('template_url'); ?>/img/icon-down.png"></i>
 	</div>
 </div>
 <div class="container-full">
 	<div id="content-main">
 		<div class="container">
-			<nav class="breadcrumb">
-				<a class="breadcrumb-item" href="#">Filter</a>
-				<a class="breadcrumb-item active" href="#"><?php single_cat_title(); ?></a>
+			<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+				<li itemprop="itemListElement" itemscope
+				itemtype="http://schema.org/ListItem"><a itemprop="item" class="breadcrumb-item" href="<?php bloginfo('home'); ?>"><span itemprop="name">Home</span></a></li>
+				<li itemprop="itemListElement" itemscope
+				itemtype="http://schema.org/ListItem"><span itemprop="item"  class="breadcrumb-item active" href="<?php bloginfo('home'); ?>/regions"><span itemprop="name"><?php single_cat_title(); ?></span></span></li>
+				
+			</ul>
 
-			</nav>
+
 			<div class="row">
 
 				<div class="col-12 col-lg-9  col-sm-12 content-filter">

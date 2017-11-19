@@ -387,12 +387,9 @@ add_action( 'init', 'register_reviews' );
         //'has_archive' => true,
         'show_in_menu' => true,
         'query_var' => true, 
-        "rewrite" => [
-            "with_front" => true
-        ],
-       // "cptp_permalink_structure" => "%post_id%",
+       'rewrite' => array('slug' => 'review', 'with_front' => true ),
         'capability_type' => 'post',
-        'hierarchical' => false,
+        'hierarchical' => true,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'excerpt','revisions')
       );

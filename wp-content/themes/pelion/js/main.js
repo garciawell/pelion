@@ -3,7 +3,7 @@ $( document ).ready(function() {
 		var scroll = $(window).scrollTop();
 
 	     //>=, not <=
-	     if (scroll >= 300) {  
+	     if (scroll >= 125) {    
 	        //clearHeader, not clearheader - caps H
 	        $("#header").addClass("fixado");
 	    }
@@ -14,7 +14,12 @@ $( document ).ready(function() {
 	    }
 	}); 
  
+/******SCROLL TOP**********/
 
+$('#scroll-top').click(function(){
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+});
 
 
 	/**********Busca*********/
@@ -31,34 +36,7 @@ $(function() {
 
 
 
-/*********APARECER e FECHAR RESUMO***************/
-$(function() {
-
-	$(window).scroll(function() {    
-		var scroll = $(window).scrollTop();
-
-	     //>=, not <=
-	     if (scroll >= 750) {  
-	        //clearHeader, not clearheader - caps H
-	        $("#resume").addClass("show");
-	    }
-
-	    else{
-	    	$("#resume").removeClass("show");
-
-	    }
-	}); 
-
-
-
-
-	$("#icon-close").on("click",function(){
-	  $("#resume").hide(); 
-	
-	}); 
-}); 
-
-
+ 
 
 
 	/**********CAROUSEL*********/

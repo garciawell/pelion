@@ -4,14 +4,14 @@
 
 <div itemscope itemtype="http://schema.org/Product">
 
-<section class="banner-full-single">
-	<div class="row no-gutters">
-		<div class="col-12 col-lg-6" style="background: url(<?php// the_field('banner_full'); ?>) left center no-repeat; background-size:cover !important; ">
+	<section class="banner-full-single">
+		<div class="row no-gutters">
+			<div class="col-12 col-lg-6" style="background: url(<?php// the_field('banner_full'); ?>) left center no-repeat; background-size:cover !important; ">
 
-			<div class="owl-carousel-thumbs owl-carousel" data-slider-id="1">
-				<div class="item" data-hash="thumb1" itemprop="image" ><?php the_post_thumbnail('full-interna'); ?></div> 
-				<?php 
-				$images = get_field('galeria');
+				<div class="owl-carousel-thumbs owl-carousel" data-slider-id="1">
+					<div class="item" data-hash="thumb1" itemprop="image" ><?php the_post_thumbnail('full-interna'); ?></div> 
+					<?php 
+					$images = get_field('galeria');
 					$size = 'full-interna'; // (thumbnail, medium, large, full or custom size)
 					if( $images ): ?>
 					<?php $i=2; foreach( $images as $image ): ?>
@@ -76,23 +76,22 @@
 						<li itemprop="itemListElement" itemscope
 						itemtype="http://schema.org/ListItem"><a itemprop="item" class="breadcrumb-item" href="<?php bloginfo('home'); ?>"><span itemprop="name">Home</span></a></li>
 						<li itemprop="itemListElement" itemscope
-						itemtype="http://schema.org/ListItem"><a itemprop="item"  class="breadcrumb-item" href="<?php bloginfo('home'); ?>/regions"><span itemprop="name">Regions</span></a></li>
-							
+						itemtype="http://schema.org/ListItem"><a itemprop="item"  class="breadcrumb-item" href="<?php bloginfo('home'); ?>/regions"><span itemprop="name">Regions</span></a>
+					</li>
+
 						<?php   // Get terms for post
 						$terms = get_the_terms( $post->ID , 'regions' );
 							 // Loop over each item since it's an array
 						if ( $terms != null ){ 
 							foreach( $terms as $term ) {
-  								$term_link = get_term_link( $term ); 
+								$term_link = get_term_link( $term ); 
 
-								 echo '<li itemprop="itemListElement" itemscope
-						itemtype="http://schema.org/ListItem"><a itemprop="item"  class="breadcrumb-item active" href="' . esc_url( $term_link ) . '"><span itemprop="name">'. $term->name . '</span></a></li>';
+								echo '<li itemprop="itemListElement" itemscope
+								itemtype="http://schema.org/ListItem"><a itemprop="item"  class="breadcrumb-item active" href="' . esc_url( $term_link ) . '"><span itemprop="name">'. $term->name . '</span></a></li>';
 								unset($term);  
 							} } ?>
-					
-				
-				</li>
-			</ul>
+
+					</ul>
 				</div>
 				<div class="col-12 col-sm-6">
 					<div class="pull-right"><?php echo do_shortcode('[addtoany]');?></div>
@@ -141,7 +140,7 @@
 								<?php the_field('why_lt'); ?>
 							</div>						
 							<div class="col-12 col-sm-6">
-								<?php the_field('why_rt'); ?>
+								<div class="video"><?php the_field('why_rt'); ?></div>
 							</div>		
 						</div>
 					</div>
@@ -167,8 +166,8 @@
 
 												<p itemprop="description">"<?php echo excerpt(25);  ?>"</p>
 												<a href="<?php the_permalink(); ?>"><h4 class="title-rating" itemprop="name">- <?php the_title(); ?></h4></a>
-												 <meta itemprop="author" content="<?php the_title(); ?>">
-							
+												<meta itemprop="author" content="<?php the_title(); ?>">
+
 												<?php if( get_field('review') == '1' ){ ?>
 												<ul class="rating">
 													<li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -304,4 +303,38 @@
 </div>
 
 <?php endwhile; ?>
+
+<script type="text/javascript">
+
+/*********APARECER e FECHAR RESUMO***************/
+
+$( document ).ready(function() { 
+
+$(function() {
+
+
+
+$(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+    var objectSelect = $(".single-padrao");
+    var objectPosition = objectSelect.offset().top;
+    if (scroll > objectPosition) {
+        $("#resume").addClass("show");
+    } else {
+        $("#resume").removeClass("show");
+    }
+});
+
+
+
+
+	$("#icon-close").on("click",function(){
+	  $("#resume").hide(); 
+	
+	}); 
+}); 
+
+}); 
+	
+</script>
 <?php get_footer (); ?>  	 

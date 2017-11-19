@@ -1,6 +1,6 @@
 <?php get_header(); /* Template Name: Home*/ ?>
 <section class="slider">
-   <?php echo do_shortcode('[rev_slider alias="home"]');?>     
+   <?php echo do_shortcode('[rev_slider alias="video"]');?>     
 </section>
 
 
@@ -17,8 +17,8 @@
       <?php // loop through the rows of data
       while ( have_rows('items') ) : the_row();
 
-       if( get_row_layout() == 'template_packages' ): ?>
-       <section class="container-full"  style="background:<?php the_sub_field('background'); ?>">
+        if( get_row_layout() == 'template_packages' ): ?>
+        <section class="container-full"  style="background:<?php the_sub_field('background'); ?>">
          <div class="container">
             <div class="full-cat-front">
                <div class="row aling-items-center header-cat">
@@ -44,7 +44,7 @@
 
 
 <?php elseif( get_row_layout() == 'template_regions' ):  ?>  
- <section class="container-full" style="background:<?php the_sub_field('background'); ?>">
+  <section class="container-full" style="background:<?php the_sub_field('background'); ?>">
    <div class="container">
 
       <div class="full-reg-front">
@@ -67,31 +67,39 @@
 
          <div class="row">
 
-            <?php foreach( $terms as $term ): ?>
+            <?php foreach( $terms as $term ):
+            $term_link = get_term_link( $term );
+            ?>
 
-               <div class="col-12 col-md-6 col-lg-3">
-                  <div class="col-in" style="background-image: url('<?php  echo $custom_field = get_field('imagem_categoria', $term ); ?>');">
+            <div class="col-12 col-md-6 col-lg-3">
+               <a href="<?php echo $term_link; ?>">
+                  <div class="col-in effect-hover" style="background-image: url('<?php  echo $custom_field = get_field('imagem_categoria', $term ); ?>');">
+                     <div class="in">
 
-                     <span class="subtitle-cat"><?php the_field('subtitle', $term ); ?></span>
 
-                     <h2 class="title-cat-pag"><?php echo  $term->name; ?></h2>
+                        <span class="subtitle-cat"><?php the_field('subtitle', $term ); ?></span>
 
+                        <h2 class="title-cat-pag"><?php echo  $term->name; ?></h2>
+
+                     </div>
                   </div>
-               </div>
+               </a>
+            </div>
 
-            <?php endforeach; ?>
+         <?php endforeach; ?>
 
-         </div>
+      </div>
 
-      <?php endif; ?>
+   <?php endif; ?>
 
 
-   </div> 
+</div> 
 </div>
 </section>
 
 <?php elseif( get_row_layout() == 'template_banner' ):  ?>  
- <section class="container-full template-banner">
+  <section class="container-full template-banner">
+<svg class="uvc-tilt-left-seperator top" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#f5f5f5" width="100%" height="70" viewBox="0 0 4 0.266661" preserveAspectRatio="none" style="height: 70px;"><polygon class="fil0" points="4,0 4,0.266661 -0,0.266661 "></polygon></svg>
    <div class="container">
       <div class="row align-items-center">
          <div class="col-12 col-sm-6">
@@ -112,9 +120,9 @@
                   <li>
                      <div class="row align-items-center">
                         <div class="col-12 col-sm-2">
-                         <figure><img src="<?php the_sub_field('icon'); ?>"></figure> 
-                      </div> 
-                      <div class="col-12 col-sm-10">
+                          <figure><img src="<?php the_sub_field('icon'); ?>"></figure> 
+                       </div> 
+                       <div class="col-12 col-sm-10">
 
                         <span><?php the_sub_field('text'); ?></span>
                      </div>
@@ -128,6 +136,8 @@
 
    </div>
 </div>
+
+<svg class="uvc-tilt-left-seperator bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#f5f5f5" width="100%" height="70" viewBox="0 0 4 0.266661" preserveAspectRatio="none" style="height: 70px;"><polygon class="fil0" points="4,0 4,0.266661 -0,0.266661 "></polygon></svg>
 </section>
 
 
@@ -135,7 +145,7 @@
 
 
 <?php elseif( get_row_layout() == 'template_offers' ):  ?>  
- <section class="container-full" style="background:<?php the_sub_field('background'); ?>">
+  <section class="container-full" style="background:<?php the_sub_field('background'); ?>">
    <div class="container">
 
       <div class="full-reg-front">
@@ -152,39 +162,43 @@
 
          <?php if( have_rows('blocks') ): ?>
 
-           <div class="row">
-              <?php  while ( have_rows('blocks') ) : the_row(); ?>
+          <div class="row">
+             <?php  while ( have_rows('blocks') ) : the_row(); ?>
 
-                 <div class="col-12 col-md-6 col-lg-3">
+                <div class="col-12 col-md-6 col-lg-3">
+                 <a href="<?php the_sub_field('link');?>">
                   <?php 
                   $attachment_id = get_sub_field('imagem');
-                     $size = "padrao-md"; // (thumbnail, medium, large, full or custom size)
-                     $image = wp_get_attachment_image_src( $attachment_id, $size );
-                     ?>
-                     <div class="col-in" style="background-image: url('<?php echo $image[0]; ?>');">
+                        $size = "padrao-md"; // (thumbnail, medium, large, full or custom size)
+                        $image = wp_get_attachment_image_src( $attachment_id, $size );
+                        ?>
+                        <div class="col-in effect-hover" style="background-image: url('<?php echo $image[0]; ?>');">
+                          <div class="in">
+                           <span class="subtitle-cat"><?php the_sub_field('subtitle'); ?></span>
 
-                        <span class="subtitle-cat"><?php the_sub_field('subtitle'); ?></span>
+                           <h4 class="title-cat-pag"><?php the_sub_field('title'); ?></h4>
 
-                        <h4 class="title-cat-pag"><?php the_sub_field('title'); ?></h4>
-
+                        </div>
                      </div>
-                  </div> 
+                  </a>
+               </div> 
 
-               <?php endwhile; ?>
-            </div> 
-         <?php endif; ?>
+            <?php endwhile; ?>
+         </div> 
+      <?php endif; ?>
 
-      </div>
-
-
+   </div>
 
 
-   </div> 
+
+
+</div> 
 </div>
 </section>
 
 <?php elseif( get_row_layout() == 'template_reviews' ):  ?>  
- <section class="container-full ct-reviews-home" >
+  <section class="container-full ct-reviews-home" >
+   <svg class="uvc-tilt-left-seperator top" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#ffffff" width="100%" height="70" viewBox="0 0 4 0.266661" preserveAspectRatio="none" style="height: 70px;"><polygon class="fil0" points="4,0 4,0.266661 -0,0.266661 "></polygon></svg>
    <div class="container">
 
       <h3 class="title-white text-center">Reviews</h3>
@@ -195,14 +209,14 @@
       <div class="row owl-carousel" id="owl-review">
          <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
             <div class="item">
-                  <figure class="icon-person"><img src="<?php bloginfo('template_url'); ?>/img/icon-person.png"></figure>
+               <figure class="icon-person"><img src="<?php bloginfo('template_url'); ?>/img/icon-person.png"></figure>
                <div class="col-review-home-in">
                   <?php setup_postdata($post); ?>
 
 
                   <p>"<?php echo excerpt(25);  ?>"</p>
                   <a href="<?php the_permalink(); ?>"><h4 class="title-rating">- <?php the_title(); ?></h4></a>
-                  <?php if( get_sub_field('review') == '1' ){ ?>
+                  <?php if( get_field('review') == '1' ){ ?>
                   <ul class="rating">
                      <li><i class="fa fa-star" aria-hidden="true"></i></li>
                      <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
@@ -211,7 +225,7 @@
                      <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 
                   </ul>
-                  <?php } else if( get_sub_field('review') == '2' ) { ?> 
+                  <?php } else if( get_field('review') == '2' ) { ?> 
                   <ul class="rating">
                      <li><i class="fa fa-star" aria-hidden="true"></i></li>
                      <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -219,7 +233,7 @@
                      <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                      <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                   </ul>
-                  <?php } else if( get_sub_field('review') == '3' ){  ?>
+                  <?php } else if( get_field('review') == '3' ){  ?>
                   <ul class="rating">
                      <li><i class="fa fa-star" aria-hidden="true"></i></li>
                      <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -227,7 +241,7 @@
                      <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                      <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                   </ul>
-                  <?php } else if( get_sub_field('review') == '4' ){  ?>
+                  <?php } else if( get_field('review') == '4' ){  ?>
                   <ul class="rating">
                      <li><i class="fa fa-star" aria-hidden="true"></i></li>
                      <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -235,7 +249,7 @@
                      <li><i class="fa fa-star" aria-hidden="true"></i></li>
                      <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                   </ul>
-                  <?php } else if( get_sub_field('review') == '5' ){  ?> 
+                  <?php } else if( get_field('review') == '5' ){  ?> 
                   <ul class="rating">
                      <li><i class="fa fa-star" aria-hidden="true"></i></li>
                      <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -266,16 +280,16 @@
       </div>
    <?php endif; ?>   
    <div class="text-center mg-tp-35">
-       <a href="#" class="btn btn-outline-secondary">SEE ALL</a>   
+     <a href="<?php bloginfo('home'); ?>/reviews" class="btn btn-outline-secondary">SEE ALL</a>   
 
-   </div>
+  </div>
 </div>
 </section>
 
 
 
 <?php elseif( get_row_layout() == 'template_text' ):  ?>  
- <section class="container-full ct-text" >
+  <section class="container-full ct-text" >
    <div class="container">
       <h3 class="noupper title-main text-center mg-bt-25"><?php the_sub_field('title'); ?></h3>
       <p class="p-17 text-center"><?php the_sub_field('desc'); ?></p>
