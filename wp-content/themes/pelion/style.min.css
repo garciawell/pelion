@@ -6774,7 +6774,7 @@ input[name="_sf_submit"] {
 /*******REG*****************/
 .bloco-cat .col-in {
   text-align: center;
-  padding: 60px 15px;
+  padding: 90px 15px;
   height: 100%; }
 
 .title-cat-pag {
@@ -6973,6 +6973,12 @@ input[name="_sf_submit"] {
 
 .bloco-inf-cat .mg-tp {
   margin-top: 60px; }
+
+.mg-15 {
+  margin: 15px 0; }
+
+.item-tax {
+  margin: 50px 0; }
 
 .galeria-cat {
   margin-top: 80px; }
