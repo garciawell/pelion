@@ -171,86 +171,85 @@ $term_id = $queried_object->term_id;
 			<div class="reviews item-tax">
 				<h4>Customers Review</h4>
 				<div class="row mg-tp-25">
-				<?php
-				$the_press = new WP_Query(array('post_type' => 'reviews','posts_per_page' => 3 ));
+					<?php
+					$the_press = new WP_Query(array('post_type' => 'reviews','posts_per_page' => 3 ));
 		            // The Loop
-				while ($the_press->have_posts()) : $the_press->the_post(); ?>
-				<div class="col-12 col-sm-12">
-					<div itemprop="review" itemscope itemtype="http://schema.org/Review" class="col-review-in">
+					while ($the_press->have_posts()) : $the_press->the_post(); ?>
+					<div class="col-12 col-sm-12">
+						<div itemprop="review" itemscope itemtype="http://schema.org/Review" class="col-review-in">
 
 
-						<p itemprop="description">"<?php echo excerpt(25);  ?>"</p>
-						<a href="<?php the_permalink(); ?>"><h5 class="title-rating" itemprop="name">- <?php the_title(); ?></h5></a>
-						<meta itemprop="author" content="<?php the_title(); ?>">
+							<p itemprop="description">"<?php echo excerpt(25);  ?>"</p>
+							<a href="<?php the_permalink(); ?>"><h5 class="title-rating" itemprop="name">- <?php the_title(); ?></h5></a>
+							<meta itemprop="author" content="<?php the_title(); ?>">
 
-						<?php if( get_field('review') == '1' ){ ?>
-						<ul class="rating">
-							<li><i class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+							<?php if( get_field('review') == '1' ){ ?>
+							<ul class="rating">
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 
-						</ul>
-						<?php } else if( get_field('review') == '2' ) { ?> 
-						<ul class="rating">
-							<li><i class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-						</ul>
-						<?php } else if( get_field('review') == '3' ){  ?>
-						<ul class="rating">
-							<li><i class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-						</ul>
-						<?php } else if( get_field('review') == '4' ){  ?>
-						<ul class="rating">
-							<li><i class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-						</ul>
-						<?php } else if( get_field('review') == '5' ){  ?> 
-						<ul class="rating">
-							<li><i class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star" aria-hidden="true"></i></li>
-						</ul>
+							</ul>
+							<?php } else if( get_field('review') == '2' ) { ?> 
+							<ul class="rating">
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+							</ul>
+							<?php } else if( get_field('review') == '3' ){  ?>
+							<ul class="rating">
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+							</ul>
+							<?php } else if( get_field('review') == '4' ){  ?>
+							<ul class="rating">
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+							</ul>
+							<?php } else if( get_field('review') == '5' ){  ?> 
+							<ul class="rating">
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							</ul>
 
-						<?php } else { ?>
-						<ul class="rating">
-							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+							<?php } else { ?>
+							<ul class="rating">
+								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 
-						</ul>
+							</ul>
 
-						<?php	}?>	
+							<?php	}?>	
 
 
 
+						</div>
 					</div>
-				</div>
-			<?php endwhile; ?>
+				<?php endwhile; ?>
 
-			<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-		</div>
+				<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+			</div>
 		</div>
 	</div>
 
 
 
-</div>
 </div>
 </div>
 </div>
