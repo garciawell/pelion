@@ -22,6 +22,17 @@ function theme_scripts() {
 
 
 
+
+//Exclude child Terms
+function is_child($term,$taxonomy) {
+    $check = get_ancestors($term->term_id,$taxonomy);
+    if (!empty($check)) { return true;} else { return false;}
+}
+
+
+
+
+
 ////////////////SHORTCODE
 function caption_shortcode( $atts, $content = null ) {
 

@@ -7209,6 +7209,8 @@ input[name="_sf_submit"] {
 .breadcrumb-item.active {
   color: #326698;
   font-weight: 500; }
+  .breadcrumb-item.active:hover {
+    text-decoration: none; }
 
 .effect-hover {
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;

@@ -1834,7 +1834,10 @@ input[name="_sf_submit"]{
 	}
 }
 
-.breadcrumb-item.active{ color:#326698; font-weight:500; }
+.breadcrumb-item.active{ color:#326698; font-weight:500; 
+	&:hover{
+		text-decoration:none;
+	}}
 
 
 .effect-hover{

@@ -2,10 +2,9 @@
 Contributors: pojo.me, KingYes, ariel.k, jzaltzberg, mati1000, pojosh, yehudah
 Tags: page builder, editor, landing page, drag-and-drop, elementor, visual editor, wysiwyg, design, maintenance mode, coming soon, under construction, website builder, landing page builder, front-end builder
 Requires at least: 4.5
-Tested up to: 4.8
+Tested up to: 4.9
 Requires PHP: 5.4
-Stable tag: 1.7.12
-Beta tag: 1.8.0-RC1
+Stable tag: 1.8.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -23,7 +22,7 @@ It's time for **[Elementor Page Builder](https://elementor.com/?utm_source=wp-re
 Instant reaction was a key feature we wanted to achieve. And we did. Instant drag & drop page builder, instant live edit, instant page load. The speed of Elementor is not matched by any other page builder, free or paid. This makes the interface fun and easy to work with, as well as reduces the time it takes to design.
 
 = Live design. Truly live. =
-Never again work on the backend and guess what the frontend will look like. With Elementor page builder, you edit the page and simultaneously see exactly how it looks like. Elementor features live editing that is truly live, with no need to press update or go to preview mode.
+Never again work on the backend and guess what the frontend will look like. With Elementor page builder, you edit the page and simultaneously see exactly how it looks like. Elementor features live design & inline editing, so the whole process of writing and designing is done directly on the page, with no need to press update or go to preview mode.
 
 = Surprises you won’t see anywhere else. =
 With Elementor's unique features, you can create websites that have that certain 'designer touch'. Among our page builder features are: Box Shadows, Background Overlays, Hover Effects, Headline Effects, Animations, Shape Dividers, Gradient Backgrounds and much more.
@@ -185,9 +184,61 @@ No. Elementor supports WordPress 4.5 or greater, and is compatible with PHP 5.4 
 
 == Changelog ==
 
-= 1.8.0 RC1 - Available For Beta Testing =
-* [Read more about v1.8](https://github.com/pojome/elementor/issues/2666/)
-* [Sign Up Now For Our Elite Group Of Early Access Testers](https://my.elementor.com/beta/)
+= 1.8.6 - 26.11.2017 =
+* Fix! - Changed minimum editing capability to `edit_posts` ([#2791](https://github.com/pojome/elementor/issues/2791))
+* Fix! - Disable `white-space: pre-wrap` in advanced editing mode ([#2776](https://github.com/pojome/elementor/issues/2776))
+* Fix! - Check publish capabilities in the page settings
+* Fix! - Fixed line break in webkit in cases when there are no active nodes.
+* Fix! - Import/export template in some server configurations.
+
+= 1.8.5 - 19.11.2017 =
+* Fix! - Compatibility with the WordPress 4.9 native widgets ([#2763](https://github.com/pojome/elementor/issues/2763))
+* Fix! - Removed related videos from background video in some cases ([#2372](https://github.com/pojome/elementor/issues/2372))
+* Fix! - Element inside similar element conflict ([#2760](https://github.com/pojome/elementor/issues/2760))
+* Fix! - Responsive alignment in Icon List widget
+
+= 1.8.4 - 14.11.2017 =
+* Fix! - Accordion open/close icon ([#2740](https://github.com/pojome/elementor/issues/2740))
+* Fix! - Color control does not allow more than 7 characters ([#2737](https://github.com/pojome/elementor/issues/2737))
+* Fix! - Button wrap on Safari browser
+* Fix! - Print duplicate styles when Print Method set to Internal Embedding
+
+= 1.8.3 - 11.11.2017 =
+* Fix! - Added nonce to export template action ([Topic](https://wordpress.org/support/topic/importation-error-in-library-elementor-8-2/))
+* Fix! - Native WordPress widgets stopped working ([#2732](https://github.com/pojome/elementor/issues/2732))
+
+= 1.8.2 - 09.11.2017 =
+* Fix! - Added nonce to export template action ([#2722](https://github.com/pojome/elementor/issues/2722))
+* Fix! - Changes nonce key for third party plugins
+
+= 1.8.1 - 09.11.2017 =
+* Fix! - Bug loading Editor templates in some server configurations ([#2712](https://github.com/pojome/elementor/issues/2712))
+* Fix! - Added parameter to overwrite control recursively ([#2702](https://github.com/pojome/elementor/issues/2702))
+* Fix! - Patched nonce validation for all library actions
+* Fix! - Glitch with Tabs widget on touch screen
+* Fix! - Glitch with Button wrap on small screens
+
+= 1.8.0 - 07.11.2017 =
+* New! - Inline Editing added to all text, textarea & TinyMCE controls ([#437](https://github.com/pojome/elementor/issues/437))
+* New! - Added auto complete for code editor (Custom CSS & HTML widget) ([#2416](https://github.com/pojome/elementor/issues/2416))
+* New! - Added more icons to Social Icons widget: Telegram & OK ([#2670](https://github.com/pojome/elementor/issues/2670))
+* New! - Set focus to search bar when you click on widget button in the panel ([#2333](https://github.com/pojome/elementor/issues/2333))
+* Tweak! - Added `soft wrap` for code editor
+* Tweak! - Better accessibility for Tabs, Toggle & Accordion widgets
+* Tweak! - Added option to disable the widget on-change rendering
+* Tweak! - Improved error dialogs for better handling cases when the editor fails to load.
+* Tweak! - Rename Global Colors & Fonts to Default Colors and Default Fonts for better clarify
+* Tweak! - Update Google Fonts list with more then 10 new fonts
+* Tweak! - Eicons v2.5.0 updated
+* Tweak! - Added an "Elementor" post state for post table
+* Tweak! - Added responsive control for Icon Box (Space & Size)
+* Tweak! - Added compatibility and support for WP Color in WordPress 4.9 ([#2550](https://github.com/pojome/elementor/issues/2550))
+* Tweak! - Better nonce handling/renewing to avoid timeouts
+* Tweak! - Added compatibility for the future release of Elementor
+* Fix! - Icon List widget alignment with RTL
+* Fix! - Render element on unknown control changed
+* Fix! - Conflict `elementor-clickable` element with editor lightbox
+* Fix! - Handle download media/gallery inside repeater control for export/import
 
 = 1.7.12 - 24.10.2017 =
 * Fix! - Stay in the same tab settings after saving

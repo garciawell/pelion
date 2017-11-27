@@ -18,11 +18,10 @@ while ( have_posts() ) : the_post(); ?>
 		<div class="container">
 			<div class="bloco-cat">
 				<div class="row">
-					<?php   // Get terms for post
-					$terms = get_terms( 'regions' );
-				 // Loop over each item since it's an array
-					if ( $terms != null ){ 
-						foreach( $terms as $term ) { ?>
+			<?php 
+			$taxonomy = get_terms('regions');
+			foreach ($taxonomy as $term) {
+				if (!is_child($term,'regions')) { ?>
 						<div class="col">
 							<a href="<?php echo  $term_link = get_term_link( $term ); ?>">
 								<div class="col-in effect-hover" style="background-image: url('<?php  echo $custom_field = get_field('imagem_categoria', $term ); ?>');">
@@ -40,7 +39,6 @@ while ( have_posts() ) : the_post(); ?>
 					} ?>
 				</div>
 			</div>
-
 
 			<div class="bloco-inf-cat">
 				<h3 class="title-grey text-center"><?php the_field('title_inf_cat'); ?></h3>

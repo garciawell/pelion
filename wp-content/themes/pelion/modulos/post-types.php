@@ -6,11 +6,11 @@ add_action( 'init', 'register_packages' );
       $labels = array(
         'name' => _x('Packages', 'post type general name'),
         'singular_name' => _x('Packages', 'post type singular name'),
-        'add_new' => _x('Adicionar Novo', 'Packages'),
-        'add_new_item' => __('Adicionar Novo Packages'),
+        'add_new' => _x('Add New', 'Packages'),
+        'add_new_item' => __('Add New Packages'),
         'edit_item' => __('Edit Packages'),
         'new_item' => __('New Packages'),
-        'all_items' => __('Todos Packages'),
+        'all_items' => __('All Packages'),
         'view_item' => __('Ver Packages'),
         'search_items' => __('Search Packages'),
         'not_found' =>  __('No Packages found'),
@@ -22,15 +22,16 @@ add_action( 'init', 'register_packages' );
       $args = array(
         'labels' => $labels,
         'public' => true,
-         'menu_icon'  => 'dashicons-tickets-alt',
+         'menu_icon'  => 'dashicons-palmtree',
         'publicly_queryable' => true,
         'show_ui' => true,
-        //'has_archive' => true,
+        'has_archive' => false,
         'show_in_menu' => true,
         'query_var' => true,
-        "rewrite" => [
+       "rewrite" => [
             "with_front" => true
-        ],
+        ], 
+       // "cptp_permalink_structure" => "/region/%regions%/%postname%/",
        // "cptp_permalink_structure" => "%post_id%",
         'capability_type' => 'post',
         'hierarchical' => false,
@@ -61,7 +62,7 @@ add_action( 'init', 'register_packages' );
     'menu_name' => __( 'Regions' ),
   );    
 
-  register_taxonomy('regions',array('packages','activities'), array( 
+  register_taxonomy('regions',array('packages'), array(  
     'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
@@ -293,11 +294,11 @@ add_action( 'init', 'register_activities' );
       $labels = array(
         'name' => _x('Activities', 'post type general name'),
         'singular_name' => _x('Activities', 'post type singular name'),
-        'add_new' => _x('Adicionar Novo', 'Activities'),
-        'add_new_item' => __('Adicionar Novo Activities'),
+        'add_new' => _x('Add New', 'Activities'),
+        'add_new_item' => __('Add New Activities'),
         'edit_item' => __('Edit Activities'),
         'new_item' => __('New Activities'),
-        'all_items' => __('Todos Activities'),
+        'all_items' => __('All Activities'),
         'view_item' => __('Ver Activities'),
         'search_items' => __('Search Activities'),
         'not_found' =>  __('No Activities found'),
@@ -309,7 +310,7 @@ add_action( 'init', 'register_activities' );
 	  $args = array(
         'labels' => $labels,
         'public' => true,
-         'menu_icon'  => 'dashicons-location-alt',
+         'menu_icon'  => 'dashicons-camera',
         'publicly_queryable' => true,
         'show_ui' => true,
         'show_in_menu' => true,
@@ -357,6 +358,47 @@ add_action( 'init', 'register_activities' );
 
 
 
+//Accomodation
+
+add_action( 'init', 'register_accomodations' );
+    function register_accomodations() {
+
+      $labels = array(
+        'name' => _x('Accomodations', 'post type general name'),
+        'singular_name' => _x('Accomodation', 'post type singular name'),
+        'add_new' => _x('Add New', 'Accomodations'),
+        'add_new_item' => __('Add New Accomodations'),
+        'edit_item' => __('Edit Accomodations'),
+        'new_item' => __('New Accomodations'),
+        'all_items' => __('All Accomodatios'),
+        'view_item' => __('See Accomodations'),
+        'search_items' => __('Search Accomodations'),
+        'not_found' =>  __('No Accomodations found'),
+        'not_found_in_trash' => __('No Accomodations found in Trash'),
+        'parent_item_colon' => '',
+        'menu_name' => __('Accomodations') 
+ 
+      );      
+      $args = array(
+        'labels' => $labels,
+        'public' => true,
+         'menu_icon'  => 'dashicons-admin-home',
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        //'has_archive' => true,
+        'show_in_menu' => true,
+        'query_var' => true, 
+       'rewrite' => array('slug' => 'accomodation', 'with_front' => true ),
+        'capability_type' => 'post',
+        'hierarchical' => true,
+        'menu_position' => null,
+        'supports' => array( 'title', 'editor', 'excerpt','revisions')
+      );
+      register_post_type('accomodations',$args);
+      
+}
+
+
 //Reviews
 
 add_action( 'init', 'register_reviews' );
@@ -365,8 +407,8 @@ add_action( 'init', 'register_reviews' );
       $labels = array(
         'name' => _x('Reviews', 'post type general name'),
         'singular_name' => _x('Reviews', 'post type singular name'),
-        'add_new' => _x('Adicionar Novo', 'Reviews'),
-        'add_new_item' => __('Adicionar Novo Reviews'),
+        'add_new' => _x('Add New', 'Reviews'),
+        'add_new_item' => __('Add New Reviews'),
         'edit_item' => __('Edit Reviews'),
         'new_item' => __('New Reviews'),
         'all_items' => __('All Reviews'),
