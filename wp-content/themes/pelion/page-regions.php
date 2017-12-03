@@ -4,9 +4,9 @@
 	<div class="container">
 		<h1 class="title-white"><?php the_title(); ?></h1>
 		<div class="desc-top-white"><?php the_content(); ?></div>
-		<i><img src="<?php bloginfo('template_url'); ?>/img/icon-down.png"></i>		
+		<a href="#content-main"><img src="<?php bloginfo('template_url'); ?>/img/icon-down.png"></a>		
 	</div>
-</div>
+</div> 
 
 
 

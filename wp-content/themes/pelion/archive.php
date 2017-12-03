@@ -17,7 +17,7 @@ $term_id = $queried_object->term_id;
 	<div class="container">
 		<h1 class="title-cat text-center"><?php single_cat_title();  ?></h1>
 		<span class="subtitle-cat text-center"><?php echo category_description(); ?> </span>
-				<i><img src="<?php bloginfo('template_url'); ?>/img/icon-down.png"></i>
+		<a href="#content-main"><img src="<?php bloginfo('template_url'); ?>/img/icon-down.png"></a>		
 	</div>
 </div>
 <div class="container-full">

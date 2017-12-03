@@ -6163,7 +6163,7 @@ dl, ol, ul {
 .banner-full {
   height: 370px;
   margin-bottom: 60px; }
-  .banner-full i {
+  .banner-full i, .banner-full a {
     margin-top: 35px;
     display: inline-block; }
 
@@ -6811,7 +6811,7 @@ input[name="_sf_submit"] {
   font-size: 60px; }
 
 .banner-full.regions {
-  margin-bottom: 80px; }
+  margin-bottom: 0px; }
 
 .bloco-tags li {
   text-transform: uppercase;

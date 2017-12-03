@@ -62,13 +62,13 @@ add_action( 'init', 'register_packages' );
     'menu_name' => __( 'Regions' ),
   );    
 
-  register_taxonomy('regions',array('packages'), array(  
+  register_taxonomy('regions',array('packages','accommodations','activities'), array(  
     'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
     'query_var' => true,
     'rewrite' => true,
-    'rewrite' => array( 'slug' => 'regions', 'with_front' => false ),
+    'rewrite' => array( 'slug' => 'region', 'with_front' => false ),
   ));  
 
 
@@ -360,23 +360,23 @@ add_action( 'init', 'register_activities' );
 
 //Accomodation
 
-add_action( 'init', 'register_accomodations' );
-    function register_accomodations() {
+add_action( 'init', 'register_accommodations' );
+    function register_accommodations() {
 
       $labels = array(
-        'name' => _x('Accomodations', 'post type general name'),
-        'singular_name' => _x('Accomodation', 'post type singular name'),
-        'add_new' => _x('Add New', 'Accomodations'),
-        'add_new_item' => __('Add New Accomodations'),
-        'edit_item' => __('Edit Accomodations'),
-        'new_item' => __('New Accomodations'),
+        'name' => _x('', 'post type general name'),
+        'singular_name' => _x('Accommodation', 'post type singular name'),
+        'add_new' => _x('Add New', 'Accommodations'),
+        'add_new_item' => __('Add New Accommodations'),
+        'edit_item' => __('Edit Accommodations'),
+        'new_item' => __('New Accommodations'),
         'all_items' => __('All Accomodatios'),
-        'view_item' => __('See Accomodations'),
-        'search_items' => __('Search Accomodations'),
-        'not_found' =>  __('No Accomodations found'),
-        'not_found_in_trash' => __('No Accomodations found in Trash'),
+        'view_item' => __('See Accommodations'),
+        'search_items' => __('Search Accommodations'),
+        'not_found' =>  __('No Accommodations found'),
+        'not_found_in_trash' => __('No Accommodations found in Trash'),
         'parent_item_colon' => '',
-        'menu_name' => __('Accomodations') 
+        'menu_name' => __('Accommodations') 
  
       );      
       $args = array(
@@ -394,7 +394,7 @@ add_action( 'init', 'register_accomodations' );
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'excerpt','revisions')
       );
-      register_post_type('accomodations',$args);
+      register_post_type('accommodations',$args);
       
 }
 
