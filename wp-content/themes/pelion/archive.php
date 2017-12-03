@@ -20,7 +20,7 @@ $term_id = $queried_object->term_id;
 		<a href="#content-main"><img src="<?php bloginfo('template_url'); ?>/img/icon-down.png"></a>		
 	</div>
 </div>
-<div class="container-full">
+
 	<div id="content-main">
 		<div class="container">
 			<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
@@ -32,9 +32,9 @@ $term_id = $queried_object->term_id;
 			</ul>
 
 
-			<div class="row order-resp">
+			<div class="row-pad-25 row order-resp">
 
-				<div class="col-12 col-lg-9  col-sm-12 content-filter">
+				<div class="pad-25 col-12 col-lg-9  col-sm-12 content-filter">
 					
 					<div id="main">
 
@@ -57,13 +57,13 @@ $term_id = $queried_object->term_id;
 				<?php //include('bloco-build.php'); ?>
 
 			</div>
-			<div class="col-12 col-lg-3  col-sm-12 item-filter">
+			<div class="pad-25 col-12 col-lg-3  col-sm-12 item-filter">
 				<?php echo do_shortcode('[searchandfilter id="63"]'); ?>
 			</div>
 		</div>
 	</div>
 </div>
-</div>
+
 
 
 <?php get_footer (); ?>

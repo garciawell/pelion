@@ -101,7 +101,7 @@ function create_tag_taxonomies()
   ); 
 
   register_taxonomy('seasons','packages',array(
-    'hierarchical' => false,
+    'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
     'update_count_callback' => '_update_post_term_count',
@@ -139,7 +139,7 @@ function create_tag_taxonomies2()
   ); 
 
   register_taxonomy('theme','packages',array(
-    'hierarchical' => false,
+    'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
     'update_count_callback' => '_update_post_term_count',
@@ -175,7 +175,7 @@ function create_tag_taxonomies3()
   ); 
 
   register_taxonomy('travel-style','packages',array(
-    'hierarchical' => false,
+    'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
     'update_count_callback' => '_update_post_term_count',
@@ -214,7 +214,7 @@ function create_tag_taxonomies4()
   ); 
 
   register_taxonomy('suitable','packages',array(
-    'hierarchical' => false,
+    'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
     'update_count_callback' => '_update_post_term_count',
@@ -250,7 +250,7 @@ function create_tag_taxonomies5()
   ); 
 
   register_taxonomy('difficulty','packages',array(
-    'hierarchical' => false,
+    'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
     'update_count_callback' => '_update_post_term_count',

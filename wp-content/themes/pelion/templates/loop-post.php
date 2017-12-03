@@ -29,16 +29,17 @@
 		<div class="top">
 			<div class="cat-travel">
 
-				<?php   // Get terms for post
-				$terms = get_the_terms( $post->ID , 'options' );
-			 // Loop over each item since it's an array
-				if ( $terms != null ){ 
-					foreach( $terms as $term ) {
-						echo '<p>';
-						print $term->name ;
-						unset($term); 
-						echo' </p>';
-					} } ?>
+
+<?php
+$terms = get_the_terms( $post->ID, 'regions' );
+echo $terms[1]->name;
+
+
+		?>
+
+
+
+
 
 				</div>
 				<h2 class="title-grid">
