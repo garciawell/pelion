@@ -2,11 +2,13 @@
 
 	<div class="bloco-padrao">
 		<div class="bloco-imagem">
+			<?php if( get_field('text_label') ): ?>
 			<div class="label"> 
 				<span style="background:<?php the_field('cor_label'); ?>">
 					<?php the_field('text_label'); ?>
 				</span>
 			</div>
+			<?php endif; ?>
 			<div class="owl-carousel owl-slider-post">
 				<div class="item">
 					<?php the_post_thumbnail( 'padrao', array( 'alt' => get_the_title() ) );  ?>			
@@ -122,17 +124,17 @@
 			</div>
 			<div class="bottom">
 				<div class="row  no-gutters align-items-center">
-					<div class="col-md-7">
+					<div class="col-12 col-sm-7">
 						<div class="row no-gutters  align-items-center"> 
-							<div class="col-md-7">
+							<div class="col-12  col-sm-7">
 								<span class="price"><span class="moeda">€</span> <?php the_field('price');?></span>
 							</div>					
-							<div class="col-md-5">
+							<div class="col-12 col-sm-5">
 								<p class="text-price"><?php the_field('text_price');?></p>
 							</div>		 
 						</div>		 
 					</div>		 
-					<div class="col-md-5">
+					<div class="col-12  col-sm-5">
 						<a href="<?php the_permalink();  ?>" class="pull-right btn btn-primary btn-square">Book Now</a>
 					</div>
 				</div>

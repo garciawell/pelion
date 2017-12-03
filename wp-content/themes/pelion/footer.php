@@ -10,7 +10,7 @@
 	<div class="main-rodape">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3 col-sm-6">
+				<div class="col-6 col-md-3 col-sm-6">
 					<?php
 					if(is_active_sidebar('rodape-1')){
 						dynamic_sidebar('rodape-1');
@@ -24,14 +24,14 @@
 					}
 					?>
 				</div> 	 
-				<div class="col-6 col-md-3 col-sm-12">
+				<div class="col-6 col-md-3 col-sm-6">
 					<?php
 					if(is_active_sidebar('rodape-3')){
 						dynamic_sidebar('rodape-3');
 					}
 					?>
 				</div> 		
-				<div class="col-md-3 col-sm-12">
+				<div class="col-6 col-md-3 col-sm-6">
 					<?php
 					if(is_active_sidebar('rodape-4')){
 						dynamic_sidebar('rodape-4');

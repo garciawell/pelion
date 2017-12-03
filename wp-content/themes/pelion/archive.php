@@ -59,10 +59,6 @@ $term_id = $queried_object->term_id;
 			</div>
 			<div class="col-12 col-lg-3  col-sm-12 item-filter">
 				<?php echo do_shortcode('[searchandfilter id="63"]'); ?>
-
-
-
-
 			</div>
 		</div>
 	</div>

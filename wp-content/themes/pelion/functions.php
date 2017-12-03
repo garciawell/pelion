@@ -204,18 +204,14 @@ function default_page_menu() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*****************************************/
-
+/*****************LIMITAR BUSCA POST TYPE************************/
+function searchfilter($query) {
+ 
+    if ($query->is_search && !is_admin() ) {
+        $query->set('post_type',array('packages','accommodations','activities'));
+    }
+ 
+return $query;
+}
+ 
+add_filter('pre_get_posts','searchfilter');

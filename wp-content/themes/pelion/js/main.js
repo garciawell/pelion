@@ -158,7 +158,7 @@ $(".cpf input").on('focusout',function(){
 
 /***********SMOOTH SCROLL*******************/
 // Select all links with hashes
-$('a[href*="#"]')
+$('.ancora')
   // Remove links that don't actually link to anything
   .not('[href="#"]')
   .not('[href="#0"]')

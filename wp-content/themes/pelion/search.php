@@ -8,6 +8,13 @@
  */
 
 get_header(); ?>
+<div class="banner-full d-flex  text-center align-items-center" style="background-size:cover; background-image: url('<?php  if( get_field('banner') ): the_field('banner'); else: echo 'http://localhost/pelion/wp-content/uploads/2017/10/banner-regioes.jpg';   endif;; ?>');">
+
+   <div class="container">
+      <h1 class="title-cat text-center">Search</h1>
+
+   </div>
+</div>
 
 <section id="primary" class="content-area-mg">
 	<main id="main" class="site-main" role="main">
@@ -33,9 +40,20 @@ get_header(); ?>
 
 				// If no content, include the "No posts found" template.
 			else :
-				echo "<h2>Nenhum resultado encontrado</h2>";
+				echo "<h2 class='text-center'>No results found for: " .get_search_query() . "</h2>"; ?>
+				<form role="search" method="get" class="search-form-line" action="<?php echo home_url( '/' ); ?>">
+					<label>
+						<input type="search" class="search-field"
+						placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>"
+						value="<?php echo get_search_query() ?>" name="s"
+						title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+					</label>
+					<input type="submit" class="search-submit"
+					value="OK" />
+				</form>
 
-			endif;
+
+			<?php endif;
 			?>
 		</div>
 

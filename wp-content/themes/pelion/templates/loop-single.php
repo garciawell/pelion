@@ -14,7 +14,7 @@
     itemscope itemtype="http://schema.org/AggregateRating" class="rating">
 		     <meta itemprop="ratingValue" content="<?php the_field('star'); ?>">
 		     <span itemprop="reviewCount" content="1">
-			<?php if( get_field('star') == 'option1' ){ ?>
+			<?php if( get_field('star') == '1' ){ ?>
 			<ul class="rating">
 				<li><i class="fa fa-star" aria-hidden="true"></i></li>
 				<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
@@ -23,7 +23,7 @@
 				<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 
 			</ul>
-			<?php } else if( get_field('star') == 'option2' ) { ?> 
+			<?php } else if( get_field('star') == '2' ) { ?> 
 			<ul class="rating">
 				<li><i class="fa fa-star" aria-hidden="true"></i></li>
 				<li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -31,7 +31,7 @@
 				<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 				<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 			</ul>
-			<?php } else if( get_field('star') == 'option3' ){  ?>
+			<?php } else if( get_field('star') == '3' ){  ?>
 			<ul class="rating">
 				<li><i class="fa fa-star" aria-hidden="true"></i></li>
 				<li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -39,7 +39,7 @@
 				<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 				<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 			</ul>
-			<?php } else if( get_field('star') == 'option4' ){  ?>
+			<?php } else if( get_field('star') == '4' ){  ?>
 			<ul class="rating">
 				<li><i class="fa fa-star" aria-hidden="true"></i></li>
 				<li><i class="fa fa-star" aria-hidden="true"></i></li>

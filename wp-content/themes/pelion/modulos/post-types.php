@@ -67,8 +67,9 @@ add_action( 'init', 'register_packages' );
     'labels' => $labels,
     'show_ui' => true,
     'query_var' => true,
-    'rewrite' => true,
-    'rewrite' => array( 'slug' => 'region', 'with_front' => false ),
+    //'rewrite' => true,
+    'rewrite' => array( 'slug' => 'region', 'with_front' => false, 'hierarchical' => true  ),
+
   ));  
 
 
@@ -321,39 +322,13 @@ add_action( 'init', 'register_activities' );
         'capability_type' => 'post',
         'hierarchical' => false, 
         'menu_position' => null,
-        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt')
+        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt','revisions')
       );
       register_post_type('activities',$args);
 	  
 }
 
 
-
-  //TAXONOMIA Options
-  
-  
-  $labels = array(
-    'name' => _x( 'Options', 'taxonomy general name' ),
-    'singular_name' => _x( 'Options', 'taxonomy singular name' ),
-    'search_items' =>  __( 'Options' ),
-    'all_items' => __( 'All Options' ),
-    'parent_item' => __( 'Parent Options' ),
-    'parent_item_colon' => __( 'Parent Options' ),
-    'edit_item' => __( 'Edit Options' ), 
-    'update_item' => __( 'Update Options' ),
-    'add_new_item' => __( 'Add New Options' ),
-    'new_item_name' => __( 'New Options' ),
-    'menu_name' => __( 'Options' ),
-  );    
-
-  register_taxonomy('options',array('packages','activities'), array( 
-    'hierarchical' => true,
-    'labels' => $labels,
-    'show_ui' => true,
-    'query_var' => true,
-    'rewrite' => true,
-    'rewrite' => array( 'slug' => 'options', 'with_front' => false ),
-  ));  
 
 
 
@@ -392,7 +367,7 @@ add_action( 'init', 'register_accommodations' );
         'capability_type' => 'post',
         'hierarchical' => true,
         'menu_position' => null,
-        'supports' => array( 'title', 'editor', 'excerpt','revisions')
+      'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt','revisions')
       );
       register_post_type('accommodations',$args);
       
@@ -436,5 +411,49 @@ add_action( 'init', 'register_reviews' );
         'supports' => array( 'title', 'editor', 'excerpt','revisions')
       );
       register_post_type('reviews',$args);
+      
+}
+
+
+
+ //Special
+
+add_action( 'init', 'register_special' );
+    function register_special() {
+
+      $labels = array(
+        'name' => _x('Special', 'post type general name'),
+        'singular_name' => _x('Special', 'post type singular name'),
+        'add_new' => _x('Add New', 'Special'),
+        'add_new_item' => __('Add New Special'),
+        'edit_item' => __('Edit Special'),
+        'new_item' => __('New Special'),
+        'all_items' => __('All Special'),
+        'view_item' => __('Ver Special'),
+        'search_items' => __('Search Special'),
+        'not_found' =>  __('No Special found'),
+        'not_found_in_trash' => __('No Special found in Trash'),
+        'parent_item_colon' => '',
+        'menu_name' => __('Special Offers')
+ 
+      );      
+      $args = array(
+        'labels' => $labels,
+        'public' => true,
+         'menu_icon'  => 'dashicons-thumbs-up',
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'has_archive' => false,
+        'show_in_menu' => true,
+        'query_var' => true,
+       "rewrite" => [
+            "with_front" => true
+        ], 
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array( 'title', 'thumbnail', 'excerpt','revisions')
+      );
+      register_post_type('special',$args);
       
 }
