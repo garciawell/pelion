@@ -31,7 +31,13 @@ function is_child($term,$taxonomy) {
 
 
 
-
+function reverse_categories($terms, $id, $taxonomy){
+    if($taxonomy == 'regions'){
+        $terms = array_reverse($terms, true);
+    }
+    return $terms;
+}
+add_filter('get_the_terms', 'reverse_categories', 10, 3);
 
 ////////////////SHORTCODE
 function caption_shortcode( $atts, $content = null ) {

@@ -80,7 +80,7 @@
 					</li>
 
 						<?php   // Get terms for post
-						$terms = get_the_terms( $post->ID , 'regions' );
+						$terms = get_the_terms( $post->ID , 'regions',  array(   'orderby' => 'term_id' ));
 							 // Loop over each item since it's an array
 						if ( $terms != null ){ 
 							foreach( $terms as $term ) {

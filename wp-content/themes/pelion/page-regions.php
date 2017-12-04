@@ -47,7 +47,7 @@ while ( have_posts() ) : the_post(); ?>
 					<?php
 					if( have_rows('block_information') ):
 						while ( have_rows('block_information') ) : the_row(); ?>
-						<div class="col-4 col-md-4 col-sm-12">
+						<div class="col-12 col-md-4 col-sm-6">
 							<div class="col-line text-center">
 								<h4 class="title-line"><?php  the_sub_field('title'); ?></h4>
 								<p><?php  the_sub_field('desc'); ?></p>

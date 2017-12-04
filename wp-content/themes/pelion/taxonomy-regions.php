@@ -57,11 +57,29 @@ $('.video-foreground').html('<iframe src="//www.youtube.com/embed/'+myId+'?contr
                   <li itemprop="itemListElement" itemscope
                      itemtype="http://schema.org/ListItem"><a itemprop="item"  class="breadcrumb-item" href="<?php bloginfo('home'); ?>/region"><span itemprop="name">Regions</span></a>
                   </li>
+                    <?php
+                        $term = get_term_by("slug", get_query_var("term"), get_query_var("taxonomy") );
+
+                        $tmpTerm = $term;
+                        $tmpCrumbs = array();
+                        while ($tmpTerm->parent > 0){
+                            $tmpTerm = get_term($tmpTerm->parent, get_query_var("taxonomy"));
+                            $crumb = '<li itemprop="itemListElement" itemscope
+                                     itemtype="http://schema.org/ListItem"><a class="breadcrumb-item"  href="' . get_term_link($tmpTerm, get_query_var('taxonomy')) . '">' . $tmpTerm->name . '</a></li>';
+                            array_push($tmpCrumbs, $crumb);
+                        }
+                        echo implode('', array_reverse($tmpCrumbs));
+                    
+                    ?>
+
                   <li itemprop="itemListElement" itemscope
                      itemtype="http://schema.org/ListItem"><span itemprop="item"  class="breadcrumb-item active" href="<?php bloginfo('home'); ?>/region"><span itemprop="name"><?php single_cat_title(); ?></span></span>
                   </li>
                </ul>
                <div id="main">
+
+
+
                   <p><?php the_field('description_large' , $queried_object);?> </p>
                   <div class="bloco-cats">
                      <?php 
@@ -133,7 +151,23 @@ $('.video-foreground').html('<iframe src="//www.youtube.com/embed/'+myId+'?contr
                               <?php 
                              $term_slug = $queried_object->slug;  
                               ?>
-                             <a href="<?php bloginfo('home'); ?>/region/<?php echo  $term_slug ."/".$child_term->slug ?>" class="pull-right btn btn-outline-success">SEE ALL</a>
+
+
+                              <?php
+                                  $term = get_term_by("slug", get_query_var("term"), get_query_var("taxonomy") );
+
+                                  $tmpTerm = $term;
+                                  $tmpCrumbs = array();
+                                  while ($tmpTerm->parent > 0){
+                                      $tmpTerm = get_term($tmpTerm->parent, get_query_var("taxonomy"));
+                                      $crumb =  $tmpTerm->slug;
+                                      array_push($tmpCrumbs, $crumb);
+                                  }
+                                  $url_tax =  implode('/', array_reverse($tmpCrumbs));
+                              
+                              ?>
+
+                             <a href="<?php bloginfo('home'); ?>/region/<?php echo $url_tax ."/". $term_slug ."/".$child_term->slug ?>" class="pull-right btn btn-outline-success">SEE ALL</a>
                           </div>
                        </div>
                        <div class="row">
