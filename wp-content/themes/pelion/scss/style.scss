@@ -778,6 +778,10 @@ input,select,textarea{
 
 }
 
+#content-main {
+    padding-bottom: 100px;
+}
+
 .owl-thumb-item img {
 
 	border: 1px solid #fff;
@@ -2589,6 +2593,10 @@ figure.icon-person {
 	    max-height: 227px;
 	}
 
+	.item-sidebar.filtro-resp {
+		display:none;
+	}
+
 	.flex{
 	    display: flex;
     align-items: center;
@@ -2650,6 +2658,14 @@ figure.icon-person {
 
 @media(max-width:980px){
 
+	.item-sidebar.filtro-resp {
+		margin-top:25px
+	}
+
+	.item-sidebar.filtro {
+		display:none;
+	}
+
 	.full-reg-front .col-in {
 	    margin: 15px 0;
 	}
@@ -2677,7 +2693,7 @@ figure.icon-person {
 		}
 		.col-lg-3{
 			//order:1;
-			margin-bottom:45px; 
+			margin-top:45px; 
 		}
 	}
 

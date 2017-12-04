@@ -6435,6 +6435,9 @@ input, select, textarea {
   background: none;
   padding: 0; }
 
+#content-main {
+  padding-bottom: 100px; }
+
 .owl-thumb-item img {
   border: 1px solid #fff; }
 
@@ -7801,6 +7804,8 @@ figure.icon-person {
   .bloco-imagem {
     overflow: hidden;
     max-height: 227px; }
+  .item-sidebar.filtro-resp {
+    display: none; }
   .flex {
     display: flex;
     align-items: center; }
@@ -7842,6 +7847,10 @@ figure.icon-person {
     transition-duration: 0s, 0.2s, 0.2s; } }
 
 @media (max-width: 980px) {
+  .item-sidebar.filtro-resp {
+    margin-top: 25px; }
+  .item-sidebar.filtro {
+    display: none; }
   .full-reg-front .col-in {
     margin: 15px 0; }
   #search-filter-form-63 .sf-field-post-meta-price label {
@@ -7854,7 +7863,7 @@ figure.icon-person {
     max-width: 100%;
     width: 100%; }
   .order-resp > .col-lg-3 {
-    margin-bottom: 45px; }
+    margin-top: 45px; }
   .full-reg-front .col-in {
     padding: 50% 0;
     text-align: center;

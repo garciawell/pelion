@@ -76,11 +76,17 @@ $('.video-foreground').html('<iframe src="//www.youtube.com/embed/'+myId+'?contr
                      itemtype="http://schema.org/ListItem"><span itemprop="item"  class="breadcrumb-item active" href="<?php bloginfo('home'); ?>/region"><span itemprop="name"><?php single_cat_title(); ?></span></span>
                   </li>
                </ul>
+
+
                <div id="main">
-
-
-
                   <p><?php the_field('description_large' , $queried_object);?> </p>
+                  <div class="filtro-resp">
+                    <h3 class="title-cat-side">
+                       Filter
+                    </h3>
+                    <?php echo do_shortcode('[searchandfilter id="63"]'); ?>
+                  </div>
+
                   <div class="bloco-cats">
                      <?php 
                         $term = get_queried_object();
