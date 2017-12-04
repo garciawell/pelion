@@ -6166,17 +6166,17 @@ dl, ol, ul {
   position: relative;
   overflow: hidden; }
   .banner-full .ytp-spinner {
-    display: none; }
+    display: none !important; }
   .banner-full .player-api {
-    background-color: transparent; }
+    background-color: transparent !important; }
   .banner-full .player-unavailable {
-    background-color: transparent; }
+    background-color: transparent !important; }
   .banner-full .html5-video-player {
-    background-color: transparent; }
+    background-color: transparent !important; }
   .banner-full .ytp-gradient-top {
-    background-image: none; }
+    background-image: none !important; }
   .banner-full .typ-gradient-bottom {
-    background-image: none; }
+    background-image: none !important; }
   .banner-full .container {
     z-index: 3; }
   .banner-full .video-background {

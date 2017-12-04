@@ -464,12 +464,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66cc9b', end
     position: relative;
     overflow: hidden;
 
-	.ytp-spinner { display:none;}
-	.player-api {background-color: transparent;}
-	.player-unavailable {background-color: transparent;}
-	.html5-video-player {background-color: transparent;}
-	.ytp-gradient-top {background-image: none;}
-	.typ-gradient-bottom {background-image: none;}
+	.ytp-spinner { display: none !important;}
+	.player-api {background-color: transparent !important;}
+	.player-unavailable {background-color: transparent !important;}
+	.html5-video-player {background-color: transparent !important;}
+	.ytp-gradient-top {background-image: none !important;}
+	.typ-gradient-bottom {background-image: none !important;}
 
     	.container{
     		    z-index: 3;
