@@ -10,7 +10,7 @@
 		<a href="#content-main"><img src="<?php bloginfo('template_url'); ?>/img/icon-down.png"></a>		
 	</div>
 </div>
-<div class="container-full">
+
 	<div id="content-main">
 		<div class="container">
 			<div class="row-pad-25 row order-resp">
@@ -48,8 +48,11 @@
 
 			</div>
 			<div class="pad-25 col-3 col-lg-3 col-md-3 col-sm-12">
-				<?php echo do_shortcode('[searchandfilter id="63"]'); ?>
-
+	<div class="filtro item-sidebar">
+		<h3 class="title-cat-side">
+		Filter</h3>
+		<?php echo do_shortcode('[searchandfilter id="63"]'); ?>
+	</div>
 
 
 
@@ -57,7 +60,7 @@
 		</div>
 	</div>
 </div>
-</div>
+
 
 
 <?php get_footer (); ?>

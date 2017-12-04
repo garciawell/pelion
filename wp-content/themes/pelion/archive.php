@@ -58,8 +58,11 @@ $term_id = $queried_object->term_id;
 
 			</div>
 			<div class="pad-25 col-12 col-lg-3  col-sm-12 item-filter">
-				<?php echo do_shortcode('[searchandfilter id="63"]'); ?>
-			</div>
+				<?php echo do_shortcode('[searchandfilter id="63"]'); ?>	<div class="filtro item-sidebar">
+		<h3 class="title-cat-side">
+		Filter</h3>
+		<?php echo do_shortcode('[searchandfilter id="63"]'); ?>
+	</div></div>
 		</div>
 	</div>
 </div>
