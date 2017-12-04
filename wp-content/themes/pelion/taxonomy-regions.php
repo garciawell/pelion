@@ -6,7 +6,11 @@
    $term_id = $queried_object->term_id;  
    
    ?>
-   <div class="banner-full d-flex  text-center align-items-center" style="background-size:cover; background-image: url('<?php  if( get_field('large_category' , $queried_object) ): the_field('large_category' , $queried_object); else: echo 'http://localhost/pelion/wp-content/uploads/2017/10/banner-regioes.jpg';   endif;; ?>');">
+   <div class="banner-full d-flex  text-center align-items-center" style="background-size:cover; background-image: url('<?php  if( get_field('large_category' , $queried_object) ): the_field('large_category' , $queried_object); else:  echo bloginfo(home) . '/wp-content/uploads/2017/10/banner-regioes.jpg';   endif;; ?>');">
+
+
+
+
 
 <?php if( get_field('video_url'  , $queried_object) ): ?>
 
