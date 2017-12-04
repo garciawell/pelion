@@ -10,7 +10,8 @@
 
 
 
-
+<?php
+if ( wp_is_mobile() ) { } else { ?>
 
 <?php if( get_field('video_url'  , $queried_object) ): ?>
 
@@ -18,7 +19,7 @@
     <div class="video-foreground">
     
     </div>
-  </div>
+  </div> 
 <script>
 //YOUTUBE VIDEO
 function getId(url) {
@@ -40,6 +41,9 @@ $('.video-foreground').html('<iframe src="//www.youtube.com/embed/'+myId+'?contr
  </script> 
 
 <?php endif; ?>
+
+<?php  } ?>
+
 
    <div class="container">
       <h1 class="title-cat text-center"><?php single_cat_title();  ?></h1>

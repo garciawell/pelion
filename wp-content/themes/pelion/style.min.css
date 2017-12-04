@@ -6668,6 +6668,9 @@ span.wpcf7-not-valid-tip {
     .customer .gallery-single .col-6 {
       padding: 5px !important; }
 
+.galeria-cat .col-6 {
+  margin: 15px 0; }
+
 .price-inf .price {
   font-weight: 500;
   font-size: 45px; }
