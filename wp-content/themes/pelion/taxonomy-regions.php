@@ -118,6 +118,7 @@ $('.video-foreground').html('<iframe src="//www.youtube.com/embed/'+myId+'?contr
                         
                         // if any, foreach child term, query the posts
                         if ( !empty($child_terms) ){  
+                           $n=1;
                         foreach ($child_terms as $child_term){
                         $child_args=""; 
                         $child_args = array(
@@ -176,8 +177,14 @@ $('.video-foreground').html('<iframe src="//www.youtube.com/embed/'+myId+'?contr
                           <?php endwhile; // end of loop ?>
                        </div>
                      </div>
+
+                    <?php  if( $n % 3 == 2) { 
+                      echo do_shortcode('[personalized]'); 
+                   } ?>
+
                      <?php endif; // if have_posts()
                         wp_reset_query();
+                        $n++; 
                         } // end foreach #child_terms
                         }
                         }
