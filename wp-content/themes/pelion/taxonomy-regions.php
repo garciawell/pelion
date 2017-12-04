@@ -216,7 +216,7 @@ $('.video-foreground').html('<iframe src="//www.youtube.com/embed/'+myId+'?contr
                   <h3 class="title-main">PHOTO GALERY</h3>
                   <ul class="row">
                      <?php foreach( $images as $image ): ?>
-                     <li class="col-4 col-md-4 col-sm-6"> 
+                     <li class="col-6 col-md-4 col-sm-6"> 
                         <a href="<?php echo $image['url']; ?>" data-rel="lightbox">
                         <img src="<?php echo $image['sizes']['padrao']; ?>" alt="<?php echo $image['alt']; ?>" />
                         </a>
