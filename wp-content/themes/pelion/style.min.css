@@ -7804,7 +7804,7 @@ figure.icon-person {
   .bloco-imagem {
     overflow: hidden;
     max-height: 227px; }
-  .item-sidebar.filtro-resp {
+  .filtro-resp {
     display: none; }
   .flex {
     display: flex;
