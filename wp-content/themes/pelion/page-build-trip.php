@@ -16,6 +16,14 @@ while ( have_posts() ) : the_post(); ?>
 <div class="container-full">
 	<div id="content-main" class="page-padrao">
 		<div class="container">
+			  <ul class="breadcrumb page" itemscope itemtype="http://schema.org/BreadcrumbList">
+                  <li itemprop="itemListElement" itemscope
+                     itemtype="http://schema.org/ListItem"><a itemprop="item" class="breadcrumb-item" href="<?php bloginfo('home'); ?>"><span itemprop="name">Home</span></a></li>
+
+                  <li itemprop="itemListElement" itemscope
+                     itemtype="http://schema.org/ListItem"><span itemprop="item"  class="breadcrumb-item active" href="<?php bloginfo('home'); ?>/region"><span itemprop="name"><?php the_title();  ?></span></span>
+                  </li>
+               </ul>
 			<div class="row">
 				<div class="col-md-9">
 

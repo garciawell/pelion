@@ -267,7 +267,7 @@
 
 
 <div class="others-packages">
-	<h4 class="title-grey">Accommodations</h4>
+	<h4 class="title-grey">Others Accommodations</h4>
 	<div class="row">
 		<?php    
 

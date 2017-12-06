@@ -30,7 +30,7 @@
 								<ul class="menu-topo-links">
 									<li>
 										<i class="fa fa-phone" aria-hidden="true"></i>
-										<a href="mailto:<?php echo $tel = $titan->getOption( 'telefone' ); ?>"> <?php echo $tel = $titan->getOption( 'telefone' ); ?></a> | 
+										<a class="left" href="mailto:<?php echo $tel = $titan->getOption( 'telefone' ); ?>"> <?php echo $tel = $titan->getOption( 'telefone' ); ?></a> | 
 										<a href="tel:<?php echo $tel2 = $titan->getOption( 'telefone2' ); ?>"><?php echo $tel2 = $titan->getOption( 'telefone2' ); ?></a>
 									</li>			
 								</ul>

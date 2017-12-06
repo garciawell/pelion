@@ -12,7 +12,7 @@ get_header(); ?>
 
 	<div class="container">
 		<h1 class="title-cat text-center">Search</h1>
-
+ <a class="ancora"  href="#content-main"><img src="<?php bloginfo('template_url'); ?>/img/icon-down.png"></a>  
 	</div>
 </div>
 

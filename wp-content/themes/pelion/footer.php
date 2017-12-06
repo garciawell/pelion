@@ -50,7 +50,7 @@
 					<p><?php echo $mySavedValue2 = $titan->getOption( 'copyright' ); ?></p>
 				</div> 	
 				<div class="col-12 col-md-6 col-sm-4">
-					<p class="pull-right"><?php echo $mySavedValue2 = $titan->getOption( 'aditional' ); ?></p>
+					<a href="http://lehype.net/" target="_blank" class="pull-right"><?php echo $mySavedValue2 = $titan->getOption( 'aditional' ); ?></a>
 				
 				</div> 
 			</div> 

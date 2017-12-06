@@ -1,13 +1,10 @@
 <div class="infs-single">
-	<?php    
-	$terms = get_the_terms( $post->ID , 'options' );
-// Loop over each item since it's an array
-	if ( $terms != null ){ 
-		foreach( $terms as $term ) {
-			print $term->name ;
-			unset($term); 
-		} } ?>
+<?php
+$post_type = get_post_type( get_the_ID() );
+echo '<span class="post-title">' . $post_type . '</span>';
 
+
+		?>
 		<h1 itemprop="name"><?php the_title();  ?></h1>
 
 		<div itemprop="aggregateRating"

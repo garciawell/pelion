@@ -2,16 +2,12 @@
 	<span class="title">Resume</span>
 	<i class="icon-close" id="icon-close">X</i>
 	<figure><?php the_post_thumbnail('resume');?></figure>
-	<span class="cat">
-		<?php    
-		$terms = get_the_terms( $post->ID , 'options' );
-// Loop over each item since it's an array
-		if ( $terms != null ){ 
-			foreach( $terms as $term ) {
-				print $term->name ;
-				unset($term); 
-			} } ?>
-		</span>
+<?php
+$post_type = get_post_type( get_the_ID() );
+echo '<span class="post-title">' . $post_type . '</span>';
+
+
+		?>
 		<span class="title-mn"><?php the_title(); ?></span>
 
 		<div class="price-inf">	
