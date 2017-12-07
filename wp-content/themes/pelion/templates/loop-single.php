@@ -93,19 +93,20 @@ echo '<span class="post-title">' . $post_type . '</span>';
 				</div>
 				<div class="col-6 col-md-6 col-sm-12">
 						<ul>
-							<?php if( get_field('age')): ?>   
-								<li>
-									<i class="icon-age-wt"></i> 
-									(<?php the_field('age'); ?>)
-								</li>
-							<?php endif; ?>
+							<li>			
+								<?php  $var2 = get_field('age'); ?>
+								<i class="icon-age-wt"></i> 
+								(<?php echo $var2['label']; ?>)
+							</li>
+	
 
-							<?php if( get_field('fly')): ?>   
+
 								<li>
-									<i class="icon-flight-wt"></i> 
-									<?php the_field('fly'); ?>
+						<?php  $var3 = get_field('term-flight'); ?>
+						<i class="icon-flight-wt"></i> 
+						<?php echo $var3['label']; ?>
 								</li>
-							<?php endif; ?>
+
 
 						</ul>
 				</div>

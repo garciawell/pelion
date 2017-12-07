@@ -460,7 +460,7 @@ border:none;
 
 		.tl-cat{
 			text-transform: uppercase;
-			font-weight: normal;
+			font-weight: bold;
 			font-size: 0.9em;
 			margin-bottom: 25px;
 		}
@@ -705,11 +705,12 @@ input,select,textarea{
   display: inline-block; }
 
 .icon-flight {
-  background: url(img/icons-grid.png) right center no-repeat;
-  width: 35px;
-  height: 35px;
-  vertical-align: middle;
-  display: inline-block; }
+    background: url(img/icons-grid.png) right center no-repeat;
+    width: 38px;
+    height: 35px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 6px; }
 
 .icon-ht-wt {
   background: url(img/icons-grid-white.png) left top no-repeat;
@@ -800,6 +801,7 @@ input,select,textarea{
 
 .comentarios{
 	margin-top:100px;
+	margin-bottom:70px;
 	h3{
 		font-weight: 400;
 		margin-bottom: 35px;
@@ -1210,9 +1212,13 @@ span.wpcf7-not-valid-tip{
 			vertical-align:middle;
 		}		
 		li:last-child{
-			float: right;
-			border-left: 1px solid #ddd;
-			padding-left: 10px;
+		    float: right;
+		    border-left: 1px solid #ddd;
+		    padding-left: 5px;
+		    max-width: 110px;
+		    line-height: 18px;
+		    display: flex;
+		    align-items: center;
 		}
 	}
 
@@ -1289,7 +1295,7 @@ span.wpcf7-not-valid-tip{
 }
 
 .others-packages{
-	margin-top:100px;
+	padding:25px 0;
 	.title-grey{
 		text-transform:uppercase;
 		margin-bottom:35px;
@@ -2249,6 +2255,10 @@ background: #01687b;
     visibility:hidden;
 top: 100px;
     right:0; 
+
+    .post-title{
+    	margin-top:10px;
+    }
 
     .icon-close{
     	font-style:normal;

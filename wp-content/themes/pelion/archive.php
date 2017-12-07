@@ -21,48 +21,48 @@ $term_id = $queried_object->term_id;
 	</div>
 </div>
 
-	<div id="content-main">
-		<div class="container">
-			<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-				<li itemprop="itemListElement" itemscope
-				itemtype="http://schema.org/ListItem"><a itemprop="item" class="breadcrumb-item" href="<?php bloginfo('home'); ?>"><span itemprop="name">Home</span></a></li>
-				<li itemprop="itemListElement" itemscope
-				itemtype="http://schema.org/ListItem"><span itemprop="item"  class="breadcrumb-item active" href="<?php bloginfo('home'); ?>/regions"><span itemprop="name"><?php single_cat_title(); ?></span></span></li>
+<div id="content-main">
+	<div class="container">
+		<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+			<li itemprop="itemListElement" itemscope
+			itemtype="http://schema.org/ListItem"><a itemprop="item" class="breadcrumb-item" href="<?php bloginfo('home'); ?>"><span itemprop="name">Home</span></a></li>
+			<li itemprop="itemListElement" itemscope
+			itemtype="http://schema.org/ListItem"><span itemprop="item"  class="breadcrumb-item active" href="<?php bloginfo('home'); ?>/regions"><span itemprop="name"><?php single_cat_title(); ?></span></span></li>
+			
+		</ul>
+
+
+		<div class="row-pad-25 row order-resp">
+
+			<div class="pad-25 col-12 col-lg-9  col-sm-12 content-filter">
 				
-			</ul>
+				<div id="main">
+
+					<p><?php the_field('description_large' , $queried_object);?> </p> 
 
 
-			<div class="row-pad-25 row order-resp">
-
-				<div class="pad-25 col-12 col-lg-9  col-sm-12 content-filter">
 					
-					<div id="main">
-
-						<p><?php the_field('description_large' , $queried_object);?> </p> 
-
-
-						
-						<div class="row">
-							<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-								<?php   get_template_part("templates/loop", "post"); ?>
-							<?php endwhile; else : ?>
-							<div class="col">
-								<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
-							</div>
-						<?php endif; ?>
-					</div>
-
+					<div class="row">
+						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+							<?php   get_template_part("templates/loop", "post"); ?>
+						<?php endwhile; else : ?>
+						<div class="col">
+							<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+						</div>
+					<?php endif; ?>
 				</div>
 
-				<?php //include('bloco-build.php'); ?>
-
 			</div>
-			<div class="pad-25 col-12 col-lg-3  col-sm-12 item-filter">
-				<?php echo do_shortcode('[searchandfilter id="63"]'); ?>	<div class="filtro item-sidebar">
-		<h3 class="title-cat-side">
-		Filter</h3>
-		<?php echo do_shortcode('[searchandfilter id="63"]'); ?>
-	</div></div>
+
+			<?php //include('bloco-build.php'); ?>
+
+		</div>
+		<div class="pad-25 col-12 col-lg-3  col-sm-12 item-filter">
+			<div class="filtro item-sidebar">
+				<h3 class="title-cat-side">
+				Filter</h3>
+				<?php echo do_shortcode('[searchandfilter id="63"]'); ?>
+			</div></div>
 		</div>
 	</div>
 </div>

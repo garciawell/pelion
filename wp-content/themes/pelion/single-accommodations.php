@@ -266,37 +266,93 @@
 </div>
 
 
-<div class="others-packages">
-	<h4 class="title-grey">Others Accommodations</h4>
-	<div class="row">
-		<?php    
 
-		$terms = get_the_terms( $post->ID , 'regions' );
-		foreach( $terms as $term ) {
-			$termo = $term->slug;
+<?php
 
-		} 
-		$args = array(
-			'cat' => $termo, 
-			'post_type'=> 'accommodations',
-			'posts_per_page'=>4,
-			'order'=>'rand',
-			'post__not_in' => array( get_the_ID() )
-		);
+// check if the flexible content field has rows of data
+if( have_rows('related_items') ):
 
-		$new_query = new WP_Query( $args );
+     // loop through the rows of data
+    while ( have_rows('related_items') ) : the_row();
+
+        if( get_row_layout() == 'block_related' ): ?>
+
+  	<div class="others-packages">
+			<h4 class="title-grey"><?php the_sub_field('title'); ?></h4>
+			<div class="row">
+				<?php 
+
+				$posts = get_sub_field('relation');
+
+				if( $posts ): ?>
+
+				<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+					<?php setup_postdata($post); ?>
+
+				<?php   get_template_part("templates/loop", "post-4"); ?>
+
+				<?php endforeach; ?>
+
+				<?php wp_reset_postdata(); 
+
+				endif;
+
+				?>
+			</div>
+
+	</div>
 
 
-		while ( $new_query->have_posts() ) : $new_query->the_post();  ?>
 
-		<?php   get_template_part("templates/loop", "post-4"); ?>
 
-	<?php endwhile;  
-	wp_reset_postdata();
+      <?php   endif;
 
-	?>
-</div>
-</div>
+    endwhile;
+
+else : ?>
+
+
+
+	<div class="others-packages">
+			<h4 class="title-grey">Others Packages</h4>
+			<div class="row">
+				<?php    
+
+				$terms = get_the_terms( $post->ID , 'regions' );
+				foreach( $terms as $term ) {
+					$termo = $term->slug;
+
+				} 
+				$args = array(
+					'cat' => $termo, 
+					'post_type'=> 'accommodations',
+					'posts_per_page'=>4,
+					'order'=>'rand',
+					'post__not_in' => array( get_the_ID() )
+				);
+
+				$new_query = new WP_Query( $args );
+
+
+				while ( $new_query->have_posts() ) : $new_query->the_post();  ?>
+
+				<?php   get_template_part("templates/loop", "post-4"); ?>
+
+				<?php endwhile;  
+				wp_reset_postdata();
+
+				?>
+			</div>
+	</div>
+<?php
+
+endif;
+
+?>
+
+
+
+
 </div> 
 </div>
 

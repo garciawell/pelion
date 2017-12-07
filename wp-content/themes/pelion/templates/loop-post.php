@@ -100,7 +100,6 @@ echo $terms[1]->name;
 
 				<?php	}?>	
 			</div>
-
 			<div class="middle">
 
 				<ul>
@@ -110,16 +109,15 @@ echo $terms[1]->name;
 						<?php endif; ?>	
 					</li>
 					<li>
-						<?php if( get_field('age')): ?>   
+						<?php  $var2 = get_field('age'); ?>
 							<i class="icon-age"></i> 
-							(<?php the_field('age'); ?>)
-						<?php endif; ?>
+							(<?php echo $var2['label']; ?>)
 					</li>
 					<li>
-						<?php if( get_field('fly')): ?>   
-							<i class="icon-flight"></i> 
-							<?php the_field('fly'); ?>
-						<?php endif; ?>
+						<?php  $var3 = get_field('term-flight'); ?>
+						<i class="icon-flight"></i> 
+						<?php echo $var3['label']; ?>
+
 					</li>
 				</ul>
 			</div>

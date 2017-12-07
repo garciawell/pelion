@@ -6161,7 +6161,7 @@ dl, ol, ul {
     margin-bottom: 10px; }
   #footer .tl-cat {
     text-transform: uppercase;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 0.9em;
     margin-bottom: 25px; }
   #footer .menu-handy-pages-container li {
@@ -6376,10 +6376,11 @@ input, select, textarea {
 
 .icon-flight {
   background: url(img/icons-grid.png) right center no-repeat;
-  width: 35px;
+  width: 38px;
   height: 35px;
   vertical-align: middle;
-  display: inline-block; }
+  display: inline-block;
+  margin-right: 6px; }
 
 .icon-ht-wt {
   background: url(img/icons-grid-white.png) left top no-repeat;
@@ -6444,7 +6445,8 @@ input, select, textarea {
   margin-top: 100px; }
 
 .comentarios {
-  margin-top: 100px; }
+  margin-top: 100px;
+  margin-bottom: 70px; }
   .comentarios h3 {
     font-weight: 400;
     margin-bottom: 35px;
@@ -6771,7 +6773,11 @@ span.wpcf7-not-valid-tip {
     .bloco-padrao .middle li:last-child {
       float: right;
       border-left: 1px solid #ddd;
-      padding-left: 10px; }
+      padding-left: 5px;
+      max-width: 110px;
+      line-height: 18px;
+      display: flex;
+      align-items: center; }
   .bloco-padrao .title-grid {
     color: #444444;
     font-weight: normal;
@@ -6819,7 +6825,7 @@ span.wpcf7-not-valid-tip {
       padding: 10px; }
 
 .others-packages {
-  margin-top: 100px; }
+  padding: 25px 0; }
   .others-packages .title-grey {
     text-transform: uppercase;
     margin-bottom: 35px;
@@ -7555,6 +7561,8 @@ input[name="_sf_submit"] {
   visibility: hidden;
   top: 100px;
   right: 0; }
+  .resume .post-title {
+    margin-top: 10px; }
   .resume .icon-close {
     font-style: normal;
     position: absolute;
