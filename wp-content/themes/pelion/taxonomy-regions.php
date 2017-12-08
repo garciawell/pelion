@@ -212,7 +212,7 @@ $('.video-foreground').html('<iframe src="//www.youtube.com/embed/'+myId+'?contr
                   </div>
                </div>
                <?php 
-                  $images = get_field('galeria' , $queried_object);
+                  $images = get_field('gallery' , $queried_object);
                                         $size = 'padrao'; // (thumbnail, medium, large, full or custom size)
                   
                                         if( $images ): ?>
