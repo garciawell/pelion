@@ -9,6 +9,7 @@
 			<div class="col-12 col-lg-6" style="background: url(<?php// the_field('banner_full'); ?>) left center no-repeat; background-size:cover !important; ">
 
 				<div class="owl-carousel-thumbs owl-carousel" data-slider-id="1">
+					<div class="item" data-hash="thumb1" itemprop="image" ><?php the_post_thumbnail('full-interna'); ?></div> 
 					<?php 
 					$images = get_field('gallery');
 					$size = 'full-interna'; // (thumbnail, medium, large, full or custom size)
