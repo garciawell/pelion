@@ -14,7 +14,7 @@
 					<?php the_post_thumbnail( 'padrao', array( 'alt' => get_the_title() ) );  ?>			
 				</div>
 				<?php 
-				$images = get_field('galeria');
+				$images = get_field('gallery');
 					$size = 'padrao'; // (thumbnail, medium, large, full or custom size)
 					if( $images ): ?>
 					<?php foreach( $images as $image ): ?>

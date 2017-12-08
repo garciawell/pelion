@@ -9,9 +9,8 @@
 			<div class="col-12 col-lg-6" style="background: url(<?php// the_field('banner_full'); ?>) left center no-repeat; background-size:cover !important; ">
 
 				<div class="owl-carousel-thumbs owl-carousel" data-slider-id="1">
-					<div class="item" data-hash="thumb1" itemprop="image" ><?php the_post_thumbnail('full-interna'); ?></div> 
 					<?php 
-					$images = get_field('galeria');
+					$images = get_field('gallery');
 					$size = 'full-interna'; // (thumbnail, medium, large, full or custom size)
 					if( $images ): ?>
 					<?php $i=2; foreach( $images as $image ): ?>
@@ -26,7 +25,7 @@
 				<?php 
 
 
-				$images2 = get_field('galeria');
+				$images2 = get_field('gallery');
 					$size = 'thumb-galeria'; // (thumbnail, medium, large, full or custom size)
 					if( $images2 ): ?>
 					<?php  $i=2;   foreach( $images2 as $image2 ): 
@@ -243,7 +242,7 @@
 								<h2 class="title-grey">PHOTO GALLERY</h2>
 								<ul class="row gallery-single">
 									<?php 
-									$images = get_field('galeria');
+									$images = get_field('gallery');
 						$size = 'padrao'; // (thumbnail, medium, large, full or custom size)
 
 						if( $images ): ?>
