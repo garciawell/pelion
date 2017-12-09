@@ -51,7 +51,7 @@ function caption_shortcode( $atts, $content = null ) {
 
 		</div>		
 		<div class="col-md-12 col-lg-5 col-sm-12 col-12">
-			<a href="" class="pull-right btn btn-outline-secondary">BUILD YOUR TRIP!</a> 
+			<a href="<?php bloginfo('home'); ?>/build-your-trip/" class="pull-right btn btn-outline-secondary">BUILD YOUR TRIP!</a> 
 
 		</div>
 	</div>		
@@ -172,6 +172,7 @@ add_theme_support( 'post-thumbnails' );
  add_image_size('full-interna',1000,600,true); 
  add_image_size('thumb-galeria',130,80,true); 
   add_image_size('resume',280,250,true);
+  add_image_size('avatar',62,62,true);
 
 
 /**************TITAN FRAMEWORKER*** Opções WordPress*********************/

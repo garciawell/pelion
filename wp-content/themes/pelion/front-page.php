@@ -212,7 +212,24 @@
       <div class="row owl-carousel" id="owl-review">
          <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
             <div class="item">
-               <figure class="icon-person"><img src="<?php bloginfo('template_url'); ?>/img/icon-person.png"></figure>
+
+            <?php
+            // Must be inside a loop.
+             
+            if ( has_post_thumbnail() ) { ?>
+                <figure class="icon-avatar"> <?php the_post_thumbnail('avatar'); ?> </figure>
+           <?php }
+            else { ?>
+              <figure class="icon-person">
+                 <?php if( get_field('genre') == 'Male' ): ?> 
+                  <img src="<?php bloginfo('template_url'); ?>/img/icon-person.png">
+                 <?php else :  ?>
+                  <img src="<?php bloginfo('template_url'); ?>/img/icon-female.png">
+              <?php endif; ?>
+               </figure>
+           <?php }  ?>
+
+
                <div class="col-review-home-in">
                   <?php setup_postdata($post); ?>
 

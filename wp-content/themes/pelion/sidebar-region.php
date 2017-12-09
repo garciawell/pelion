@@ -217,6 +217,33 @@
 	<div class="bloco-cat  item-tax item-sidebar">
 		<h3 class="title-cat-side">
 		Explore Others areas</h3>
+		<?php 
+
+		$terms3 = get_field('regions'  , $queried_object); 
+
+		if( $terms3 ): ?>
+
+		<div class="row">
+
+		<?php foreach( $terms3 as $term3 ): ?>
+
+
+				<div class="col-12 mg-15">
+					<a href="<?php echo get_term_link( $term3 ); ?>">
+						<div class="col-in effect-hover" style="background-image: url('<?php  echo $custom_field = get_field('imagem_categoria', $term3 ); ?>');">
+							<div class="in">
+								<span class="subtitle-cat"><?php the_field('subtitle', $term3 ); ?></span> 
+								<h4 class="title-cat-pag"><?php echo $term3->name; ?></h4>
+							</div>
+						</div>
+					</a>
+				</div>
+
+		<?php endforeach; ?>
+
+		</div>
+
+		<?php else: ?>
 		<div class="row">
 			<?php 
 			$exclude =  get_queried_object()->term_id;
@@ -236,5 +263,7 @@
 				<?php } 
 			} ?>
 		</div>
+
+		<?php  endif; ?>
 	</div>
 </div>

@@ -1,5 +1,5 @@
 ﻿<?php $titan = TitanFramework::getInstance( 'pelion' ); ?>
-<?php if ( !is_404() && !is_search() ) { ?>
+<?php if ( !is_404() && !is_search() && !is_page( 268 ) ) { ?>
 <section class="maps-footer">
 	<div class="inner">
 		<?php echo $mySavedValue2 = $titan->getOption( 'maps-footer' ); ?>

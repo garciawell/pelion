@@ -408,7 +408,7 @@ add_action( 'init', 'register_reviews' );
         'capability_type' => 'post',
         'hierarchical' => true,
         'menu_position' => null,
-        'supports' => array( 'title', 'editor', 'excerpt','revisions')
+        'supports' => array( 'title', 'editor', 'excerpt','revisions','thumbnail')
       );
       register_post_type('reviews',$args);
       

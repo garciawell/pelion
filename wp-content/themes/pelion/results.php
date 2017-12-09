@@ -7,7 +7,7 @@
 <div class="banner-full d-flex text-center align-items-center" style="background: url('<?php bloginfo('template_url');  ?>/img/banner-regioes.jpg') center center no-repeat; background-size:cover;">
 	<div class="container">
 		<h1 class="title-cat text-center">Results</h1>
-		<a href="#content-main"><img src="<?php bloginfo('template_url'); ?>/img/icon-down.png"></a>		
+		<a href="#content-main" class="ancora"><img src="<?php bloginfo('template_url'); ?>/img/icon-down.png"></a>	
 	</div>
 </div>
 
@@ -24,7 +24,6 @@
 			</ul>
  
 					<div id="main">
- 
 						<p><?php the_field('description_large');?> </p> 
 
 
