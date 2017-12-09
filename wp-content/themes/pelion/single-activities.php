@@ -16,6 +16,12 @@
 					if( $images ): ?>
 					<?php $i=1; foreach( $images as $image ): ?>
 					<div class="item" data-hash="thumb<?php echo $i; ?>">
+
+						<?php if ($i==1){
+							$thumblink = $image['url'];
+						}?>
+
+
 						<img src="<?php echo $image['sizes']['full-interna']; ?>?rel=non" alt="<?php echo $image['alt']; ?>" />
 					</div>
 					<?php $i++;  $len = count($images);  endforeach; ?>
@@ -37,7 +43,7 @@
 					$conuntergeral;
 
 					?>
-					<a class="owl-thumb-item <?php if ($i == 4) { echo 'last-thumb'; }  ?>" href="<?php if ($i == 4) { echo 'http://localhost/pelion/wp-content/uploads/2017/10/pelion-about.jpg'; } else {?>#thumb<?php echo $i; }?>"   <?php if ($i == 4 /*$len + 1*/) { ?> data-rel="lightbox" <?php } ?>>  
+					<a class="owl-thumb-item <?php if ($i == 4) { echo 'last-thumb'; }  ?>" href="<?php if ($i == 4) { echo $thumblink; } else {?>#thumb<?php echo $i; }?>"   <?php if ($i == 4 /*$len + 1*/) { ?> data-rel="lightbox" <?php } ?>>  
 						<?php if ($i == 4 /*$len + 1*/) {  ?>
 
 						<i><?php echo '+ ' . $conuntergeral ;?></i>
@@ -51,7 +57,7 @@
 
 
 			
-		</div>		
+		</div>					
 		<div class="col-12 col-lg-6 bg-blue">
 			<div class="limit-grid-left">
 				<?php   get_template_part("templates/loop", "single"); ?>
