@@ -9,27 +9,27 @@
 			<div class="col-12 col-lg-6" style="background: url(<?php// the_field('banner_full'); ?>) left center no-repeat; background-size:cover !important; ">
 
 				<div class="owl-carousel-thumbs owl-carousel" data-slider-id="1">
-					<div class="item" data-hash="thumb1" itemprop="image" ><?php the_post_thumbnail('full-interna'); ?></div> 
+
 					<?php 
 					$images = get_field('gallery');
 					$size = 'full-interna'; // (thumbnail, medium, large, full or custom size)
 					if( $images ): ?>
-					<?php $i=2; foreach( $images as $image ): ?>
+					<?php $i=1; foreach( $images as $image ): ?>
 					<div class="item" data-hash="thumb<?php echo $i; ?>">
-						<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+						<img src="<?php echo $image['sizes']['full-interna']; ?>?rel=non" alt="<?php echo $image['alt']; ?>" />
 					</div>
 					<?php $i++;  $len = count($images);  endforeach; ?>
 				<?php endif; ?>
 			</div> 
 			<div class="owl-thumbs" data-slider-id="1">
-				<a  href="#thumb1" class="owl-thumb-item"><?php the_post_thumbnail('thumb-galeria'); ?></a>
+
 				<?php 
 
 
 				$images2 = get_field('gallery');
 					$size = 'thumb-galeria'; // (thumbnail, medium, large, full or custom size)
 					if( $images2 ): ?>
-					<?php  $i=2;   foreach( $images2 as $image2 ): 
+					<?php  $i=1;   foreach( $images2 as $image2 ): 
 					$len2 = count($images2);
 
 					$conuntergeral = $len - 3; 
@@ -37,7 +37,7 @@
 					$conuntergeral;
 
 					?>
-					<a class="owl-thumb-item <?php if ($i == 4) { echo 'last-thumb'; }  ?>" href="<?php if ($i == 4) { the_post_thumbnail_url(); } else {?>#thumb<?php echo $i; }?>"   <?php if ($i == 4 /*$len + 1*/) { ?> data-rel="lightbox" <?php } ?>>  
+					<a class="owl-thumb-item <?php if ($i == 4) { echo 'last-thumb'; }  ?>" href="<?php if ($i == 4) { echo 'http://localhost/pelion/wp-content/uploads/2017/10/pelion-about.jpg'; } else {?>#thumb<?php echo $i; }?>"   <?php if ($i == 4 /*$len + 1*/) { ?> data-rel="lightbox" <?php } ?>>  
 						<?php if ($i == 4 /*$len + 1*/) {  ?>
 
 						<i><?php echo '+ ' . $conuntergeral ;?></i>
@@ -58,26 +58,27 @@
 
 			</div>		
 		</div>		
-	</section>
+	</div>		
+</section>
 
 
 
 
 
-	<?php
+<?php
 			// Start the loop.
-	while ( have_posts() ) : the_post(); ?>
+while ( have_posts() ) : the_post(); ?>
 
-	<div id="content-main" class="single-padrao">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-sm-8">
-					<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-						<li itemprop="itemListElement" itemscope
-						itemtype="http://schema.org/ListItem"><a itemprop="item" class="breadcrumb-item" href="<?php bloginfo('home'); ?>"><span itemprop="name">Home</span></a></li>
-						<li itemprop="itemListElement" itemscope
-						itemtype="http://schema.org/ListItem"><a itemprop="item"  class="breadcrumb-item" href="<?php bloginfo('home'); ?>/regions"><span itemprop="name">Regions</span></a>
-					</li>
+<div id="content-main" class="single-padrao">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-8">
+				<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+					<li itemprop="itemListElement" itemscope
+					itemtype="http://schema.org/ListItem"><a itemprop="item" class="breadcrumb-item" href="<?php bloginfo('home'); ?>"><span itemprop="name">Home</span></a></li>
+					<li itemprop="itemListElement" itemscope
+					itemtype="http://schema.org/ListItem"><a itemprop="item"  class="breadcrumb-item" href="<?php bloginfo('home'); ?>/regions"><span itemprop="name">Regions</span></a>
+				</li>
 
 						<?php   // Get terms for post
 						$terms = get_the_terms( $post->ID , 'regions',  array(   'orderby' => 'term_id' ));
@@ -247,13 +248,23 @@
 						$size = 'padrao'; // (thumbnail, medium, large, full or custom size)
 
 						if( $images ): ?>
-						<?php foreach( $images as $image ): ?>
-							<li class="col-6 col-md-6 col-xl-4"> 
-								<a href="<?php echo $image['url']; ?>" data-rel="lightbox">
-									<img src="<?php echo $image['sizes']['padrao']; ?>" alt="<?php echo $image['alt']; ?>" />
-								</a>
-							</li>
-						<?php endforeach; ?>
+						<?php $n=1;  foreach( $images as $image ): ?>
+						<li class="col-6 col-md-6 col-xl-4"> 
+
+							<?php if ($n==1) {?>
+							<a href="<?php echo $image['url']; ?>?rel=non">
+								<img src="<?php echo $image['sizes']['padrao']; ?>?rel=non" alt="<?php echo $image['alt']; ?>" />
+							</a>
+
+							<?php } else { ?>
+							<a href="<?php echo $image['url']; ?>" data-rel="lightbox">
+								<img src="<?php echo $image['sizes']['padrao']; ?>" alt="<?php echo $image['alt']; ?>" />
+							</a>
+
+
+							<?php }  ?>
+						</li>
+						<?php $n++; endforeach; ?>
 					<?php endif; ?>
 				</ul>
 			</div>		
@@ -261,9 +272,9 @@
 	</div>
 <?php endif;  ?>
 
-	<div class="comentarios">
-		<?php echo do_shortcode('[fbcomments url="" width="100%" count="off" num="3" countmsg="wonderful comments!"]'); ?>
-	</div>
+<div class="comentarios">
+	<?php echo do_shortcode('[fbcomments url="" width="100%" count="off" num="3" countmsg="wonderful comments!"]'); ?>
+</div>
 
 
 
@@ -273,11 +284,11 @@
 if( have_rows('related_items') ):
 
      // loop through the rows of data
-    while ( have_rows('related_items') ) : the_row();
+	while ( have_rows('related_items') ) : the_row();
 
-        if( get_row_layout() == 'block_related' ): ?>
+		if( get_row_layout() == 'block_related' ): ?>
 
-  	<div class="others-packages">
+		<div class="others-packages">
 			<h4 class="title-grey"><?php the_sub_field('title'); ?></h4>
 			<div class="row">
 				<?php 
@@ -289,68 +300,68 @@ if( have_rows('related_items') ):
 				<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
 					<?php setup_postdata($post); ?>
 
-				<?php   get_template_part("templates/loop", "post-4"); ?>
+					<?php   get_template_part("templates/loop", "post-4"); ?>
 
 				<?php endforeach; ?>
 
 				<?php wp_reset_postdata(); 
 
-				endif;
+			endif;
 
-				?>
-			</div>
+			?>
+		</div>
 
 	</div>
 
 
 
 
-      <?php   endif;
+<?php   endif;
 
-    endwhile;
+endwhile;
 
 else : ?>
 
 
 
-	<div class="others-packages">
-			<h4 class="title-grey">Others Packages</h4>
-			<div class="row">
-				<?php    
+<div class="others-packages">
+	<h4 class="title-grey">Others Packages</h4>
+	<div class="row">
+		<?php    
 
-				$terms = get_the_terms( $post->ID , 'regions' );
-				foreach( $terms as $term ) {
-					$termo = $term->slug;
+		$terms = get_the_terms( $post->ID , 'regions' );
+		foreach( $terms as $term ) {
+			$termo = $term->slug;
 
-				} 
-				$args = array(
-					'cat' => $termo, 
-					'post_type'=> 'packages',
-					'posts_per_page'=>4,
-					'order'=>'rand',
-					'post__not_in' => array( get_the_ID() )
-				);
+		} 
+		$args = array(
+			'cat' => $termo, 
+			'post_type'=> 'packages',
+			'posts_per_page'=>4,
+			'order'=>'rand',
+			'post__not_in' => array( get_the_ID() )
+		);
 
-				$new_query = new WP_Query( $args );
+		$new_query = new WP_Query( $args );
 
 
-				while ( $new_query->have_posts() ) : $new_query->the_post();  ?>
+		while ( $new_query->have_posts() ) : $new_query->the_post();  ?>
 
-				<?php   get_template_part("templates/loop", "post-4"); ?>
+		<?php   get_template_part("templates/loop", "post-4"); ?>
 
-				<?php endwhile;  
-				wp_reset_postdata();
+	<?php endwhile;  
+	wp_reset_postdata();
 
-				?>
-			</div>
-	</div>
+	?>
+</div>
+</div>
 <?php
 
 endif;
 
 ?>
 
-	</div> 
+</div> 
 </div>
 
 

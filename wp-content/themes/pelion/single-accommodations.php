@@ -4,32 +4,33 @@
 
 <div itemscope itemtype="http://schema.org/Product">
 
+
 	<section class="banner-full-single">
 		<div class="row no-gutters">
 			<div class="col-12 col-lg-6" style="background: url(<?php// the_field('banner_full'); ?>) left center no-repeat; background-size:cover !important; ">
 
 				<div class="owl-carousel-thumbs owl-carousel" data-slider-id="1">
-					<div class="item" data-hash="thumb1" itemprop="image" ><?php the_post_thumbnail('full-interna'); ?></div> 
+
 					<?php 
 					$images = get_field('gallery');
 					$size = 'full-interna'; // (thumbnail, medium, large, full or custom size)
 					if( $images ): ?>
-					<?php $i=2; foreach( $images as $image ): ?>
+					<?php $i=1; foreach( $images as $image ): ?>
 					<div class="item" data-hash="thumb<?php echo $i; ?>">
-						<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+						<img src="<?php echo $image['sizes']['full-interna']; ?>?rel=non" alt="<?php echo $image['alt']; ?>" />
 					</div>
 					<?php $i++;  $len = count($images);  endforeach; ?>
 				<?php endif; ?>
 			</div> 
 			<div class="owl-thumbs" data-slider-id="1">
-				<a  href="#thumb1" class="owl-thumb-item"><?php the_post_thumbnail('thumb-galeria'); ?></a>
+
 				<?php 
 
 
 				$images2 = get_field('gallery');
 					$size = 'thumb-galeria'; // (thumbnail, medium, large, full or custom size)
 					if( $images2 ): ?>
-					<?php  $i=2;   foreach( $images2 as $image2 ): 
+					<?php  $i=1;   foreach( $images2 as $image2 ): 
 					$len2 = count($images2);
 
 					$conuntergeral = $len - 3; 
@@ -37,7 +38,7 @@
 					$conuntergeral;
 
 					?>
-					<a class="owl-thumb-item <?php if ($i == 4) { echo 'last-thumb'; }  ?>" href="<?php if ($i == 4) { the_post_thumbnail_url(); } else {?>#thumb<?php echo $i; }?>"   <?php if ($i == 4 /*$len + 1*/) { ?> data-rel="lightbox" <?php } ?>>  
+					<a class="owl-thumb-item <?php if ($i == 4) { echo 'last-thumb'; }  ?>" href="<?php if ($i == 4) { echo 'http://localhost/pelion/wp-content/uploads/2017/10/pelion-about.jpg'; } else {?>#thumb<?php echo $i; }?>"   <?php if ($i == 4 /*$len + 1*/) { ?> data-rel="lightbox" <?php } ?>>  
 						<?php if ($i == 4 /*$len + 1*/) {  ?>
 
 						<i><?php echo '+ ' . $conuntergeral ;?></i>
@@ -51,15 +52,15 @@
 
 
 			
-		</div>						
+		</div>		
 		<div class="col-12 col-lg-6 bg-blue">
 			<div class="limit-grid-left">
 				<?php   get_template_part("templates/loop", "single"); ?>
 
 			</div>		
 		</div>		
-	</section>
-
+	</div>		
+</section>
 
 
 
@@ -247,13 +248,23 @@
 						$size = 'padrao'; // (thumbnail, medium, large, full or custom size)
 
 						if( $images ): ?>
-						<?php foreach( $images as $image ): ?>
-							<li class="col-6 col-md-6 col-xl-4"> 
-								<a href="<?php echo $image['url']; ?>" data-rel="lightbox">
-									<img src="<?php echo $image['sizes']['padrao']; ?>" alt="<?php echo $image['alt']; ?>" />
-								</a>
-							</li>
-						<?php endforeach; ?>
+						<?php $n=1;  foreach( $images as $image ): ?>
+						<li class="col-6 col-md-6 col-xl-4"> 
+
+							<?php if ($n==1) {?>
+							<a href="<?php echo $image['url']; ?>?rel=non">
+								<img src="<?php echo $image['sizes']['padrao']; ?>?rel=non" alt="<?php echo $image['alt']; ?>" />
+							</a>
+
+							<?php } else { ?>
+							<a href="<?php echo $image['url']; ?>" data-rel="lightbox">
+								<img src="<?php echo $image['sizes']['padrao']; ?>" alt="<?php echo $image['alt']; ?>" />
+							</a>
+
+
+							<?php }  ?>
+						</li>
+						<?php $n++; endforeach; ?>
 					<?php endif; ?>
 				</ul>
 			</div>		
