@@ -6430,6 +6430,15 @@ input, select, textarea {
   .rating li i {
     color: #fdcd00; }
 
+.single-reviews .mg-tp-btn {
+  margin-top: 100px;
+  padding-top: 100px;
+  border-top: 1px solid #ddd; }
+
+.single-reviews .title-single {
+  margin: 25px 0 25px;
+  font-size: 30px; }
+
 .single-padrao {
   padding-top: 50px;
   padding-bottom: 50px;

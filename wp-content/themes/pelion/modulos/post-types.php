@@ -339,7 +339,7 @@ add_action( 'init', 'register_accommodations' );
     function register_accommodations() {
 
       $labels = array(
-        'name' => _x('', 'post type general name'),
+        'name' => _x('Accommodations', 'post type general name'),
         'singular_name' => _x('Accommodation', 'post type singular name'),
         'add_new' => _x('Add New', 'Accommodations'),
         'add_new_item' => __('Add New Accommodations'),
