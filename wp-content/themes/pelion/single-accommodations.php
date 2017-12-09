@@ -152,7 +152,7 @@
 
 
 
-					<?php if( get_field('reviews') ): ?>
+					<?php if( get_field('gallery') ): ?>
 						<div class="customer">
 							<div class="row">
 								<div class="col-12 col-md-6 reviews">
