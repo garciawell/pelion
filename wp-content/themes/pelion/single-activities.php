@@ -34,7 +34,7 @@
 
 				$images2 = get_field('gallery');
 					$size = 'thumb-galeria'; // (thumbnail, medium, large, full or custom size)
-					if( $images2 ): ?>
+					if( $images2 ): ?> 
 					<?php  $i=1;   foreach( $images2 as $image2 ): 
 					$len2 = count($images2);
 
@@ -43,7 +43,7 @@
 					$conuntergeral;
 
 					?>
-					<a class="owl-thumb-item <?php if ($i == 4) { echo 'last-thumb'; }  ?>" href="<?php if ($i == 4) { echo $thumblink; } else {?>#thumb<?php echo $i; }?>"   <?php if ($i == 4 /*$len + 1*/) { ?> data-rel="lightbox" <?php } ?>>  
+					<a class="owl-thumb-item <?php if ($i == 4) { echo 'last-thumb'; }  ?>" href="<?php if ($i == 4) { echo $thumblink; } else {?>#thumb<?php echo $i; }?>"   <?php if ($i == 4 /*$len + 1*/) { ?> data-rel="lightbox-gallery-2" <?php } ?>>  
 						<?php if ($i == 4 /*$len + 1*/) {  ?>
 
 						<i><?php echo '+ ' . $conuntergeral ;?></i>
@@ -251,29 +251,43 @@ while ( have_posts() ) : the_post(); ?>
 								<ul class="row gallery-single">
 									<?php 
 									$images = get_field('gallery');
-						$size = 'padrao'; // (thumbnail, medium, large, full or custom size)
+								$size = 'padrao'; // (thumbnail, medium, large, full or custom size)
 
-						if( $images ): ?>
-						<?php $n=1;  foreach( $images as $image ): ?>
-						<li class="col-6 col-md-6 col-xl-4"> 
+								if( $images ): ?>
+								<?php $n=1;  foreach( $images as $image ): ?>
+								<li class="col-6 col-md-6 col-xl-4"> 
+									<a href="<?php echo $image['url']; ?>" data-rel="lightbox">
+										<img src="<?php echo $image['sizes']['padrao']; ?>" alt="<?php echo $image['alt']; ?>" />
+									</a>
+								</li>
+								<?php $n++; endforeach; ?>
+							<?php endif; ?>
+						</ul>								
 
-							<?php if ($n==1) {?>
-							<a href="<?php echo $image['url']; ?>?rel=non">
-								<img src="<?php echo $image['sizes']['padrao']; ?>?rel=non" alt="<?php echo $image['alt']; ?>" />
-							</a>
+						<ul style="display:none;">
+							<?php 
+							$images = get_field('gallery');
+								$size = 'padrao'; // (thumbnail, medium, large, full or custom size)
+								if( $images ): ?>
+								<?php $n=1;  foreach( $images as $image ): ?>
+								<li> 
 
-							<?php } else { ?>
-							<a href="<?php echo $image['url']; ?>" data-rel="lightbox">
-								<img src="<?php echo $image['sizes']['padrao']; ?>" alt="<?php echo $image['alt']; ?>" />
-							</a>
+									<?php if ($n==1) {?>
+									<a href="<?php echo $image['url']; ?>?rel=non">
+										<img src="<?php echo $image['sizes']['padrao']; ?>?rel=non" alt="<?php echo $image['alt']; ?>" />
+									</a>
+									<?php } else { ?>
+									<a href="<?php echo $image['url']; ?>" data-rel="lightbox-gallery-2">
+										<img src="<?php echo $image['sizes']['padrao']; ?>" alt="<?php echo $image['alt']; ?>" />
+									</a>
 
 
-							<?php }  ?>
-						</li>
-						<?php $n++; endforeach; ?>
-					<?php endif; ?>
-				</ul>
-			</div>		
+									<?php }  ?>
+								</li>
+								<?php $n++; endforeach; ?>
+							<?php endif; ?>
+						</ul>
+					</div>		
 		</div>
 	</div>
 <?php endif;  ?>

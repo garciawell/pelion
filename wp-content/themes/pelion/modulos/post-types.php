@@ -387,7 +387,7 @@ add_action( 'init', 'register_reviews' );
         'edit_item' => __('Edit Reviews'),
         'new_item' => __('New Reviews'),
         'all_items' => __('All Reviews'),
-        'view_item' => __('See Packages'),
+        'view_item' => __('See Reviews'),
         'search_items' => __('Search Reviews'),
         'not_found' =>  __('No Reviews found'),
         'not_found_in_trash' => __('No Reviews found in Trash'),

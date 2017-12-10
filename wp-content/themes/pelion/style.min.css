@@ -6430,14 +6430,47 @@ input, select, textarea {
   .rating li i {
     color: #fdcd00; }
 
+.location {
+  color: #666666;
+  font-size: 16px;
+  vertical-align: middle;
+  padding: 0 10px; }
+
+.tour {
+  color: #326698;
+  font-size: 16px;
+  vertical-align: middle;
+  padding: 0 10px; }
+
+.single-reviews .btn-primary {
+  background: #326698; }
+  .single-reviews .btn-primary:hover {
+    background: #174571; }
+
+.single-reviews .site-content {
+  background: #fff; }
+
 .single-reviews .mg-tp-btn {
   margin-top: 100px;
   padding-top: 100px;
   border-top: 1px solid #ddd; }
 
 .single-reviews .title-single {
-  margin: 25px 0 25px;
-  font-size: 30px; }
+  margin: 0;
+  font-size: 30px;
+  vertical-align: middle;
+  display: inline-block; }
+
+.single-reviews .rating {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 10px; }
+
+.single-reviews .conteudo-main {
+  margin-top: 50px; }
+
+.single-reviews .breadcrumb {
+  margin-bottom: 50px; }
 
 .single-padrao {
   padding-top: 50px;

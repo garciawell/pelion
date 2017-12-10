@@ -30,6 +30,63 @@ while ( have_posts() ) : the_post(); ?>
 					<article>
 
 						<h1 class="title-single"><?php the_title(); ?></h1>
+										<?php if( get_field('location') ): ?><span class="location">From <?php the_field('location'); ?></span><?php endif; ?> <?php if( get_field('tour') ): ?> . <span class="tour"><?php the_field('tour'); ?></span><?php endif; ?> 
+
+
+				<?php if( get_field('review') == '1' ){ ?>
+				<ul class="rating">
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+
+				</ul>
+				<?php } else if( get_field('review') == '2' ) { ?> 
+				<ul class="rating">
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+				</ul>
+				<?php } else if( get_field('review') == '3' ){  ?>
+				<ul class="rating">
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+				</ul>
+				<?php } else if( get_field('review') == '4' ){  ?>
+				<ul class="rating">
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+				</ul>
+				<?php } else if( get_field('review') == '5' ){  ?> 
+				<ul class="rating">
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+				</ul>
+
+				<?php } else { ?>
+				<ul class="rating">
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+
+				</ul>
+
+				<?php }?>   
+
 						<div class="conteudo-main"><?php the_content(); ?></div>
 
 					</article>		

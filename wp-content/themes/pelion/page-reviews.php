@@ -35,6 +35,9 @@
 			<div class="col-review-home-in">
 				<?php setup_postdata($post); ?>
 				<a href="<?php the_permalink(); ?>"><h2 class="title-rating-page"><?php the_title(); ?></h2></a>
+				<?php if( get_field('location') ): ?><span class="location">From <?php the_field('location'); ?></span><?php endif; ?> <?php if( get_field('tour') ): ?> . <span class="tour"><?php the_field('tour'); ?></span><?php endif; ?> 
+
+
 				<?php if( get_field('review') == '1' ){ ?>
 				<ul class="rating">
 					<li><i class="fa fa-star" aria-hidden="true"></i></li>
