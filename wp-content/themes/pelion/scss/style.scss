@@ -1316,13 +1316,15 @@ span.wpcf7-not-valid-tip{
 		li{
 			display:inline-block;
 			vertical-align:middle;
+			font-size:0.8em;
+			color:#888888;
 		}		
 		li:last-child{
 		    float: right;
 		    border-left: 1px solid #ddd;
 		    padding-left: 5px;
 		    max-width: 110px;
-		    line-height: 18px;
+		    line-height: 14px;
 		    display: flex;
 		    align-items: center;
 		}
