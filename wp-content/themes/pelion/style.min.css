@@ -6014,6 +6014,9 @@ dl, ol, ul {
 #menu-menu-principal {
   margin-top: 22px; }
 
+.searchandfilter label {
+  width: 100%; }
+
 .barra-topo {
   background: #01687b;
   padding: 8px 0; }
