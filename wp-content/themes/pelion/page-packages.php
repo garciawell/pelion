@@ -74,7 +74,7 @@
             </div>
             </div>
             <div class="pad-25 col-12 col-lg-3 col-md-12 col-sm-12">
-               <?php get_sidebar('region');?>
+                <?php get_sidebar('pages');?>
             </div><!---->
          </div>
       </div>
