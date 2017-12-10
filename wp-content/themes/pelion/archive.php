@@ -40,6 +40,12 @@ $term_id = $queried_object->term_id;
 
 					<p><?php the_field('description_large' , $queried_object);?> </p> 
 
+                   <div class="filtro-resp">
+                      <h3 class="title-cat-side">
+                         Filter
+                      </h3>
+                      <?php echo do_shortcode('[searchandfilter id="63"]'); ?>
+                    </div>
 
 					
 					<div class="row">

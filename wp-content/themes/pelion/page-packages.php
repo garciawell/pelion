@@ -22,11 +22,17 @@
                      itemtype="http://schema.org/ListItem"><span itemprop="item"  class="breadcrumb-item active" href="<?php bloginfo('home'); ?>/region"><span itemprop="name"><?php the_title();  ?></span></span>
                   </li>
                </ul>
-                 <div class="desc-page">
-                  <?php the_content(); ?>
-               </div>
                <div id="main">
-                  <p><?php the_field('description_large' , $queried_object);?> </p>
+                    <div class="desc-page">
+                      <?php the_content(); ?>
+                   </div>
+
+                   <div class="filtro-resp">
+                      <h3 class="title-cat-side">
+                         Filter
+                      </h3>
+                      <?php echo do_shortcode('[searchandfilter id="63"]'); ?>
+                    </div>
                     <div class="bloco-cats">
 
                       <div class="row">

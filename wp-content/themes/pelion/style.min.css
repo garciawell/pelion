@@ -6836,6 +6836,9 @@ span.wpcf7-not-valid-tip {
     border-bottom: 1px solid #dddddd;
     padding: 25px 0 10px 0; }
 
+.filtro-resp {
+  margin-bottom: 25px; }
+
 .bloco-padrao {
   -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
