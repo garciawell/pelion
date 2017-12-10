@@ -6012,7 +6012,7 @@ dl, ol, ul {
   visibility: visible; }
 
 #menu-menu-principal {
-  margin-top: 4px; }
+  margin-top: 22px; }
 
 .barra-topo {
   background: #01687b;
@@ -6042,7 +6042,7 @@ dl, ol, ul {
       cursor: pointer; }
 
 #header {
-  height: 148px; }
+  height: 161px; }
   #header .btn-success:hover {
     color: #fff !important; }
   #header .menu-topo {
