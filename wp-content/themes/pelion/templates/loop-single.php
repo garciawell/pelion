@@ -60,7 +60,7 @@ echo '<span class="post-title">' . $post_type . '</span>';
 		</div>
 
 		<div class="descricao"> 
-			<p itemprop="description"><?php echo excerpt(50);  ?></p>
+			<p itemprop="description"><?php echo excerpt(45);  ?></p>
 		</div>	
 
 		<div class="lista-single">

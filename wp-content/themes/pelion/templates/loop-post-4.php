@@ -31,7 +31,7 @@
 
 <?php
 $terms = get_the_terms( $post->ID, 'regions' );
-echo $terms[1]->name;
+echo $terms[0]->name;
 
 
 		?>
@@ -117,7 +117,7 @@ echo $terms[1]->name;
 				</ul>
 			</div>
 			<div class="bottom">
-				<div class="row  no-gutters align-items-center">
+				<div class="row  no-gutters align-items-center <?php $str = get_field('price'); $str2 = strlen($str);  if($str2 > 3){ echo 'price-large';} ?>">
 					<div class="col-12 col-sm-7">
 						<div class="row no-gutters  align-items-center"> 
 							<div class="col-12  col-sm-7">

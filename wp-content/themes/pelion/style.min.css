@@ -6991,6 +6991,27 @@ input[name="_sf_submit"] {
   left: 0;
   right: 0; }
 
+.why h2 {
+  font-weight: 400;
+  margin-bottom: 35px;
+  color: #444444;
+  font-weight: 300;
+  font-size: 30px; }
+
+.why h3 {
+  font-weight: 400;
+  margin-bottom: 35px;
+  color: #444444;
+  font-weight: 300;
+  font-size: 28px; }
+
+.why h4 {
+  font-weight: 400;
+  margin-bottom: 35px;
+  color: #444444;
+  font-weight: 300;
+  font-size: 26px; }
+
 .full-reg-front .col-in {
   padding: 168px 0;
   text-align: center;
@@ -7040,6 +7061,10 @@ input[name="_sf_submit"] {
 
 #agm_mh_footer {
   display: none; }
+
+.bloco-padrao .price-large .price {
+  font-size: 24px;
+  padding-left: 5px; }
 
 .bloco-tags li {
   text-transform: uppercase;
