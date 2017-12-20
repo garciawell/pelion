@@ -144,7 +144,6 @@ while ( have_posts() ) : the_post(); ?>
 						<div class="why">
 							<div class="row align-items-center">
 								<div class="col-12 col-md-6">
-									<h2 class="title-grey">WHY SHOULD YOU GO HERE?</h2>
 									<?php the_field('why_lt'); ?>
 								</div>						
 								<div class="col-12 col-md-6 mg-tp-15">
