@@ -59,8 +59,8 @@ echo '<span class="post-title">' . $post_type . '</span>';
 
 		</div>
 
-		<div class="descricao">
-			<p itemprop="description"><?php the_excerpt();  ?></p>
+		<div class="descricao"> 
+			<p itemprop="description"><?php echo excerpt(50);  ?></p>
 		</div>	
 
 		<div class="lista-single">
@@ -117,7 +117,7 @@ echo '<span class="post-title">' . $post_type . '</span>';
 				<div class="col-6 col-md-6 col-sm-12">
 					<ul>
 						<li>
-						Season:
+						<strong>Season:</strong>
 							<?php    
 							$terms = get_the_terms( $post->ID , 'seasons' );
 							if ( $terms != null ){ 
@@ -130,7 +130,7 @@ echo '<span class="post-title">' . $post_type . '</span>';
 							} } ?>
 						</li>
 
-						<li>Regions:
+						<li><strong>Regions:</strong>
 							<?php    
 							$terms = get_the_terms( $post->ID , 'regions' );
 							if ( $terms != null ){ 
@@ -142,7 +142,7 @@ echo '<span class="post-title">' . $post_type . '</span>';
 								echo "</a>";
 							} } ?>
 						 </li>
-						<li>Theme:
+						<li><strong>Theme:</strong>
 							<?php    
 							$terms = get_the_terms( $post->ID , 'theme' );
 							if ( $terms != null ){ 
@@ -158,7 +158,7 @@ echo '<span class="post-title">' . $post_type . '</span>';
 				</div>
 				<div class="col-6 col-md-6 col-sm-12">
 					<ul>
-						<li>Suitable for:
+						<li><strong>Suitable for:</strong>
 							<?php    
 							$terms = get_the_terms( $post->ID , 'suitable' );
 							if ( $terms != null ){ 
@@ -170,7 +170,7 @@ echo '<span class="post-title">' . $post_type . '</span>';
 								echo "</a>";
 							} } ?>
 						 </li>
-						<li>Difficulty: 
+						<li><strong>Difficulty: </strong>
 							<?php    
 							$terms = get_the_terms( $post->ID , 'difficulty' );
 							if ( $terms != null ){ 

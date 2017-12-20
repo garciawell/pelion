@@ -7038,6 +7038,9 @@ input[name="_sf_submit"] {
 .banner-full.regions {
   margin-bottom: 0px; }
 
+#agm_mh_footer {
+  display: none; }
+
 .bloco-tags li {
   text-transform: uppercase;
   font-size: 12px;
@@ -7050,6 +7053,10 @@ input[name="_sf_submit"] {
   content: ",";
   display: inline-block;
   margin-right: 5px; }
+
+.bloco-tags a {
+  text-transform: none;
+  font-size: 13px; }
 
 .bloco-tags a:last-child:after {
   content: ""; }
@@ -7268,6 +7275,9 @@ input[name="_sf_submit"] {
 .owl-thumb-item.last-thumb {
   width: 90px;
   line-height: 70px; }
+
+.banner-full-single .descricao {
+  margin-top: 10px; }
 
 .last-thumb i {
   content: "+";
