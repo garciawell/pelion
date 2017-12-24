@@ -67,7 +67,7 @@ while ( have_posts() ) : the_post(); ?>
 
 									<div class="card-header" role="tab" id="heading<?php echo $n; ?>">
 										<h4 class="mb-0">
-											<a data-toggle="collapse"  data-parent="#accordion" href="#collapse<?php echo $n; ?>"  aria-expanded="<?php  if( $n == 1) { echo 'true';} else{ echo 'false';} ?>" aria-controls="collapse<?php echo $n; ?>">
+											<a data-toggle="collapse"  <?php  if( $n != 1) { ?> class="collapsed" <?php }  ?> data-parent="#accordion" href="#collapse<?php echo $n; ?>"  aria-expanded="<?php  if( $n == 1) { echo 'true';} else{ echo 'false';} ?>" aria-controls="collapse<?php echo $n; ?>">
 												<?php the_sub_field('question'); ?>
 											</a>
 										</h4>
