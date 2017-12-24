@@ -22,7 +22,7 @@ while ( have_posts() ) : the_post(); ?>
 			$taxonomy = get_terms('regions');
 			foreach ($taxonomy as $term) {
 				if (!is_child($term,'regions')) { ?>
-						<div class="col">
+						<div class="col-12 col-sm-3 col-mg">
 							<a href="<?php echo  $term_link = get_term_link( $term ); ?>">
 								<div class="col-in effect-hover" style="background-image: url('<?php  echo $custom_field = get_field('imagem_categoria', $term ); ?>');">
 									<div class="in">

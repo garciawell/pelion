@@ -121,7 +121,7 @@ echo $terms[0]->name;
 					<div class="col-12 col-sm-7">
 						<div class="row no-gutters  align-items-center"> 
 							<div class="col-12  col-sm-7">
-								<span class="price"><span class="moeda">€</span> <?php the_field('price');?></span>
+								<span class="price"><span class="moeda">€</span> <?php $valor = get_field('price'); echo number_format($valor,0,",",".");  ?></span>
 							</div>					
 							<div class="col-12 col-sm-5">
 								<p class="text-price"><?php the_field('text_price');?></p>

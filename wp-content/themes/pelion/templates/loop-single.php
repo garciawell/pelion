@@ -190,7 +190,7 @@ echo '<span class="post-title">' . $post_type . '</span>';
 		<div class="price-inf"  itemprop="offers" itemscope itemtype="http://schema.org/Offer">	
 			<div class="row align-items-center">	
 				<div class="col-12 col-sm-6">	
-					 <span itemprop="priceCurrency" content="EUR"><span class="price" itemprop="price" content="<?php the_field('price');?>"><span class="moeda">€</span> <?php the_field('price');?></span></span>
+					 <span itemprop="priceCurrency" content="EUR"><span class="price" itemprop="price" content="<?php the_field('price');?>"><span class="moeda">€</span><?php $valor = get_field('price'); echo number_format($valor,0,",",".");  ?></span></span>
 					  <link itemprop="availability" href="http://schema.org/InStock" content="In stock"/>
 					<p class="text-price"><?php the_field('text_price');?></p>
 				</div>			

@@ -128,7 +128,39 @@ while ( have_posts() ) : the_post(); ?>
 												<h3><?php the_sub_field('title'); ?></h3>
 											</div>						
 											<div class="col-12 col-lg-8 col-md-7">
-												<?php the_sub_field('description'); ?>
+												<?php if( get_sub_field('description') ): ?><?php the_sub_field('description'); ?><?php endif; ?>
+
+												<?php if( get_sub_field('gallery') ): ?>
+												<ul class="row gallery-single-tabs">
+													<?php 
+													$images = get_sub_field('gallery');
+													$size = 'padrao'; // (thumbnail, medium, large, full or custom size)
+
+														if( $images ): ?>
+														<?php $n=1;  foreach( $images as $image ): ?>
+														<li class="col-6 col-md-6 col-xl-4"> 
+															<a href="<?php echo $image['url']; ?>" data-rel="lightbox-gallery-3">
+																<img src="<?php echo $image['sizes']['padrao']; ?>" alt="<?php echo $image['alt']; ?>" />
+															</a>
+														</li>
+														<?php $n++; endforeach; ?>
+													<?php endif; ?>
+												</ul>
+												<?php endif; ?>
+												<?php if( have_rows('downloads') ): ?>
+												<ul>
+												<?php while ( have_rows('downloads') ) : the_row(); ?>
+												<li>
+												<?php if( get_sub_field('file') ): ?>
+
+													<a href="<?php the_sub_field('file'); ?>" class="btn btn-primary" download><?php the_sub_field('name'); ?></a>
+
+												<?php endif; ?>
+												</li>
+												<?php endwhile;  ?>
+												</ul> 
+											<?php endif;?>
+											
 											</div>
 										</div>
 									<?php endwhile; endif;?>
