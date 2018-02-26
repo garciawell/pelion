@@ -100,7 +100,7 @@ function create_tag_taxonomies()
     'menu_name' => __( 'Seasons' ),
   ); 
 
-  register_taxonomy('seasons','packages',array(
+  register_taxonomy('seasons',array('packages','accommodations','activities'),array(
     'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
@@ -249,7 +249,7 @@ function create_tag_taxonomies5()
     'menu_name' => __( 'Difficultys' ),
   ); 
 
-  register_taxonomy('difficulty','packages',array(
+  register_taxonomy('difficulty',array('packages','activities'),array(
     'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
@@ -328,6 +328,83 @@ add_action( 'init', 'register_activities' );
 	  
 }
 
+
+
+
+add_action( 'init', 'create_tag_taxonomies11', 0 );
+
+//create two taxonomies, genres and tags for the post type "tag"
+function create_tag_taxonomies11() 
+{
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Locations', 'taxonomy general name' ),
+    'singular_name' => _x( 'Location', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Location' ),
+    'popular_items' => __( 'Popular Location' ),
+    'all_items' => __( 'All Location' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Location' ), 
+    'update_item' => __( 'Update Location' ),
+    'add_new_item' => __( 'Add New Location' ),
+    'new_item_name' => __( 'New Location Name' ),
+    'separate_items_with_commas' => __( 'Separate Locations with commas' ),
+    'add_or_remove_items' => __( 'Add or remove Locations' ),
+    'choose_from_most_used' => __( 'Choose from the most used Locations' ),
+    'menu_name' => __( 'Locations' ),
+  ); 
+
+  register_taxonomy('locations','activities',array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'location' ),
+  ));
+}
+
+
+
+
+
+add_action( 'init', 'create_tag_taxonomies12', 0 );
+
+//create two taxonomies, genres and tags for the post type "tag"
+function create_tag_taxonomies12() 
+{
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Environment', 'taxonomy general name' ),
+    'singular_name' => _x( 'Environment', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Environment' ),
+    'popular_items' => __( 'Popular Environment' ),
+    'all_items' => __( 'All Environment' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Environment' ), 
+    'update_item' => __( 'Update Environment' ),
+    'add_new_item' => __( 'Add New Environment' ),
+    'new_item_name' => __( 'New Environment Name' ),
+    'separate_items_with_commas' => __( 'Separate Environment with commas' ),
+    'add_or_remove_items' => __( 'Add or remove Environment' ),
+    'choose_from_most_used' => __( 'Choose from the most used Environment' ),
+    'menu_name' => __( 'Environment' ),
+  ); 
+
+  register_taxonomy('environment',array('accommodations','activities'),array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'environment' ),
+  ));
+}
+
+
+ 
 
 
 

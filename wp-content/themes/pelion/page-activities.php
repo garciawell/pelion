@@ -38,7 +38,7 @@
 
                       <div class="row">
                       <?php
-                      $the_press = new WP_Query(array('post_type' => 'packages','posts_per_page' => 12,'paged'=> get_query_var('paged') ));
+                      $the_press = new WP_Query(array('post_type' => 'activities','posts_per_page' => 12,'paged'=> get_query_var('paged') ));
                         // The Loop
                       $n=1;   while ($the_press->have_posts()) : $the_press->the_post();
                       $count = $the_press->post_count;

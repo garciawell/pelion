@@ -59,7 +59,7 @@
 		</div>					
 		<div class="col-12 col-lg-6 bg-blue">
 			<div class="limit-grid-left">
-				<?php   get_template_part("templates/loop", "single"); ?>
+				<?php   get_template_part("templates/loop", "single-acm"); ?>
 
 			</div>		
 		</div>		
