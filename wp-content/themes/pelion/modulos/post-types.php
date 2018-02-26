@@ -408,6 +408,45 @@ function create_tag_taxonomies12()
 
 
 
+add_action( 'init', 'create_tag_taxonomies13', 0 );
+
+//create two taxonomies, genres and tags for the post type "tag"
+function create_tag_taxonomies13() 
+{
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'View', 'taxonomy general name' ),
+    'singular_name' => _x( 'View', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search View' ),
+    'popular_items' => __( 'Popular View' ),
+    'all_items' => __( 'All View' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit View' ), 
+    'update_item' => __( 'Update View' ),
+    'add_new_item' => __( 'Add New View' ),
+    'new_item_name' => __( 'New View Name' ),
+    'separate_items_with_commas' => __( 'Separate View with commas' ),
+    'add_or_remove_items' => __( 'Add or remove View' ),
+    'choose_from_most_used' => __( 'Choose from the most used View' ),
+    'menu_name' => __( 'View' ),
+  ); 
+
+  register_taxonomy('view',array('accommodations'),array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'view' ),
+  ));
+}
+
+
+ 
+
+
+
 
 
 //Accomodation
